@@ -2,3 +2,5 @@
 __pycache__/
 *.bak
 banks/_raw_mzs.json
+reports/AI_SIGNATURES.md
+reports/verify_full_run.log
