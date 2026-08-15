@@ -53,10 +53,17 @@ def get_owner(repo_path):
 def count_signatures(repo_path):
     """Count AI signatures in commit messages (method 1: own parser)."""
     try:
-        log = run(["git", "log", "--format=%B"], cwd=repo_path, check=False)
+        # Use --all to match git method, split by NUL separator
+        log = run(["git", "log", "--all", "--format=%B%x00"], cwd=repo_path, check=False)
         if not log:
             return 0
-        return len(SIGNATURE_RE.findall(log))
+        # Split by NUL and count signatures in each full message
+        messages = log.split("\x00")
+        count = 0
+        for msg in messages:
+            if msg.strip() and SIGNATURE_RE.search(msg):
+                count += 1
+        return count
     except Exception:
         return 0
 
@@ -64,12 +71,12 @@ def count_signatures(repo_path):
 def count_signatures_git(repo_path):
     """Count AI signatures via git grep (method 2: git's own search)."""
     try:
-        # Use git log with grep for each pattern
+        # Use git log with grep for each pattern, --all to match parser
         total = 0
         for pattern in SIGNATURE_PATTERNS:
             # Escape for git grep
             git_pattern = pattern.replace("\\", "\\\\").replace("|", "\\|")
-            out = run(["git", "log", "--format=%B", "--grep=" + git_pattern, "-i", "--all"], cwd=repo_path, check=False)
+            out = run(["git", "log", "--all", "--format=%H", "--grep=" + git_pattern, "-i"], cwd=repo_path, check=False)
             if out:
                 total += len(out.splitlines())
         return total
@@ -131,18 +138,22 @@ patterns = [
     r"🤖 generated",
     r"created by claude",
 ]
-re_combined = re.compile("|".join(patterns), re.IGNORECASE)
+re_combined = re.compile("|".join(patterns), re.IGNORECASE | re.DOTALL)
 
 def clean(msg):
-    lines = msg.split("\\n")
-    out = []
-    for line in lines:
-        if re_combined.search(line):
-            continue
-        out.append(line)
-    return "\\n".join(out)
+    # Apply regex to entire message, not line by line
+    if re_combined.search(msg):
+        # Remove matching lines
+        lines = msg.split("\\n")
+        out = []
+        for line in lines:
+            if re_combined.search(line):
+                continue
+            out.append(line)
+        return "\\n".join(out)
+    return msg
 
-data = sys.stdin.buffer.read().decode("utf-8")
+data = sys.stdin.buffer.read().decode("utf-8", errors="replace")
 sys.stdout.write(clean(data))
 '''
     with open(script_path, "w", encoding="utf-8") as f:
@@ -221,8 +232,40 @@ def clean_repo(repo_path, repo_name, max_attempts, log_path):
             status = "ОЧИЩЕНО"
             break
         elif after_count != git_count:
+            # Diagnostic: show up to 3 SHAs found by one method but not the other
+            parser_shas = set()
+            git_shas = set()
+            try:
+                # Get SHAs from parser method
+                log = run(["git", "log", "--all", "--format=%H%x00%B%x00"], cwd=repo_path, check=False)
+                if log:
+                    parts = log.split("\x00")
+                    for i in range(0, len(parts)-1, 2):
+                        sha = parts[i]
+                        msg_text = parts[i+1] if i+1 < len(parts) else ""
+                        if SIGNATURE_RE.search(msg_text):
+                            parser_shas.add(sha)
+                
+                # Get SHAs from git method
+                for pattern in SIGNATURE_PATTERNS:
+                    git_pattern = pattern.replace("\\", "\\\\").replace("|", "\\|")
+                    out = run(["git", "log", "--all", "--format=%H", "--grep=" + git_pattern, "-i"], cwd=repo_path, check=False)
+                    if out:
+                        git_shas.update(out.splitlines())
+            except Exception:
+                pass
+            
+            only_git = list(git_shas - parser_shas)[:3]
+            only_parser = list(parser_shas - git_shas)[:3]
+            
+            diag_parts = [f"парсер={after_count}, git={git_count}"]
+            if only_git:
+                diag_parts.append(f"тільки-git: {', '.join(only_git)}")
+            if only_parser:
+                diag_parts.append(f"тільки-парсер: {', '.join(only_parser)}")
+            
             status = "РОЗБІЖНІСТЬ ПЕРЕВІРОК"
-            integrity_msg = f"парсер={after_count}, git={git_count}"
+            integrity_msg = "; ".join(diag_parts)
             break
         elif after_count == 0:
             # git method still finds something

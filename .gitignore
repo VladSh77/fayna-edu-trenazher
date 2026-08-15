@@ -10,3 +10,5 @@ reports/
 .clean_loop/
 .verify_tmp/
 .chystka_backup/
+.registry_cache/
+.stars_cache/
