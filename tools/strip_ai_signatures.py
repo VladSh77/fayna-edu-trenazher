@@ -103,18 +103,25 @@ def main():
     env = os.environ.copy()
     env['FILTER_BRANCH_SQUELCH_WARNING'] = '1'
 
-    filter_script = (
-        "import sys, re;"
-        "patterns = [" + ','.join(f"r'{p}'" for p in AI_PATTERNS) + "];"
-        "msg = sys.stdin.read();"
-        "lines = msg.splitlines();"
-        "filtered = [l for l in lines if not any(re.search(p, l) for p in patterns)];"
-        "while filtered and filtered[-1] == '': filtered.pop();"
-        "sys.stdout.write('\\n'.join(filtered) + ('\\n' if filtered else ''))"
-    )
+    filter_file = os.path.join(repo, '.git', 'ai_msg_filter.py')
+    with open(filter_file, 'w', encoding='utf-8') as f:
+        f.write('# -*- coding: utf-8 -*-\n')
+        f.write('import sys\n')
+        f.write('import re\n')
+        f.write('patterns = [\n')
+        for p in AI_PATTERNS:
+            f.write(f"    r'{p}',\n")
+        f.write(']\n')
+        f.write("msg = sys.stdin.buffer.read().decode('utf-8')\n")
+        f.write("lines = msg.splitlines()\n")
+        f.write("filtered = [l for l in lines if not any(re.search(p, l) for p in patterns)]\n")
+        f.write("while filtered and filtered[-1] == '':\n")
+        f.write("    filtered.pop()\n")
+        f.write("result = '\\n'.join(filtered) + ('\\n' if filtered else '')\n")
+        f.write("sys.stdout.buffer.write(result.encode('utf-8'))\n")
 
     result = run(
-        ['git', 'filter-branch', '--msg-filter', f"python3 -c \"{filter_script}\"", 'HEAD'],
+        ['git', 'filter-branch', '--msg-filter', f"python3 {filter_file}", 'HEAD'],
         cwd=repo,
         check=False
     )
@@ -135,6 +142,12 @@ def main():
         sys.exit(1)
 
     print(f"✅ сліди прибрано: було {initial_count}, стало 0")
+
+    run(['git', 'for-each-ref', '--format=%(refname)', 'refs/original/'], cwd=repo, check=False)
+    refs_result = run(['git', 'for-each-ref', '--format=%(refname)', 'refs/original/'], cwd=repo, check=False)
+    if refs_result.returncode == 0 and refs_result.stdout.strip():
+        for ref in refs_result.stdout.strip().splitlines():
+            run(['git', 'update-ref', '-d', ref], cwd=repo)
 
     push_status = "пропущено"
     if args.push:
