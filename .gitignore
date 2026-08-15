@@ -1,0 +1,4 @@
+.verify_tmp/
+__pycache__/
+*.bak
+banks/_raw_mzs.json

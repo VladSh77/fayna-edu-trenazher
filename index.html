@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тренажер — МЗС 2026</title>
+<style>
+  :root{
+    --bg:#f5f7fa; --card:#ffffff; --text:#1a1a1a; --muted:#5b6470;
+    --border:#d0d7de; --accent:#1a6fb5; --accent-soft:#e7f0f8;
+    --green:#1a7f37; --green-bg:#dafbe1; --red:#cf222e; --red-bg:#ffebe9;
+    --shadow:0 1px 3px rgba(0,0,0,0.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0d1117; --card:#161b22; --text:#e6edf3; --muted:#8b949e;
+      --border:#30363d; --accent:#58a6ff; --accent-soft:#1f2a3a;
+      --green:#3fb950; --green-bg:#12261a; --red:#f85149; --red-bg:#2d1517;
+      --shadow:0 1px 3px rgba(0,0,0,0.5);
+    }
+  }
+  *{box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; -webkit-text-size-adjust:100%;}
+  html,body{height:100%;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    line-height:1.55; overflow-x:hidden;
+  }
+  #app{max-width:760px; margin:0 auto; padding:16px 16px 80px; min-height:100%;}
+  .hidden{display:none !important;}
+  button{
+    font:inherit; cursor:pointer; border:1px solid var(--border);
+    background:var(--card); color:var(--text); border-radius:10px;
+    padding:12px 16px; min-height:48px; width:100%; text-align:left;
+    transition:background 0.15s, border-color 0.15s, transform 0.05s;
+    overflow-wrap:break-word; word-break:break-word;
+  }
+  button:active{transform:scale(0.995);}
+  button:disabled{opacity:0.6; cursor:not-allowed;}
+  .btn-primary{background:var(--accent); border-color:var(--accent); color:#fff; text-align:center; font-weight:600;}
+  .btn-secondary{background:var(--card); text-align:center;}
+  .btn-danger{background:var(--red-bg); border-color:var(--red); color:var(--red); text-align:center;}
+  .btn-ghost{background:transparent; border-color:transparent; color:var(--accent); text-align:center;}
+  .card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px; box-shadow:var(--shadow);}
+  .top-bar{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:16px; flex-wrap:wrap;}
+  .top-bar h1{font-size:1.2rem; font-weight:600;}
+  .muted{color:var(--muted); font-size:0.9rem;}
+  .question-text{font-size:1.1rem; line-height:1.55; margin-bottom:20px; font-weight:500;}
+  .options{display:flex; flex-direction:column; gap:10px; margin-bottom:20px;}
+  .option{display:flex; align-items:center; gap:10px; width:100%;}
+  .option .mark{width:24px; height:24px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-weight:700; border-radius:50%;}
+  .option.correct{background:var(--green-bg); border-color:var(--green);}
+  .option.correct .mark{background:var(--green); color:#fff;}
+  .option.wrong{background:var(--red-bg); border-color:var(--red);}
+  .option.wrong .mark{background:var(--red); color:#fff;}
+  .option.neutral{border-color:var(--accent); background:var(--accent-soft);}
+  .option.disabled{opacity:0.5; pointer-events:none;}
+  .progress-bar{height:8px; background:var(--border); border-radius:20px; overflow:hidden; margin:8px 0;}
+  .progress-fill{height:100%; background:var(--green); border-radius:20px;}
+  .progress-fill.low{background:var(--red);}
+  .nav-row{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;}
+  .nav-row button{flex:1; min-width:120px;}
+  .section-item{display:flex; flex-direction:column; gap:6px; padding:14px 0; border-bottom:1px solid var(--border);}
+  .section-item:last-child{border-bottom:none;}
+  .section-header{display:flex; justify-content:space-between; align-items:center; gap:10px;}
+  .section-title{font-weight:600; font-size:1rem;}
+  .exam-summary{background:var(--card); border-radius:14px; padding:16px; border:1px solid var(--border);}
+  .verdict{font-size:1.4rem; font-weight:700; margin:10px 0;}
+  .verdict.pass{color:var(--green);}
+  .verdict.fail{color:var(--red);}
+  .history-item{display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border);}
+  .history-item:last-child{border:none;}
+  .timer{font-variant-numeric:tabular-nums; font-weight:600;}
+  .timer.warning{color:var(--red);}
+  .checkbox-row{display:flex; align-items:center; gap:10px; padding:8px 0;}
+  .checkbox-row input{width:18px; height:18px;}
+  .error-box{background:var(--red-bg); border:1px solid var(--red); border-radius:12px; padding:16px; color:var(--red);}
+  .bottom-padding{padding-bottom:env(safe-area-inset-bottom);}
+  .sticky-bottom{position:fixed; bottom:0; left:0; right:0; background:var(--bg); padding:12px 16px calc(12px + env(safe-area-inset-bottom)); border-top:1px solid var(--border);}
+  .sticky-bottom .nav-row{max-width:760px; margin:0 auto;}
+  @media (max-width:480px){
+    .top-bar{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+'use strict';
+// ====== Стан ======
+const state = {
+  manifest: null,
+  bank: null,
+  bankFile: '',
+  screen: 'home', // home | sections | learn | exam-setup | exam | exam-result
+  currentSectionId: null,
+  learnIndex: 0,
+  learnAnswers: {}, // id -> 'correct' | 'wrong'
+  learnWrongIds: [],
+  examQuestions: [],
+  examIndex: 0,
+  examAnswers: [],
+  examTimer: null,
+  examTimeLeft: 1800,
+  examSections: [],
+  progress: {}, // {sectionId: {index, correct:Set, wrong:Set, history:[]}}
+  shuffled: {}, // {questionId: [options]}
+};
+
+// ====== localStorage ======
+function loadProgress() {
+  if (!state.bankFile) return {};
+  try {
+    const raw = localStorage.getItem('trenazher:' + state.bankFile);
+    return raw ? JSON.parse(raw) : {};
+  } catch (e) {
+    return {};
+  }
+}
+function saveProgress() {
+  if (!state.bankFile) return;
+  try {
+    const data = {};
+    for (const [sid, p] of Object.entries(state.progress)) {
+      data[sid] = {
+        index: p.index,
+        correct: [...p.correct],
+        wrong: [...p.wrong],
+        history: p.history || []
+      };
+    }
+    localStorage.setItem('trenazher:' + state.bankFile, JSON.stringify(data));
+  } catch (e) { /* приватний режим */ }
+}
+function initProgress() {
+  state.progress = loadProgress();
+  if (!state.bank) return;
+  for (const sec of state.bank.sections) {
+    if (!state.progress[sec.id]) {
+      state.progress[sec.id] = { index: 0, correct: new Set(), wrong: new Set(), history: [] };
+    } else {
+      state.progress[sec.id].correct = new Set(state.progress[sec.id].correct || []);
+      state.progress[sec.id].wrong = new Set(state.progress[sec.id].wrong || []);
+      state.progress[sec.id].history = state.progress[sec.id].history || [];
+    }
+  }
+}
+
+// ====== Допоміжні ======
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function fmtPercent(correct, total) {
+  if (total === 0) return '0%';
+  return Math.round((correct / total) * 100) + '%';
+}
+function sectionProgress(sectionId) {
+  const p = state.progress[sectionId];
+  if (!p) return { done: 0, correct: 0, pct: 0 };
+  const total = state.bank.sections.find(s => s.id === sectionId).count;
+  const done = p.correct.size + p.wrong.size;
+  const pct = done === 0 ? 0 : Math.round((p.correct.size / done) * 100);
+  return { done, correct: p.correct.size, pct, total };
+}
+function getShuffledOptions(q) {
+  if (!state.shuffled[q.id]) {
+    state.shuffled[q.id] = shuffle([q.correct, ...q.wrong]);
+  }
+  return state.shuffled[q.id];
+}
+
+// ====== Рендер ======
+const app = document.getElementById('app');
+
+function renderHome() {
+  if (!state.manifest) return;
+  state.screen = 'home';
+  let html = `<div class="top-bar"><h1>Оберіть банк</h1></div>`;
+  for (const b of state.manifest.banks) {
+    const prog = loadProgressForBank(b.file);
+    const done = prog ? Object.values(prog).reduce((acc, p) => acc + p.correct.length + p.wrong.length, 0) : 0;
+    const total = b.total;
+    const pct = done === 0 ? 0 : Math.round((Object.values(prog || {}).reduce((acc, p) => acc + p.correct.length, 0) / done) * 100);
+    html += `<div class="card" style="margin-bottom:12px; cursor:pointer;" data-bank="${b.file}">
+      <div style="font-weight:600; font-size:1.1rem;">${b.title}</div>
+      <div class="muted">${b.total} питань · ${b.sections} розділів</div>
+      ${done > 0 ? `<div style="margin-top:8px;">✅ Пройдено ${done}/${total} · правильно ${pct}%</div>` : '<div class="muted" style="margin-top:8px;">Ще не починав</div>'}
+    </div>`;
+  }
+  app.innerHTML = html;
+  app.querySelectorAll('[data-bank]').forEach(el => {
+    el.addEventListener('click', () => loadBank(el.dataset.bank));
+  });
+}
+function loadProgressForBank(file) {
+  try {
+    const raw = localStorage.getItem('trenazher:' + file);
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) { return null; }
+}
+
+async function loadBank(file) {
+  try {
+    const resp = await fetch('banks/' + file);
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    state.bank = await resp.json();
+    state.bankFile = file;
+    initProgress();
+    renderSections();
+  } catch (e) {
+    app.innerHTML = `<div class="error-box">
+      <strong>Не вдалося завантажити банк.</strong><br>
+      Якщо ви відкрили файл локально (file://), скористайтеся GitHub Pages або локальним сервером.
+    </div>`;
+  }
+}
+
+function renderSections() {
+  state.screen = 'sections';
+  const b = state.bank;
+  let html = `<div class="top-bar"><h1>${b.title}</h1><button class="btn-ghost" id="backHome">← Банки</button></div>`;
+  html += `<div style="display:flex; gap:10px; margin-bottom:16px;">
+    <button class="btn-primary" id="btnLearn">📖 Навчання</button>
+    <button class="btn-secondary" id="btnExam">📝 Екзамен</button>
+  </div>`;
+  for (const sec of b.sections) {
+    const p = sectionProgress(sec.id);
+    const fillClass = p.pct < 75 ? 'low' : '';
+    html += `<div class="section-item">
+      <div class="section-header">
+        <span class="section-title">${sec.title}</span>
+        <span class="muted">${p.done}/${sec.count} · ${p.pct}%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill ${fillClass}" style="width:${p.done/sec.count*100}%"></div></div>
+    </div>`;
+  }
+  html += `<div style="margin-top:20px;"><button class="btn-danger" id="resetProgress">Скинути прогрес</button></div>`;
+  html += `<div style="margin-top:16px;"><h3>Історія екзаменів</h3>`;
+  const allHistory = [];
+  for (const sec of b.sections) {
+    const p = state.progress[sec.id];
+    if (p && p.history) allHistory.push(...p.history);
+  }
+  if (allHistory.length === 0) html += `<div class="muted">Ще немає спроб</div>`;
+  else {
+    allHistory.sort((a,b) => new Date(b.date) - new Date(a.date));
+    for (const h of allHistory.slice(0, 10)) {
+      const cls = h.pass ? 'pass' : 'fail';
+      html += `<div class="history-item"><span>${new Date(h.date).toLocaleDateString('uk-UA')}</span><span class="${cls}">${h.percent}% ${h.pass ? '✓' : '✗'}</span></div>`;
+    }
+  }
+  html += `</div>`;
+  app.innerHTML = html;
+  document.getElementById('backHome').onclick = () => { state.bank = null; state.bankFile=''; renderHome(); };
+  document.getElementById('btnLearn').onclick = () => startLearning();
+  document.getElementById('btnExam').onclick = () => renderExamSetup();
+  document.getElementById('resetProgress').onclick = () => {
+    if (confirm('Скинути весь прогрес?')) {
+      try { localStorage.removeItem('trenazher:' + state.bankFile); } catch(e) {}
+      initProgress();
+      renderSections();
+    }
+  };
+}
+
+// ====== Навчання ======
+function startLearning() {
+  const sec = state.bank.sections[0];
+  state.currentSectionId = sec.id;
+  state.learnIndex = state.progress[sec.id].index || 0;
+  state.learnAnswers = {};
+  state.learnWrongIds = [];
+  renderLearn();
+}
+function renderLearn() {
+  state.screen = 'learn';
+  const sec = state.bank.sections.find(s => s.id === state.currentSectionId);
+  const q = sec.questions[state.learnIndex];
+  if (!q) { renderLearnSummary(); return; }
+  const p = state.progress[sec.id];
+  const total = sec.count;
+  const answered = p.correct.size + p.wrong.size;
+  const pct = answered === 0 ? 0 : Math.round((p.correct.size / answered) * 100);
+  const prevAnswer = state.learnAnswers[q.id];
+  const options = getShuffledOptions(q);
+  let html = `<div class="top-bar">
+    <span>${sec.title}</span>
+    <span class="muted">Питання ${state.learnIndex+1} / ${total} · правильно ${p.correct.size} (${pct}%)</span>
+  </div>`;
+  html += `<div class="card"><div class="question-text" id="qText"></div><div class="options" id="optionsBox"></div></div>`;
+  html += `<div class="nav-row">`;
+  if (state.learnIndex > 0) html += `<button class="btn-secondary" id="prevBtn">← Назад</button>`;
+  if (prevAnswer) html += `<button class="btn-primary" id="nextBtn">Наступне →</button>`;
+  html += `</div>`;
+  app.innerHTML = html;
+  document.getElementById('qText').textContent = q.question;
+  const box = document.getElementById('optionsBox');
+  options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    let cls = 'option';
+    let mark = '';
+    let disabled = false;
+    if (prevAnswer) {
+      if (opt === q.correct) { cls += ' correct'; mark = '✓'; }
+      else if (opt === prevAnswer && prevAnswer !== q.correct) { cls += ' wrong'; mark = '✗'; }
+      else { cls += ' disabled'; }
+      disabled = true;
+    }
+    btn.className = cls;
+    btn.disabled = disabled;
+    const mk = document.createElement('span'); mk.className = 'mark'; mk.textContent = mark;
+    const tx = document.createElement('span'); tx.textContent = opt;
+    btn.append(mk, tx);
+    if (!prevAnswer) {
+      btn.addEventListener('click', () => {
+        const chosen = opt;
+        const isCorrect = chosen === q.correct;
+        state.learnAnswers[q.id] = chosen;
+        if (isCorrect) p.correct.add(q.id);
+        else { p.wrong.add(q.id); state.learnWrongIds.push(q.id); }
+        p.index = state.learnIndex;
+        saveProgress();
+        renderLearn();
+      });
+    }
+    box.appendChild(btn);
+  });
+  if (state.learnIndex > 0) document.getElementById('prevBtn').onclick = () => {
+    state.learnIndex--;
+    renderLearn();
+  };
+  if (prevAnswer) document.getElementById('nextBtn').onclick = () => {
+    state.learnIndex++;
+    saveProgress();
+    renderLearn();
+  };
+}
+function renderLearnSummary() {
+  const sec = state.bank.sections.find(s => s.id === state.currentSectionId);
+  const p = state.progress[sec.id];
+  const total = sec.count;
+  const correct = p.correct.size;
+  const pct = total === 0 ? 0 : Math.round((correct / total) * 100);
+  let html = `<div class="card" style="text-align:center; padding:30px;">
+    <h2>Розділ завершено!</h2>
+    <div style="font-size:2rem; margin:16px 0;">${pct}%</div>
+    <div class="muted">Правильних: ${correct} з ${total}</div>
+    <div style="margin-top:20px; display:flex; flex-direction:column; gap:10px;">
+      ${state.learnWrongIds.length > 0 ? `<button class="btn-primary" id="retryWrong">Повторити помилки (${state.learnWrongIds.length})</button>` : ''}
+      <button class="btn-secondary" id="toSections">До розділів</button>
+    </div>
+  </div>`;
+  app.innerHTML = html;
+  document.getElementById('toSections').onclick = () => renderSections();
+  const retry = document.getElementById('retryWrong');
+  if (retry) retry.onclick = () => {
+    const wrongIds = state.learnWrongIds;
+    state.learnWrongIds = [];
+    state.learnIndex = 0;
+    const secObj = state.bank.sections.find(s => s.id === state.currentSectionId);
+    const wrongQuestions = secObj.questions.filter(q => wrongIds.includes(q.id));
+    // тимчасово замінимо питання розділу
+    const original = secObj.questions;
+    secObj.questions = wrongQuestions;
+    state.learnIndex = 0;
+    state.learnAnswers = {};
+    renderLearn();
+    secObj.questions = original;
+  };
+}
+
+// ====== Екзамен ======
+function renderExamSetup() {
+  state.screen = 'exam-setup';
+  let html = `<div class="top-bar"><h1>Екзамен</h1><button class="btn-ghost" id="backSections">← Розділи</button></div>`;
+  html += `<div class="card"><h3>Оберіть розділи</h3>`;
+  for (const sec of state.bank.sections) {
+    html += `<label class="checkbox-row"><input type="checkbox" checked data-section="${sec.id}"> ${sec.title}</label>`;
+  }
+  html += `<button class="btn-primary" id="startExam" style="margin-top:16px;">Почати (30 питань, 30 хв)</button></div>`;
+  app.innerHTML = html;
+  document.getElementById('backSections').onclick = () => renderSections();
+  document.getElementById('startExam').onclick = () => {
+    const selected = [...document.querySelectorAll('input[type=checkbox]:checked')].map(i => i.dataset.section);
+    if (selected.length === 0) { alert('Оберіть хоча б один розділ'); return; }
+    const allQuestions = [];
+    for (const sid of selected) {
+      const sec = state.bank.sections.find(s => s.id === sid);
+      allQuestions.push(...sec.questions);
+    }
+    const count = Math.min(30, allQuestions.length);
+    state.examQuestions = shuffle(allQuestions).slice(0, count);
+    state.examIndex = 0;
+    state.examAnswers = [];
+    state.examTimeLeft = 1800;
+    startExamTimer();
+    renderExam();
+  };
+}
+function startExamTimer() {
+  clearInterval(state.examTimer);
+  state.examTimer = setInterval(() => {
+    state.examTimeLeft--;
+    if (state.examTimeLeft <= 0) {
+      clearInterval(state.examTimer);
+      finishExam();
+    }
+    const timerEl = document.getElementById('examTimer');
+    if (timerEl) {
+      const m = Math.floor(state.examTimeLeft / 60);
+      const s = state.examTimeLeft % 60;
+      timerEl.textContent = `${m}:${s.toString().padStart(2,'0')}`;
+      if (state.examTimeLeft <= 300) timerEl.classList.add('warning');
+    }
+  }, 1000);
+}
+function renderExam() {
+  state.screen = 'exam';
+  const q = state.examQuestions[state.examIndex];
+  const options = getShuffledOptions(q);
+  const answered = state.examAnswers[state.examIndex];
+  let html = `<div class="top-bar">
+    <span>Екзамен</span>
+    <span class="timer" id="examTimer"></span>
+  </div>`;
+  html += `<div class="card"><div class="question-text" id="qText"></div><div class="options" id="optionsBox"></div></div>`;
+  html += `<div class="nav-row">`;
+  if (state.examIndex > 0) html += `<button class="btn-secondary" id="prevExam">← Назад</button>`;
+  if (answered) html += `<button class="btn-primary" id="nextExam">${state.examIndex === state.examQuestions.length-1 ? 'Завершити' : 'Наступне →'}</button>`;
+  html += `</div>`;
+  app.innerHTML = html;
+  document.getElementById('qText').textContent = q.question;
+  const box = document.getElementById('optionsBox');
+  options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    let cls = 'option';
+    if (answered) {
+      if (opt === answered) cls += ' neutral';
+      else cls += ' disabled';
+    }
+    btn.className = cls;
+    btn.disabled = !!answered;
+    const mk = document.createElement('span'); mk.className = 'mark'; mk.textContent = '';
+    const tx = document.createElement('span'); tx.textContent = opt;
+    btn.append(mk, tx);
+    if (!answered) {
+      btn.addEventListener('click', () => {
+        state.examAnswers[state.examIndex] = opt;
+        renderExam();
+      });
+    }
+    box.appendChild(btn);
+  });
+  const timerEl = document.getElementById('examTimer');
+  if (timerEl) {
+    const m = Math.floor(state.examTimeLeft / 60);
+    const s = state.examTimeLeft % 60;
+    timerEl.textContent = `${m}:${s.toString().padStart(2,'0')}`;
+    if (state.examTimeLeft <= 300) timerEl.classList.add('warning');
+  }
+  if (state.examIndex > 0) document.getElementById('prevExam').onclick = () => { state.examIndex--; renderExam(); };
+  if (answered) document.getElementById('nextExam').onclick = () => {
+    if (state.examIndex === state.examQuestions.length-1) { finishExam(); return; }
+    state.examIndex++;
+    renderExam();
+  };
+}
+function finishExam() {
+  clearInterval(state.examTimer);
+  let correct = 0;
+  const mistakes = [];
+  state.examQuestions.forEach((q, i) => {
+    const ans = state.examAnswers[i];
+    if (ans === q.correct) correct++;
+    else mistakes.push({ q, chosen: ans });
+  });
+  const total = state.examQuestions.length;
+  const pct = total === 0 ? 0 : Math.round((correct / total) * 100);
+  const pass = pct >= 75;
+  const historyEntry = { date: new Date().toISOString(), percent: pct, pass };
+  const secIds = new Set(state.bank.sections.map(s => s.id));
+  for (const sid of secIds) {
+    const p = state.progress[sid];
+    if (p) {
+      if (!p.history) p.history = [];
+      p.history.push(historyEntry);
+    }
+  }
+  saveProgress();
+  let html = `<div class="exam-summary" style="text-align:center;">
+    <h2>Результат</h2>
+    <div class="verdict ${pass ? 'pass' : 'fail'}">${pass ? 'ЗАРАХОВАНО' : 'НЕ ЗАРАХОВАНО'}</div>
+    <div style="font-size:2rem;">${pct}%</div>
+    <div class="muted">Правильних: ${correct} з ${total}</div>
+  </div>`;
+  if (mistakes.length > 0) {
+    html += `<div class="card" style="margin-top:16px;"><h3>Помилки (${mistakes.length})</h3><div id="mistakesBox"></div></div>`;
+  }
+  html += `<div style="margin-top:20px;"><button class="btn-primary" id="toSections2">До розділів</button></div>`;
+  app.innerHTML = html;
+  if (mistakes.length > 0) {
+    const mistakesBox = document.getElementById('mistakesBox');
+    for (const m of mistakes) {
+      const div = document.createElement('div');
+      div.style.marginTop = '12px';
+      div.style.padding = '10px';
+      div.style.background = 'var(--red-bg)';
+      div.style.borderRadius = '8px';
+      const qDiv = document.createElement('div');
+      const qStrong = document.createElement('strong');
+      qStrong.textContent = m.q.question;
+      qDiv.appendChild(qStrong);
+      const chosenDiv = document.createElement('div');
+      chosenDiv.className = 'muted';
+      chosenDiv.textContent = 'Ваша відповідь: ' + (m.chosen || '—');
+      const correctDiv = document.createElement('div');
+      correctDiv.style.color = 'var(--green)';
+      correctDiv.textContent = 'Правильно: ' + m.q.correct;
+      div.append(qDiv, chosenDiv, correctDiv);
+      mistakesBox.appendChild(div);
+    }
+  }
+  document.getElementById('toSections2').onclick = () => renderSections();
+}
+
+// ====== Ініціалізація ======
+async function init() {
+  try {
+    const resp = await fetch('banks/manifest.json');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    state.manifest = await resp.json();
+    renderHome();
+  } catch (e) {
+    app.innerHTML = `<div class="error-box">
+      <strong>Не вдалося завантажити manifest.json.</strong><br>
+      Якщо ви відкрили файл локально (file://), скористайтеся GitHub Pages або локальним сервером.
+    </div>`;
+  }
+}
+init();
+</script>
+</body>
+</html>
