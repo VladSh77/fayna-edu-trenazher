@@ -295,7 +295,8 @@ function renderLearn() {
   html += `<div class="card"><div class="question-text" id="qText"></div><div class="options" id="optionsBox"></div></div>`;
   html += `<div class="nav-row">`;
   if (state.learnIndex > 0) html += `<button class="btn-secondary" id="prevBtn">← Назад</button>`;
-  if (prevAnswer) html += `<button class="btn-primary" id="nextBtn">Наступне →</button>`;
+  if (!prevAnswer) html += `<button class="btn-ghost" id="skipBtn">Пропустити →</button>`;
+  html += `<button class="btn-primary" id="nextBtn">${state.learnIndex === total-1 ? 'Завершити' : 'Наступне →'}</button>`;
   html += `</div>`;
   app.innerHTML = html;
   document.getElementById('qText').textContent = q.question;
@@ -334,7 +335,13 @@ function renderLearn() {
     state.learnIndex--;
     renderLearn();
   };
-  if (prevAnswer) document.getElementById('nextBtn').onclick = () => {
+  const skipBtn = document.getElementById('skipBtn');
+  if (skipBtn) skipBtn.onclick = () => {
+    state.learnIndex++;
+    saveProgress();
+    renderLearn();
+  };
+  document.getElementById('nextBtn').onclick = () => {
     state.learnIndex++;
     saveProgress();
     renderLearn();
@@ -431,7 +438,7 @@ function renderExam() {
   html += `<div class="card"><div class="question-text" id="qText"></div><div class="options" id="optionsBox"></div></div>`;
   html += `<div class="nav-row">`;
   if (state.examIndex > 0) html += `<button class="btn-secondary" id="prevExam">← Назад</button>`;
-  if (answered) html += `<button class="btn-primary" id="nextExam">${state.examIndex === state.examQuestions.length-1 ? 'Завершити' : 'Наступне →'}</button>`;
+  html += `<button class="btn-primary" id="nextExam">${state.examIndex === state.examQuestions.length-1 ? 'Завершити' : 'Наступне →'}</button>`;
   html += `</div>`;
   app.innerHTML = html;
   document.getElementById('qText').textContent = q.question;
@@ -464,7 +471,7 @@ function renderExam() {
     if (state.examTimeLeft <= 300) timerEl.classList.add('warning');
   }
   if (state.examIndex > 0) document.getElementById('prevExam').onclick = () => { state.examIndex--; renderExam(); };
-  if (answered) document.getElementById('nextExam').onclick = () => {
+  document.getElementById('nextExam').onclick = () => {
     if (state.examIndex === state.examQuestions.length-1) { finishExam(); return; }
     state.examIndex++;
     renderExam();
