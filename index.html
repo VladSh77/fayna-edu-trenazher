@@ -60,9 +60,19 @@
   .explain-box .explain-title::before{content:'💡';}
   .explain-box .explain-ref{display:block; margin-top:8px; font-size:0.9rem; color:var(--muted); border-top:1px dashed var(--border); padding-top:8px;}
   .explain-box .explain-ref strong{color:var(--text);}
-  .explain-box .explain-link{display:inline-flex; align-items:center; gap:6px; margin-top:12px; padding:10px 14px; background:var(--card); border:1px solid var(--accent); color:var(--accent); border-radius:10px; font-weight:600; font-size:0.95rem; text-decoration:none; min-height:44px;}
+  .explain-box .explain-link{display:inline-flex; align-items:center; justify-content:center; gap:6px; margin-top:12px; padding:10px 14px; background:var(--card); border:1px solid var(--accent); color:var(--accent); border-radius:10px; font-weight:600; font-size:0.95rem; text-decoration:none; min-height:44px; width:auto; text-align:center;}
   .explain-box .explain-link:hover{background:var(--accent-soft);}
   .explain-box .explain-link:active{transform:scale(0.99);}
+  /* Модальне вікно повного тексту акта */
+  .law-modal-overlay{position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:1000; display:flex; align-items:stretch; justify-content:center; padding:0;}
+  .law-modal{background:var(--bg); width:100%; max-width:860px; height:100%; display:flex; flex-direction:column; box-shadow:0 0 40px rgba(0,0,0,0.4);}
+  .law-modal-header{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 16px; border-bottom:1px solid var(--border); background:var(--card);}
+  .law-modal-header .law-modal-title{font-weight:700; font-size:1rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .law-modal-close{flex-shrink:0; width:40px; height:40px; min-height:40px; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.4rem; border-radius:10px; background:var(--card); border:1px solid var(--border); color:var(--text);}
+  .law-modal-body{flex:1; overflow-y:auto; -webkit-overflow-scrolling:touch; padding:0;}
+  .law-modal-body iframe{width:100%; height:100%; border:none; display:block;}
+  .law-modal-loading{display:flex; align-items:center; justify-content:center; height:100%; color:var(--muted); font-size:1rem;}
+  .law-modal-error{display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:12px; color:var(--red); padding:24px; text-align:center;}
   .progress-bar{height:8px; background:var(--border); border-radius:20px; overflow:hidden; margin:8px 0;}
   .progress-fill{height:100%; background:var(--green); border-radius:20px;}
   .progress-fill.low{background:var(--red);}
@@ -96,6 +106,17 @@
 </head>
 <body>
 <div id="app"></div>
+<div id="lawModal" class="law-modal-overlay hidden">
+  <div class="law-modal">
+    <div class="law-modal-header">
+      <div class="law-modal-title" id="lawModalTitle">Повний текст документа</div>
+      <button class="law-modal-close" id="lawModalClose" aria-label="Закрити">✕</button>
+    </div>
+    <div class="law-modal-body" id="lawModalBody">
+      <div class="law-modal-loading">Завантаження…</div>
+    </div>
+  </div>
+</div>
 <script>
 'use strict';
 // ====== Стан ======
@@ -186,110 +207,62 @@ function getShuffledOptions(q) {
   return state.shuffled[q.id];
 }
 
-// ====== Посилання на законодавство ======
-// Мапа: ключові слова (що зустрічаються в explain.ref) -> URL повного тексту акта.
+// ====== Вбудовані повні тексти законодавства ======
+// Мапа: ключові слова (що зустрічаються в explain.ref) -> локальний HTML-файл
+// повного тексту акта у папці laws/. Документи згенеровані з бази знань
+// (docs-sorter) скриптом scripts/build_law_docs.py і відкриваються в модальному
+// вікні тренажера — без зовнішніх посилань, які можуть бути недоступні.
 // Порядок має значення: перевіряємо зверху вниз, тому специфічніші ключі — раніше.
 const LEGISLATION = [
   // Виборчий кодекс (замінив закони про вибори Президента та нардепів)
-  [['Виборчий кодекс'], 'https://zakon.rada.gov.ua/laws/show/396-20'],
-  [['вибори Президента'], 'https://zakon.rada.gov.ua/laws/show/396-20'],
-  [['вибори народних депутатів'], 'https://zakon.rada.gov.ua/laws/show/396-20'],
+  [['Виборчий кодекс', 'вибори Президента', 'вибори народних депутатів'], 'laws/vyborchyi-kodeks-ukrainy.html'],
   // Закони України
-  [['громадянство України'], 'https://zakon.rada.gov.ua/laws/show/2235-14'],
-  [['дипломатичну службу'], 'https://zakon.rada.gov.ua/laws/show/2449-19'],
-  [['нотаріат'], 'https://zakon.rada.gov.ua/laws/show/3425-12'],
-  [['правовий статус іноземців'], 'https://zakon.rada.gov.ua/laws/show/3773-17'],
-  [['правовий статус осіб'], 'https://zakon.rada.gov.ua/laws/show/3773-17'],
-  [['міжнародні договори України'], 'https://zakon.rada.gov.ua/laws/show/1906-15'],
-  [['державну реєстрацію актів цивільного стану'], 'https://zakon.rada.gov.ua/laws/show/2398-17'],
-  [['Державний реєстр виборців'], 'https://zakon.rada.gov.ua/laws/show/698-16'],
-  [['управління об\'єктами державної власності'], 'https://zakon.rada.gov.ua/laws/show/185-16'],
-  [['електронні документи'], 'https://zakon.rada.gov.ua/laws/show/851-15'],
-  [['зовнішню трудову міграцію'], 'https://zakon.rada.gov.ua/laws/show/761-19'],
-  [['консульську службу'], 'https://zakon.rada.gov.ua/laws/show/2729-19'],
-  [['консульські установи'], 'https://zakon.rada.gov.ua/laws/show/2070-12'],
-  [['Єдиний державний демографічний реєстр'], 'https://zakon.rada.gov.ua/laws/show/5492-17'],
-  [['Національну поліцію'], 'https://zakon.rada.gov.ua/laws/show/580-19'],
-  [['надзвичайних ситуацій'], 'https://zakon.rada.gov.ua/laws/show/1559-14'],
-  [['міжнародне приватне право'], 'https://zakon.rada.gov.ua/laws/show/2709-15'],
-  [['основи соціальної захищеності'], 'https://zakon.rada.gov.ua/laws/show/875-12'],
-  [['охорону дитинства'], 'https://zakon.rada.gov.ua/laws/show/2402-14'],
-  [['про інформацію'], 'https://zakon.rada.gov.ua/laws/show/2657-12'],
-  [['Регламент Верховної Ради'], 'https://zakon.rada.gov.ua/laws/show/1861-17'],
-  // Кодекси
-  [['Сімейний кодекс'], 'https://zakon.rada.gov.ua/laws/show/2947-14'],
-  [['Цивільний кодекс'], 'https://zakon.rada.gov.ua/laws/show/435-15'],
-  [['Кримінальний процесуальний кодекс'], 'https://zakon.rada.gov.ua/laws/show/4651-17'],
-  [['Кримінальний кодекс'], 'https://zakon.rada.gov.ua/laws/show/2341-14'],
-  [['Кодекс України про адміністративні правопорушення'], 'https://zakon.rada.gov.ua/laws/show/80731-10'],
+  [['громадянство України'], 'laws/zakon-pro-hromadianstvo.html'],
+  [['дипломатичну службу'], 'laws/zakon-pro-dyplomatychnu-sluzhbu.html'],
+  [['нотаріат'], 'laws/zakon-pro-notariat.html'],
+  [['правовий статус іноземців', 'правовий статус осіб'], 'laws/zakon-pro-pravovyi-status-inozemtsiv.html'],
+  [['міжнародні договори України'], 'laws/zakon-pro-mizhnarodni-dohovory.html'],
+  [['державну реєстрацію актів цивільного стану'], 'laws/zakon-pro-derzhavnu-reiestratsiiu-aktiv-tsyvilnoho-stanu.html'],
+  [['Державний реєстр виборців'], 'laws/zakon-pro-derzhavnyi-reiestr-vyborciv.html'],
+  [['управління об\'єктами державної власності'], 'laws/zakon-pro-upravlinnia-obiektamy-derzhavnoi-vlasnosti.html'],
+  [['електронні документи'], 'laws/zakon-pro-elektronni-dokumenty.html'],
+  [['Регламент Верховної Ради'], 'laws/rehlament-verkhovnoi-rady.html'],
   // Постанови КМУ та накази
-  [['Положення про Міністерство закордонних справ'], 'https://zakon.rada.gov.ua/laws/show/281-2016-п'],
-  [['Положення про МЗС'], 'https://zakon.rada.gov.ua/laws/show/281-2016-п'],
-  [['Правила оформлення віз'], 'https://zakon.rada.gov.ua/laws/show/118-2017-п'],
-  [['Регламент Кабінету Міністрів'], 'https://zakon.rada.gov.ua/laws/show/950-2007-п'],
-  [['документування управлінської діяльності'], 'https://zakon.rada.gov.ua/laws/show/55-2018-п'],
-  [['документування'], 'https://zakon.rada.gov.ua/laws/show/55-2018-п'],
-  [['Типової інструкції з діловодства'], 'https://zakon.rada.gov.ua/laws/show/736-2016-п'],
-  [['діловодство'], 'https://zakon.rada.gov.ua/laws/show/736-2016-п'],
-  [['№ 879'], 'https://zakon.rada.gov.ua/laws/show/z1365-14'],
-  [['інвентаризацію'], 'https://zakon.rada.gov.ua/laws/show/z1365-14'],
-  [['№ 645'], 'https://zakon.rada.gov.ua/laws/show/645-2019-п'],
-  [['№ 118'], 'https://zakon.rada.gov.ua/laws/show/118-2017-п'],
-  [['№ 368'], 'https://zakon.rada.gov.ua/laws/show/368-2019-п'],
-  [['№ 776'], 'https://zakon.rada.gov.ua/laws/show/776-2021-п'],
-  [['№ 954'], 'https://zakon.rada.gov.ua/laws/show/954-2018-п'],
-  [['№ 651'], 'https://zakon.rada.gov.ua/laws/show/651-2012-п'],
-  [['№ 750'], 'https://zakon.rada.gov.ua/laws/show/750-2015-п'],
-  [['№ 130'], 'https://zakon.rada.gov.ua/laws/show/z0962-00'],
-  [['Державного казначейства'], 'https://zakon.rada.gov.ua/laws/show/z0962-00'],
-  [['консульського збору'], 'https://zakon.rada.gov.ua/laws/show/118-2017-п'],
-  [['виїзних консульських обслуговувань'], 'https://zakon.rada.gov.ua/laws/show/118-2017-п'],
-  [['матеріальної допомоги громадянам України за кордоном'], 'https://zakon.rada.gov.ua/laws/show/118-2017-п'],
-  [['повернення до України позбавлених батьківського піклування дітей'], 'https://zakon.rada.gov.ua/laws/show/118-2017-п'],
-  [['Стратегія інформаційної безпеки'], 'https://zakon.rada.gov.ua/laws/show/685-2021-р'],
+  [['Положення про Міністерство закордонних справ', 'Положення про МЗС'], 'laws/polozhennia-pro-mzs.html'],
+  [['Правила оформлення віз', '№ 118', 'консульського збору', 'виїзних консульських обслуговувань', 'матеріальної допомоги громадянам України за кордоном', 'повернення до України позбавлених батьківського піклування дітей', 'Консульський збір України'], 'laws/pravyla-oformlennia-viz.html'],
+  [['Регламент Кабінету Міністрів'], 'laws/rehlament-kabinetu-ministriv.html'],
+  [['документування управлінської діяльності', 'документування'], 'laws/postanova-kmu-55-dokumentuvannia.html'],
+  [['Типової інструкції з діловодства', 'діловодство'], 'laws/typova-instruktsiia-dilovodstva.html'],
+  [['№ 879', 'інвентаризацію'], 'laws/nakaz-minfinu-879-inventaryzatsiia.html'],
+  [['№ 645'], 'laws/postanova-kmu-645.html'],
+  [['№ 130', 'Державного казначейства'], 'laws/nakaz-kaznacheistva-130-typovi-formy-zapasiv.html'],
   // Міжнародні договори та конвенції
-  [['Угода про асоціацію'], 'https://zakon.rada.gov.ua/laws/show/984_011'],
-  [['Віденська конвенція про право міжнародних договорів'], 'https://zakon.rada.gov.ua/laws/show/995_118'],
-  [['Віденська конвенція про дипломатичні зносини'], 'https://zakon.rada.gov.ua/laws/show/995_048'],
-  [['Віденська конвенція про консульські зносини'], 'https://zakon.rada.gov.ua/laws/show/995_047'],
-  [['Європейська конвенція про взаємну допомогу у кримінальних справах'], 'https://zakon.rada.gov.ua/laws/show/995_044'],
-  [['Гаазька конвенція'], 'https://zakon.rada.gov.ua/laws/show/995_083'],
-  [['легалізації іноземних офіційних документів'], 'https://zakon.rada.gov.ua/laws/show/995_083'],
-  [['Статут Організації Об\'єднаних Націй'], 'https://www.un.org/en/about-us/un-charter/full-text'],
-  // ЄС та Польща (зовнішні джерела)
-  [['Договір про Європейський Союз'], 'https://eur-lex.europa.eu/legal-content/UK/TXT/?uri=CELEX:12016M/TXT'],
-  [['Договір про функціонування Європейського Союзу'], 'https://eur-lex.europa.eu/legal-content/UK/TXT/?uri=CELEX:12016E/TXT'],
-  [['Шенгенська угода'], 'https://eur-lex.europa.eu/legal-content/UK/TXT/?uri=CELEX:42000A0922(02)'],
-  [['Конституція Республіки Польща'], 'https://www.sejm.gov.pl/prawo/konst/rosyjski/kon1.htm'],
-  [['Карта Поляка'], 'https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20080160097'],
-  [['Карту Поляка'], 'https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20080160097'],
-  [['Законодавство Республіки Польща'], 'https://isap.sejm.gov.pl/'],
-  [['Законодавство Польщі'], 'https://isap.sejm.gov.pl/'],
-  [['Закон про адвокатуру'], 'https://isap.sejm.gov.pl/'],
-  [['Закон про вибори до органів місцевого самоврядування'], 'https://isap.sejm.gov.pl/'],
-  [['Закон про громадянство Польщі'], 'https://isap.sejm.gov.pl/'],
-  [['Консульський збір України'], 'https://zakon.rada.gov.ua/laws/show/118-2017-п'],
+  [['Угода про асоціацію'], 'laws/uhoda-pro-asotsiatsiiu-ukraina-yes.html'],
+  [['Віденська конвенція про право міжнародних договорів'], 'laws/videnska-konventsiia-pravo-mizhnarodnykh-dohovoriv.html'],
+  [['Віденська конвенція про дипломатичні зносини'], 'laws/videnska-konventsiia-dyplomatychni-znosyny.html'],
+  [['Віденська конвенція про консульські зносини'], 'laws/videnska-konventsiia-konsulski-znosyny.html'],
 ];
 
-// Повертає URL повного тексту акта за рядком джерела (explain.ref), або null.
+// Повертає шлях до локального HTML-файлу повного тексту акта за рядком
+// джерела (explain.ref), або null, якщо акт не знайдено.
 function legislationLink(ref) {
   if (!ref) return null;
   const r = ref.toLowerCase();
-  for (const [keys, url] of LEGISLATION) {
+  for (const [keys, file] of LEGISLATION) {
     for (const k of keys) {
-      if (r.includes(k.toLowerCase())) return url;
+      if (r.includes(k.toLowerCase())) return file;
     }
   }
   return null;
 }
 
-// Показує пояснення з посиланням на законодавство після відповіді
+// Показує пояснення з кнопкою перегляду повного тексту акта після відповіді
 function renderExplain(q, isCorrect) {
   const box = document.getElementById('explainBox');
   if (!box) return;
-  const link = legislationLink(q.explain && q.explain.ref);
-  const linkHtml = link
-    ? `<a class="explain-link" href="${link}" target="_blank" rel="noopener noreferrer">📄 Читати повний текст документа</a>`
+  const file = legislationLink(q.explain && q.explain.ref);
+  const linkHtml = file
+    ? `<button class="explain-link" data-law="${file}">📄 Читати повний текст документа</button>`
     : '';
   if (!isCorrect) {
     // Навіть при помилці показуємо пояснення, щоб закріпити знання
@@ -315,6 +288,8 @@ function renderExplain(q, isCorrect) {
     ${q.explain.ref ? `<span class="explain-ref"><strong>Джерело:</strong> ${q.explain.ref}</span>` : ''}
     ${linkHtml}
   </div>`;
+  const btn = box.querySelector('.explain-link');
+  if (btn) btn.onclick = () => openLawModal(btn.getAttribute('data-law'));
 }
 
 // ====== Рендер ======
@@ -771,6 +746,57 @@ function finishExam() {
     renderExam();
   };
 }
+
+// ====== Модальне вікно повного тексту акта ======
+function openLawModal(file) {
+  const modal = document.getElementById('lawModal');
+  const title = document.getElementById('lawModalTitle');
+  const body = document.getElementById('lawModalBody');
+  if (!modal || !body) return;
+  // Назва акта з файлу
+  const name = file.replace(/^laws\//, '').replace(/\.html$/, '').replace(/-/g, ' ');
+  title.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+  body.innerHTML = '<div class="law-modal-loading">Завантаження…</div>';
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  fetch(file)
+    .then(r => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.text();
+    })
+    .then(html => {
+      // Вбудовуємо документ у iframe, щоб зберегти його власні стилі
+      const iframe = document.createElement('iframe');
+      iframe.setAttribute('title', 'Повний текст документа');
+      iframe.srcdoc = html;
+      body.innerHTML = '';
+      body.appendChild(iframe);
+    })
+    .catch(err => {
+      body.innerHTML = `<div class="law-modal-error">
+        <strong>Не вдалося завантажити документ.</strong>
+        <span>${err.message}</span>
+        <button class="explain-link" onclick="openLawModal('${file}')">🔄 Спробувати ще раз</button>
+      </div>`;
+    });
+}
+
+function closeLawModal() {
+  const modal = document.getElementById('lawModal');
+  const body = document.getElementById('lawModalBody');
+  if (modal) modal.classList.add('hidden');
+  if (body) body.innerHTML = '<div class="law-modal-loading">Завантаження…</div>';
+  document.body.style.overflow = '';
+}
+
+// Закриття модального вікна
+document.addEventListener('DOMContentLoaded', () => {
+  const closeBtn = document.getElementById('lawModalClose');
+  const modal = document.getElementById('lawModal');
+  if (closeBtn) closeBtn.onclick = closeLawModal;
+  if (modal) modal.onclick = (e) => { if (e.target === modal) closeLawModal(); };
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLawModal(); });
+});
 
 // ====== Ініціалізація ======
 async function init() {
