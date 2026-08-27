@@ -55,6 +55,11 @@
   .option.wrong .mark{background:var(--red); color:#fff;}
   .option.neutral{border-color:var(--accent); background:var(--accent-soft);}
   .option.disabled{opacity:0.5; pointer-events:none;}
+  .explain-box{background:var(--accent-soft); border:1px solid var(--accent); border-left:4px solid var(--accent); border-radius:10px; padding:14px 16px; margin-top:16px; line-height:1.6;}
+  .explain-box .explain-title{font-weight:700; color:var(--accent); margin-bottom:6px; display:flex; align-items:center; gap:8px;}
+  .explain-box .explain-title::before{content:'💡';}
+  .explain-box .explain-ref{display:block; margin-top:8px; font-size:0.9rem; color:var(--muted); border-top:1px dashed var(--border); padding-top:8px;}
+  .explain-box .explain-ref strong{color:var(--text);}
   .progress-bar{height:8px; background:var(--border); border-radius:20px; overflow:hidden; margin:8px 0;}
   .progress-fill{height:100%; background:var(--green); border-radius:20px;}
   .progress-fill.low{background:var(--red);}
@@ -64,6 +69,9 @@
   .section-item:last-child{border-bottom:none;}
   .section-header{display:flex; justify-content:space-between; align-items:center; gap:10px;}
   .section-title{font-weight:600; font-size:1rem;}
+  .section-actions{display:flex; gap:10px; margin-top:4px; flex-wrap:wrap;}
+  .section-actions button{flex:1; min-width:130px;}
+  .btn-sm{padding:8px 12px; min-height:38px; font-size:0.9rem;}
   .exam-summary{background:var(--card); border-radius:14px; padding:16px; border:1px solid var(--border);}
   .verdict{font-size:1.4rem; font-weight:700; margin:10px 0;}
   .verdict.pass{color:var(--green);}
@@ -102,6 +110,7 @@ const state = {
   examAnswers: [],
   examTimer: null,
   examTimeLeft: 1800,
+  examAttemptsLeft: 3,
   examSections: [],
   progress: {}, // {sectionId: {index, correct:Set, wrong:Set, history:[]}}
   shuffled: {}, // {questionId: [options]}
@@ -174,6 +183,34 @@ function getShuffledOptions(q) {
   return state.shuffled[q.id];
 }
 
+// Показує пояснення з посиланням на законодавство після відповіді
+function renderExplain(q, isCorrect) {
+  const box = document.getElementById('explainBox');
+  if (!box) return;
+  if (!isCorrect) {
+    // Навіть при помилці показуємо пояснення, щоб закріпити знання
+    if (!q.explain) return;
+    box.innerHTML = `<div class="explain-box">
+      <div class="explain-title">Пояснення</div>
+      <div>${q.explain.text || ''}</div>
+      ${q.explain.ref ? `<span class="explain-ref"><strong>Джерело:</strong> ${q.explain.ref}</span>` : ''}
+    </div>`;
+    return;
+  }
+  if (!q.explain) {
+    box.innerHTML = `<div class="explain-box">
+      <div class="explain-title">Правильно!</div>
+      <div>Це вірна відповідь.</div>
+    </div>`;
+    return;
+  }
+  box.innerHTML = `<div class="explain-box">
+    <div class="explain-title">Правильно! Це вірна відповідь</div>
+    <div>${q.explain.text || ''}</div>
+    ${q.explain.ref ? `<span class="explain-ref"><strong>Джерело:</strong> ${q.explain.ref}</span>` : ''}
+  </div>`;
+}
+
 // ====== Рендер ======
 const app = document.getElementById('app');
 
@@ -237,6 +274,10 @@ function renderSections() {
         <span class="muted">${p.done}/${sec.count} · ${p.pct}%</span>
       </div>
       <div class="progress-bar"><div class="progress-fill ${fillClass}" style="width:${p.done/sec.count*100}%"></div></div>
+      <div class="section-actions">
+        <button class="btn-primary btn-sm" data-learn="${sec.id}">📖 Навчання</button>
+        <button class="btn-ghost btn-sm" data-restart="${sec.id}">↺ Почати з початку</button>
+      </div>
     </div>`;
   }
   html += `<div style="margin-top:20px;"><button class="btn-danger" id="resetProgress">Скинути прогрес</button></div>`;
@@ -266,11 +307,29 @@ function renderSections() {
       renderSections();
     }
   };
+  document.querySelectorAll('[data-learn]').forEach(btn => {
+    btn.onclick = () => startLearning(btn.dataset.learn);
+  });
+  document.querySelectorAll('[data-restart]').forEach(btn => {
+    btn.onclick = () => {
+      const secId = btn.dataset.restart;
+      if (!confirm('Почати цей розділ з початку? Поточний прогрес у цьому розділі буде скинуто.')) return;
+      const p = state.progress[secId];
+      p.correct.clear();
+      p.wrong.clear();
+      p.index = 0;
+      saveProgress();
+      renderSections();
+    };
+  });
 }
 
 // ====== Навчання ======
-function startLearning() {
-  const sec = state.bank.sections[0];
+function startLearning(secId) {
+  const sec = secId
+    ? state.bank.sections.find(s => s.id === secId)
+    : state.bank.sections[0];
+  if (!sec) return;
   state.currentSectionId = sec.id;
   state.learnIndex = state.progress[sec.id].index || 0;
   state.learnAnswers = {};
@@ -293,12 +352,15 @@ function renderLearn() {
     <span>${sec.title}</span>
     <span class="muted">Питання ${state.learnIndex+1} / ${total} · правильно ${p.correct.size} (${pct}%)</span>
   </div>`;
-  html += `<div class="card"><div class="question-text" id="qText"></div><div class="options" id="optionsBox"></div></div>`;
+  html += `<div class="card"><div class="question-text" id="qText"></div><div class="options" id="optionsBox"></div><div id="explainBox"></div></div>`;
   html += `<div class="nav-row">`;
   if (state.learnIndex > 0) html += `<button class="btn-secondary" id="prevBtn">← Назад</button>`;
   if (!prevAnswer) html += `<button class="btn-ghost" id="skipBtn">Пропустити →</button>`;
   html += `<button class="btn-primary" id="nextBtn">${state.learnIndex === total-1 ? 'Завершити' : 'Наступне →'}</button>`;
   html += `</div>`;
+  html += `<div class="nav-row" style="margin-top:8px;">
+    <button class="btn-ghost" id="restartLearn">↺ Почати з початку</button>
+  </div>`;
   app.innerHTML = html;
   document.getElementById('qText').textContent = q.question;
   const box = document.getElementById('optionsBox');
@@ -332,6 +394,7 @@ function renderLearn() {
     }
     box.appendChild(btn);
   });
+  if (prevAnswer) renderExplain(q, prevAnswer === q.correct);
   if (state.learnIndex > 0) document.getElementById('prevBtn').onclick = () => {
     state.learnIndex--;
     renderLearn();
@@ -350,6 +413,20 @@ function renderLearn() {
   document.getElementById('backSectionsLearn').onclick = () => {
     saveProgress();
     renderSections();
+  };
+  document.getElementById('restartLearn').onclick = () => {
+    if (!confirm('Почати розділ з початку? Поточний прогрес у цьому розділі буде скинуто.')) return;
+    const secId = state.currentSectionId;
+    const p = state.progress[secId];
+    p.correct.clear();
+    p.wrong.clear();
+    p.index = 0;
+    state.learnIndex = 0;
+    state.learnAnswers = {};
+    state.learnWrongIds = [];
+    state.shuffled = {};
+    saveProgress();
+    renderLearn();
   };
 }
 function renderLearnSummary() {
@@ -389,17 +466,20 @@ function renderLearnSummary() {
 // ====== Екзамен ======
 function renderExamSetup() {
   state.screen = 'exam-setup';
+  state.examAttemptsLeft = 3;
   let html = `<div class="top-bar"><h1>Екзамен</h1><button class="btn-ghost" id="backSections">← Розділи</button></div>`;
   html += `<div class="card"><h3>Оберіть розділи</h3>`;
   for (const sec of state.bank.sections) {
     html += `<label class="checkbox-row"><input type="checkbox" checked data-section="${sec.id}"> ${sec.title}</label>`;
   }
+  html += `<div class="muted" style="margin-top:12px;">У вас є 3 спроби на екзамен. Зарахування — від 75% правильних відповідей.</div>`;
   html += `<button class="btn-primary" id="startExam" style="margin-top:16px;">Почати (30 питань, 30 хв)</button></div>`;
   app.innerHTML = html;
   document.getElementById('backSections').onclick = () => renderSections();
   document.getElementById('startExam').onclick = () => {
     const selected = [...document.querySelectorAll('input[type=checkbox]:checked')].map(i => i.dataset.section);
     if (selected.length === 0) { alert('Оберіть хоча б один розділ'); return; }
+    state.examSections = selected;
     const allQuestions = [];
     for (const sid of selected) {
       const sec = state.bank.sections.find(s => s.id === sid);
@@ -410,6 +490,7 @@ function renderExamSetup() {
     state.examIndex = 0;
     state.examAnswers = [];
     state.examTimeLeft = 1800;
+    state.shuffled = {};
     startExamTimer();
     renderExam();
   };
@@ -511,16 +592,23 @@ function finishExam() {
     }
   }
   saveProgress();
+  state.examAttemptsLeft--;
+  const attemptsLeft = state.examAttemptsLeft;
   let html = `<div class="exam-summary" style="text-align:center;">
     <h2>Результат</h2>
     <div class="verdict ${pass ? 'pass' : 'fail'}">${pass ? 'ЗАРАХОВАНО' : 'НЕ ЗАРАХОВАНО'}</div>
     <div style="font-size:2rem;">${pct}%</div>
     <div class="muted">Правильних: ${correct} з ${total}</div>
+    <div class="muted" style="margin-top:8px;">Спроба ${3 - attemptsLeft} з 3</div>
   </div>`;
   if (mistakes.length > 0) {
     html += `<div class="card" style="margin-top:16px;"><h3>Помилки (${mistakes.length})</h3><div id="mistakesBox"></div></div>`;
   }
-  html += `<div style="margin-top:20px;"><button class="btn-primary" id="toSections2">До розділів</button></div>`;
+  html += `<div style="margin-top:20px; display:flex; flex-direction:column; gap:10px;">`;
+  if (attemptsLeft > 0 && !pass) {
+    html += `<button class="btn-primary" id="retryExam">Спробувати ще раз (залишилось ${attemptsLeft})</button>`;
+  }
+  html += `<button class="btn-secondary" id="toSections2">До розділів</button></div>`;
   app.innerHTML = html;
   if (mistakes.length > 0) {
     const mistakesBox = document.getElementById('mistakesBox');
@@ -541,10 +629,41 @@ function finishExam() {
       correctDiv.style.color = 'var(--green)';
       correctDiv.textContent = 'Правильно: ' + m.q.correct;
       div.append(qDiv, chosenDiv, correctDiv);
+      if (m.q.explain) {
+        const expDiv = document.createElement('div');
+        expDiv.style.marginTop = '8px';
+        expDiv.style.padding = '10px';
+        expDiv.style.background = 'var(--accent-soft)';
+        expDiv.style.borderRadius = '8px';
+        expDiv.style.fontSize = '0.9rem';
+        expDiv.innerHTML = `<strong>Пояснення:</strong> ${m.q.explain.text || ''}`;
+        if (m.q.explain.ref) expDiv.innerHTML += `<div class="muted" style="margin-top:4px;"><strong>Джерело:</strong> ${m.q.explain.ref}</div>`;
+        div.appendChild(expDiv);
+      }
       mistakesBox.appendChild(div);
     }
   }
   document.getElementById('toSections2').onclick = () => renderSections();
+  const retryExam = document.getElementById('retryExam');
+  if (retryExam) retryExam.onclick = () => {
+    // Перезапуск екзамену з тими самими розділами, новими питаннями
+    const selected = state.examSections && state.examSections.length
+      ? state.examSections
+      : state.bank.sections.map(s => s.id);
+    const allQuestions = [];
+    for (const sid of selected) {
+      const sec = state.bank.sections.find(s => s.id === sid);
+      if (sec) allQuestions.push(...sec.questions);
+    }
+    const count = Math.min(30, allQuestions.length);
+    state.examQuestions = shuffle(allQuestions).slice(0, count);
+    state.examIndex = 0;
+    state.examAnswers = [];
+    state.examTimeLeft = 1800;
+    state.shuffled = {};
+    startExamTimer();
+    renderExam();
+  };
 }
 
 // ====== Ініціалізація ======
