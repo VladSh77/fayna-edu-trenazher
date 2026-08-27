@@ -5,6 +5,12 @@
       "title": "Тести МЗС — віцеконсул 2026",
       "total": 1036,
       "sections": 36
+    },
+    {
+      "file": "it-admin-interview.json",
+      "title": "IT Administrator — Techniczna rozmowa kwalifikacyjna",
+      "total": 33,
+      "sections": 5
     }
   ]
 }

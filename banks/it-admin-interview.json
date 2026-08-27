@@ -1,0 +1,371 @@
+{
+  "title": "IT Administrator — Techniczna rozmowa kwalifikacyjna",
+  "total": 33,
+  "sections": [
+    {
+      "id": "windows-ad",
+      "title": "Windows & Active Directory",
+      "count": 8,
+      "questions": [
+        {
+          "id": "it-win-001",
+          "question": "Użytkownik nie może zalogować się do domeny. Co sprawdzasz PIERWSZE?",
+          "correct": "Łączność z kontrolerem domeny (DC) i rozwiązywanie DNS",
+          "wrong": [
+            "Od razu resetuję hasło użytkownika",
+            "Od razu przeformatowuję komputer",
+            "Od razu wyłączam zaporę na komputerze"
+          ]
+        },
+        {
+          "id": "it-win-002",
+          "question": "Chcesz utworzyć nowego użytkownika i nadać mu uprawnienia. Gdzie to robisz w środowisku domenowym?",
+          "correct": "W ADUC/ADAC (Active Directory Users and Computers) — tworzę konto w właściwej OU i dodaję do grup",
+          "wrong": [
+            "W Panelu sterowania na komputerze użytkownika",
+            "W menedżerze urządzeń",
+            "W rejestrze systemowym (regedit)"
+          ]
+        },
+        {
+          "id": "it-win-003",
+          "question": "Co to jest GPO (Group Policy Object) i jak wymusić zastosowanie polityki na komputerze?",
+          "correct": "Zbiór ustawień zarządzanych centralnie; wymuszam przez gpupdate /force na kliencie",
+          "wrong": [
+            "To program antywirusowy; wymuszam przez restart",
+            "To narzędzie do backupu; wymuszam przez kopiowanie plików",
+            "To ustawienie BIOS; wymuszam przez aktualizację firmware"
+          ]
+        },
+        {
+          "id": "it-win-004",
+          "question": "DNS nie rozwiązuje nazw (np. serwer nie jest osiągalny po nazwie). Jakie narzędzie użyjesz do diagnostyki?",
+          "correct": "nslookup do sprawdzenia rekordów A/PTR oraz ipconfig /flushdns do wyczyszczenia cache",
+          "wrong": [
+            "chkdsk do naprawy dysku",
+            "sfc /scannow do naprawy systemu",
+            "defrag do defragmentacji dysku"
+          ]
+        },
+        {
+          "id": "it-win-005",
+          "question": "Klient nie otrzymuje adresu IP z DHCP. Co sprawdzasz?",
+          "correct": "Zakres (scope) DHCP, wykluczenia (exclusions), konflikty adresów oraz wykonuję ipconfig /release i /renew",
+          "wrong": [
+            "Od razu wymieniam kartę sieciową",
+            "Od razu przeformatowuję system",
+            "Od razu zmieniam hasło administratora"
+          ]
+        },
+        {
+          "id": "it-win-006",
+          "question": "Zapomniałeś hasła administratora kontrolera domeny. Jakie jest poprawne podejście?",
+          "correct": "Użycie trybu DSRM (Directory Services Restore Mode) lub odtworzenie z kopii zapasowej — podkreślam wagę backupu",
+          "wrong": [
+            "Usunięcie pliku SAM z dysku",
+            "Zresetowanie hasła przez edycję rejestru zdalnie",
+            "Przeformatowanie dysku systemowego"
+          ]
+        },
+        {
+          "id": "it-win-007",
+          "question": "Dlaczego synchronizacja czasu (NTP/W32Time) jest krytyczna w domenie?",
+          "correct": "Bo Kerberos używa znaczników czasu — duża różnica czasu powoduje błędy autentykacji",
+          "wrong": [
+            "Bo wpływa na szybkość dysku",
+            "Bo bez tego nie działa drukarka",
+            "Bo to tylko kosmetyka, nie ma znaczenia"
+          ]
+        },
+        {
+          "id": "it-win-008",
+          "question": "Chcesz zmodernizować kontroler domeny. Jaki jest poprawny proces?",
+          "correct": "Podnoszę nowy DC, przenoszę role FSMO, a następnie demotuję (usuwam) stary DC",
+          "wrong": [
+            "Od razu usuwam stary DC i instaluję nowy od zera",
+            "Kopiuję folder systemowy na nowy serwer",
+            "Zmieniam tylko adres IP starego serwera"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sieci",
+      "title": "Sieci LAN/WAN/Wi-Fi",
+      "count": 8,
+      "questions": [
+        {
+          "id": "it-net-001",
+          "question": "Użytkownik nie ma internetu. Jakie narzędzia użyjesz do diagnostyki w kolejności?",
+          "correct": "ipconfig (adres IP), ping do bramy, ping do DNS, tracert do celu",
+          "wrong": [
+            "Od razu wymieniam router",
+            "Od razu przeformatowuję komputer",
+            "Od razu instaluję nowy system"
+          ]
+        },
+        {
+          "id": "it-net-002",
+          "question": "Do czego służy VLAN i dlaczego warto go stosować?",
+          "correct": "Do segmentacji sieci — dzieli domeny rozgłoszeniowe (broadcast) i zwiększa bezpieczeństwo",
+          "wrong": [
+            "Do przyspieszania dysku twardego",
+            "Do zwiększania pamięci RAM",
+            "Do zmiany adresu MAC karty"
+          ]
+        },
+        {
+          "id": "it-net-003",
+          "question": "Konfigurujesz port przełącznika pod VLAN. Jaka jest różnica między portem access a trunk?",
+          "correct": "Access należy do jednego VLAN (bez tagowania), trunk przenosi wiele VLAN (tagowanie 802.1Q)",
+          "wrong": [
+            "Access jest szybszy, trunk wolniejszy",
+            "Access to port zasilania, trunk to port danych",
+            "Nie ma różnicy, to to samo"
+          ]
+        },
+        {
+          "id": "it-net-004",
+          "question": "Sieć Wi-Fi jest wolna i się rozłącza. Co sprawdzasz?",
+          "correct": "Zakłócenia (interferencje), kanały, roaming, moc sygnału oraz pasmo 2.4 vs 5 GHz",
+          "wrong": [
+            "Od razu wymieniam wszystkie anteny",
+            "Od razu przeformatowuję router",
+            "Od razu zmieniam hasło administratora"
+          ]
+        },
+        {
+          "id": "it-net-005",
+          "question": "Jak zbudować gościnną sieć Wi-Fi dla klientów?",
+          "correct": "Osobny SSID, osobny VLAN, izolacja klientów (client isolation) i opcjonalnie captive portal",
+          "wrong": [
+            "Używam tego samego SSID co pracownicy",
+            "Łączę gości z tą samą siecią co serwery",
+            "Nie zabezpieczam jej wcale"
+          ]
+        },
+        {
+          "id": "it-net-006",
+          "question": "Co to jest 802.1X / RADIUS w kontekście Wi-Fi?",
+          "correct": "Korporacyjna autentykacja Wi-Fi oparta na serwerze RADIUS i certyfikatach",
+          "wrong": [
+            "To protokół przesyłania plików",
+            "To narzędzie do backupu",
+            "To typ kabla sieciowego"
+          ]
+        },
+        {
+          "id": "it-net-007",
+          "question": "Ping działa, ale strona internetowa się nie otwiera. Co jest najprawdopodobniejszą przyczyną?",
+          "correct": "Problem z DNS, proxy lub firewall (blokada portów 80/443)",
+          "wrong": [
+            "Uszkodzony dysk twardy",
+            "Za mało pamięci RAM",
+            "Przegrzany procesor"
+          ]
+        },
+        {
+          "id": "it-net-008",
+          "question": "Co oznacza maska podsieci /24 (CIDR)?",
+          "correct": "255.255.255.0 — 256 adresów, w tym 254 hosty użyteczne",
+          "wrong": [
+            "255.0.0.0 — 16 milionów adresów",
+            "255.255.0.0 — 65 tysięcy adresów",
+            "255.255.255.255 — 1 adres"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m365",
+      "title": "Microsoft 365 / Exchange / Teams / SharePoint",
+      "count": 6,
+      "questions": [
+        {
+          "id": "it-m365-001",
+          "question": "Chcesz utworzyć użytkownika i przypisać mu licencję M365. Gdzie to robisz?",
+          "correct": "W centrum administracyjnym Microsoft 365 / Entra ID (Azure AD) — tworzę konto i przypisuję licencję",
+          "wrong": [
+            "W Panelu sterowania na komputerze",
+            "W BIOS-ie serwera",
+            "W menedżerze urządzeń"
+          ]
+        },
+        {
+          "id": "it-m365-002",
+          "question": "Użytkownik nie otrzymuje poczty. Co sprawdzasz w Exchange Online?",
+          "correct": "Rekordy MX, kwarantannę (quarantine), spam, śledzenie wiadomości (message trace)",
+          "wrong": [
+            "Od razu tworzę nową skrzynkę",
+            "Od razu przeformatowuję komputer",
+            "Od razu zmieniam hasło"
+          ]
+        },
+        {
+          "id": "it-m365-003",
+          "question": "Użytkownik zapomniał hasła i ma problem z MFA. Co robisz?",
+          "correct": "Resetuję hasło i pomagam w odzyskaniu MFA (self-service / conditional access)",
+          "wrong": [
+            "Usuwam konto użytkownika",
+            "Od razu blokuję konto na stałe",
+            "Nie mogę nic zrobić, to bez wyjścia"
+          ]
+        },
+        {
+          "id": "it-m365-004",
+          "question": "Jak zarządzasz uprawnieniami dostępu do witryny SharePoint?",
+          "correct": "Przez grupy SharePoint i poziomy uprawnień (read/contribute/full control) oraz ustawienia udostępniania",
+          "wrong": [
+            "Przez BIOS serwera",
+            "Przez edycję plików lokalnych",
+            "Nie da się tego skonfigurować"
+          ]
+        },
+        {
+          "id": "it-m365-005",
+          "question": "Chcesz utworzyć zespół (team) w Teams i skonfigurować dostęp gości. Co konfigurujesz?",
+          "correct": "Tworzę zespół, kanały, ustawiam dostęp gości (guest access) i zasady przechowywania (retention)",
+          "wrong": [
+            "Od razu instaluję Teams na serwerze",
+            "Od razu przeformatowuję komputer",
+            "Od razu zmieniam hasło administratora"
+          ]
+        },
+        {
+          "id": "it-m365-006",
+          "question": "Czym różni się Entra ID (Azure AD) od lokalnego Active Directory?",
+          "correct": "Entra ID to usługa w chmurze (tożsamości), AD to lokalny katalog; można je synchronizować przez Entra Connect",
+          "wrong": [
+            "To dokładnie to samo",
+            "Entra ID to tylko program antywirusowy",
+            "AD działa tylko w chmurze"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "backup-bezpieczenstwo",
+      "title": "Backup, bezpieczeństwo, serwery",
+      "count": 5,
+      "questions": [
+        {
+          "id": "it-bkp-001",
+          "question": "Co oznacza strategia backupu 3-2-1?",
+          "correct": "3 kopie danych, na 2 różnych nośnikach, 1 kopia poza siedzibą (off-site)",
+          "wrong": [
+            "3 kopie na tym samym dysku",
+            "2 kopie, obie w tym samym miejscu",
+            "1 kopia wystarczy"
+          ]
+        },
+        {
+          "id": "it-bkp-002",
+          "question": "Musisz odzyskać plik z kopii zapasowej. Co robisz?",
+          "correct": "Używam narzędzia do backupu (np. Veeam) do przywrócenia (restore) i weryfikuję integralność danych",
+          "wrong": [
+            "Od razu przeformatowuję dysk",
+            "Od razu wymieniam serwer",
+            "Od razu zmieniam hasło administratora"
+          ]
+        },
+        {
+          "id": "it-bkp-003",
+          "question": "Zgłoszono naruszenie danych (RODO/GDPR). Jaka jest pierwsza poprawna reakcja administratora?",
+          "correct": "Zabezpieczam dowody, dokumentuję incydent i zgłaszam zgodnie z procedurą (w tym do organu nadzorczego)",
+          "wrong": [
+            "Ignoruję zgłoszenie",
+            "Od razu usuwam wszystkie logi",
+            "Od razu przeformatowuję wszystkie serwery"
+          ]
+        },
+        {
+          "id": "it-bkp-004",
+          "question": "Serwer jest wolny/przeciążony. Co sprawdzasz?",
+          "correct": "Monitoruję CPU/RAM/dysk, przeglądam logi i identyfikuję procesy o największym zużyciu",
+          "wrong": [
+            "Od razu wymieniam serwer",
+            "Od razu przeformatowuję dysk",
+            "Od razu wyłączam wszystkie usługi"
+          ]
+        },
+        {
+          "id": "it-bkp-005",
+          "question": "Do czego służy firewall i VPN w firmie?",
+          "correct": "Firewall chroni perymetr sieci (reguły), VPN zapewnia bezpieczne zdalne połączenie (site-to-site / remote access)",
+          "wrong": [
+            "Firewall przyspiesza internet",
+            "VPN to program do backupu",
+            "To to samo co antywirus na komputerze"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "helpdesk",
+      "title": "Scenariusze Help Desk",
+      "count": 6,
+      "questions": [
+        {
+          "id": "it-hd-001",
+          "question": "Użytkownik zgłasza: „komputer się zawiesza”. Co robisz?",
+          "correct": "Diagnozuję (twardy reset, logi, menedżer zadań), sprawdzam przyczynę i wykonuję profilaktykę",
+          "wrong": [
+            "Od razu wymieniam komputer",
+            "Od razu przeformatowuję dysk",
+            "Od razu wyłączam komputer na stałe"
+          ]
+        },
+        {
+          "id": "it-hd-002",
+          "question": "Drukarka nie drukuje. Co sprawdzasz?",
+          "correct": "Kolejkę wydruku, sterownik, połączenie sieciowe i usługę spoolera (Print Spooler)",
+          "wrong": [
+            "Od razu wymieniam drukarkę",
+            "Od razu przeformatowuję komputer",
+            "Od razu zmieniam hasło"
+          ]
+        },
+        {
+          "id": "it-hd-003",
+          "question": "Użytkownik nie może otworzyć pliku/programu. Co sprawdzasz?",
+          "correct": "Uprawnienia do pliku, format/kompatybilność oraz uprawnienia do aplikacji",
+          "wrong": [
+            "Od razu przeformatowuję dysk",
+            "Od razu wymieniam komputer",
+            "Od razu wyłączam zaporę"
+          ]
+        },
+        {
+          "id": "it-hd-004",
+          "question": "Kiedy należy eskalować zgłoszenie (przekazać dalej)?",
+          "correct": "Gdy problem przekracza moje kompetencje — dokumentuję i przekazuję z pełnym opisem",
+          "wrong": [
+            "Nigdy, zawsze rozwiązuję sam",
+            "Od razu, bez analizy problemu",
+            "Tylko gdy użytkownik jest zdenerwowany"
+          ]
+        },
+        {
+          "id": "it-hd-005",
+          "question": "Jak pracujesz z rozdrażnionym użytkownikiem?",
+          "correct": "Aktywnie słucham, zachowuję spokój, zadaję pytania i ustalam priorytety",
+          "wrong": [
+            "Przerywam i mówię, że to nie mój problem",
+            "Podnoszę głos, żeby użytkownik się uspokoił",
+            "Ignoruję zgłoszenie"
+          ]
+        },
+        {
+          "id": "it-hd-006",
+          "question": "Jak priorytetyzujesz zgłoszenia (ticketing)?",
+          "correct": "Według krytyczności i SLA (umowy o poziomie usług) — np. awaria całej sieci ma najwyższy priorytet",
+          "wrong": [
+            "W kolejności zgłoszeń, bez wyjątków",
+            "Najpierw obsługuję znajomych",
+            "Wszystkie zgłoszenia są równe, bez SLA"
+          ]
+        }
+      ]
+    }
+  ]
+}
