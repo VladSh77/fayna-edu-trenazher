@@ -289,6 +289,7 @@ function renderLearn() {
   const prevAnswer = state.learnAnswers[q.id];
   const options = getShuffledOptions(q);
   let html = `<div class="top-bar">
+    <button class="btn-ghost" id="backSectionsLearn">← Розділи</button>
     <span>${sec.title}</span>
     <span class="muted">Питання ${state.learnIndex+1} / ${total} · правильно ${p.correct.size} (${pct}%)</span>
   </div>`;
@@ -345,6 +346,10 @@ function renderLearn() {
     state.learnIndex++;
     saveProgress();
     renderLearn();
+  };
+  document.getElementById('backSectionsLearn').onclick = () => {
+    saveProgress();
+    renderSections();
   };
 }
 function renderLearnSummary() {
@@ -432,6 +437,7 @@ function renderExam() {
   const options = getShuffledOptions(q);
   const answered = state.examAnswers[state.examIndex];
   let html = `<div class="top-bar">
+    <button class="btn-ghost" id="backSectionsExam">← Розділи</button>
     <span>Екзамен</span>
     <span class="timer" id="examTimer"></span>
   </div>`;
@@ -475,6 +481,12 @@ function renderExam() {
     if (state.examIndex === state.examQuestions.length-1) { finishExam(); return; }
     state.examIndex++;
     renderExam();
+  };
+  document.getElementById('backSectionsExam').onclick = () => {
+    if (confirm('Перервати екзамен і повернутися до розділів?')) {
+      clearInterval(state.examTimer);
+      renderSections();
+    }
   };
 }
 function finishExam() {
