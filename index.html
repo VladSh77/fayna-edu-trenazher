@@ -60,6 +60,9 @@
   .explain-box .explain-title::before{content:'💡';}
   .explain-box .explain-ref{display:block; margin-top:8px; font-size:0.9rem; color:var(--muted); border-top:1px dashed var(--border); padding-top:8px;}
   .explain-box .explain-ref strong{color:var(--text);}
+  .explain-box .explain-link{display:inline-flex; align-items:center; gap:6px; margin-top:12px; padding:10px 14px; background:var(--card); border:1px solid var(--accent); color:var(--accent); border-radius:10px; font-weight:600; font-size:0.95rem; text-decoration:none; min-height:44px;}
+  .explain-box .explain-link:hover{background:var(--accent-soft);}
+  .explain-box .explain-link:active{transform:scale(0.99);}
   .progress-bar{height:8px; background:var(--border); border-radius:20px; overflow:hidden; margin:8px 0;}
   .progress-fill{height:100%; background:var(--green); border-radius:20px;}
   .progress-fill.low{background:var(--red);}
@@ -183,10 +186,111 @@ function getShuffledOptions(q) {
   return state.shuffled[q.id];
 }
 
+// ====== Посилання на законодавство ======
+// Мапа: ключові слова (що зустрічаються в explain.ref) -> URL повного тексту акта.
+// Порядок має значення: перевіряємо зверху вниз, тому специфічніші ключі — раніше.
+const LEGISLATION = [
+  // Виборчий кодекс (замінив закони про вибори Президента та нардепів)
+  [['Виборчий кодекс'], 'https://zakon.rada.gov.ua/laws/show/396-20'],
+  [['вибори Президента'], 'https://zakon.rada.gov.ua/laws/show/396-20'],
+  [['вибори народних депутатів'], 'https://zakon.rada.gov.ua/laws/show/396-20'],
+  // Закони України
+  [['громадянство України'], 'https://zakon.rada.gov.ua/laws/show/2235-14'],
+  [['дипломатичну службу'], 'https://zakon.rada.gov.ua/laws/show/2449-19'],
+  [['нотаріат'], 'https://zakon.rada.gov.ua/laws/show/3425-12'],
+  [['правовий статус іноземців'], 'https://zakon.rada.gov.ua/laws/show/3773-17'],
+  [['правовий статус осіб'], 'https://zakon.rada.gov.ua/laws/show/3773-17'],
+  [['міжнародні договори України'], 'https://zakon.rada.gov.ua/laws/show/1906-15'],
+  [['державну реєстрацію актів цивільного стану'], 'https://zakon.rada.gov.ua/laws/show/2398-17'],
+  [['Державний реєстр виборців'], 'https://zakon.rada.gov.ua/laws/show/698-16'],
+  [['управління об\'єктами державної власності'], 'https://zakon.rada.gov.ua/laws/show/185-16'],
+  [['електронні документи'], 'https://zakon.rada.gov.ua/laws/show/851-15'],
+  [['зовнішню трудову міграцію'], 'https://zakon.rada.gov.ua/laws/show/761-19'],
+  [['консульську службу'], 'https://zakon.rada.gov.ua/laws/show/2729-19'],
+  [['консульські установи'], 'https://zakon.rada.gov.ua/laws/show/2070-12'],
+  [['Єдиний державний демографічний реєстр'], 'https://zakon.rada.gov.ua/laws/show/5492-17'],
+  [['Національну поліцію'], 'https://zakon.rada.gov.ua/laws/show/580-19'],
+  [['надзвичайних ситуацій'], 'https://zakon.rada.gov.ua/laws/show/1559-14'],
+  [['міжнародне приватне право'], 'https://zakon.rada.gov.ua/laws/show/2709-15'],
+  [['основи соціальної захищеності'], 'https://zakon.rada.gov.ua/laws/show/875-12'],
+  [['охорону дитинства'], 'https://zakon.rada.gov.ua/laws/show/2402-14'],
+  [['про інформацію'], 'https://zakon.rada.gov.ua/laws/show/2657-12'],
+  [['Регламент Верховної Ради'], 'https://zakon.rada.gov.ua/laws/show/1861-17'],
+  // Кодекси
+  [['Сімейний кодекс'], 'https://zakon.rada.gov.ua/laws/show/2947-14'],
+  [['Цивільний кодекс'], 'https://zakon.rada.gov.ua/laws/show/435-15'],
+  [['Кримінальний процесуальний кодекс'], 'https://zakon.rada.gov.ua/laws/show/4651-17'],
+  [['Кримінальний кодекс'], 'https://zakon.rada.gov.ua/laws/show/2341-14'],
+  [['Кодекс України про адміністративні правопорушення'], 'https://zakon.rada.gov.ua/laws/show/80731-10'],
+  // Постанови КМУ та накази
+  [['Положення про Міністерство закордонних справ'], 'https://zakon.rada.gov.ua/laws/show/281-2016-п'],
+  [['Положення про МЗС'], 'https://zakon.rada.gov.ua/laws/show/281-2016-п'],
+  [['Правила оформлення віз'], 'https://zakon.rada.gov.ua/laws/show/118-2017-п'],
+  [['Регламент Кабінету Міністрів'], 'https://zakon.rada.gov.ua/laws/show/950-2007-п'],
+  [['документування управлінської діяльності'], 'https://zakon.rada.gov.ua/laws/show/55-2018-п'],
+  [['документування'], 'https://zakon.rada.gov.ua/laws/show/55-2018-п'],
+  [['Типової інструкції з діловодства'], 'https://zakon.rada.gov.ua/laws/show/736-2016-п'],
+  [['діловодство'], 'https://zakon.rada.gov.ua/laws/show/736-2016-п'],
+  [['№ 879'], 'https://zakon.rada.gov.ua/laws/show/z1365-14'],
+  [['інвентаризацію'], 'https://zakon.rada.gov.ua/laws/show/z1365-14'],
+  [['№ 645'], 'https://zakon.rada.gov.ua/laws/show/645-2019-п'],
+  [['№ 118'], 'https://zakon.rada.gov.ua/laws/show/118-2017-п'],
+  [['№ 368'], 'https://zakon.rada.gov.ua/laws/show/368-2019-п'],
+  [['№ 776'], 'https://zakon.rada.gov.ua/laws/show/776-2021-п'],
+  [['№ 954'], 'https://zakon.rada.gov.ua/laws/show/954-2018-п'],
+  [['№ 651'], 'https://zakon.rada.gov.ua/laws/show/651-2012-п'],
+  [['№ 750'], 'https://zakon.rada.gov.ua/laws/show/750-2015-п'],
+  [['№ 130'], 'https://zakon.rada.gov.ua/laws/show/z0962-00'],
+  [['Державного казначейства'], 'https://zakon.rada.gov.ua/laws/show/z0962-00'],
+  [['консульського збору'], 'https://zakon.rada.gov.ua/laws/show/118-2017-п'],
+  [['виїзних консульських обслуговувань'], 'https://zakon.rada.gov.ua/laws/show/118-2017-п'],
+  [['матеріальної допомоги громадянам України за кордоном'], 'https://zakon.rada.gov.ua/laws/show/118-2017-п'],
+  [['повернення до України позбавлених батьківського піклування дітей'], 'https://zakon.rada.gov.ua/laws/show/118-2017-п'],
+  [['Стратегія інформаційної безпеки'], 'https://zakon.rada.gov.ua/laws/show/685-2021-р'],
+  // Міжнародні договори та конвенції
+  [['Угода про асоціацію'], 'https://zakon.rada.gov.ua/laws/show/984_011'],
+  [['Віденська конвенція про право міжнародних договорів'], 'https://zakon.rada.gov.ua/laws/show/995_118'],
+  [['Віденська конвенція про дипломатичні зносини'], 'https://zakon.rada.gov.ua/laws/show/995_048'],
+  [['Віденська конвенція про консульські зносини'], 'https://zakon.rada.gov.ua/laws/show/995_047'],
+  [['Європейська конвенція про взаємну допомогу у кримінальних справах'], 'https://zakon.rada.gov.ua/laws/show/995_044'],
+  [['Гаазька конвенція'], 'https://zakon.rada.gov.ua/laws/show/995_083'],
+  [['легалізації іноземних офіційних документів'], 'https://zakon.rada.gov.ua/laws/show/995_083'],
+  [['Статут Організації Об\'єднаних Націй'], 'https://www.un.org/en/about-us/un-charter/full-text'],
+  // ЄС та Польща (зовнішні джерела)
+  [['Договір про Європейський Союз'], 'https://eur-lex.europa.eu/legal-content/UK/TXT/?uri=CELEX:12016M/TXT'],
+  [['Договір про функціонування Європейського Союзу'], 'https://eur-lex.europa.eu/legal-content/UK/TXT/?uri=CELEX:12016E/TXT'],
+  [['Шенгенська угода'], 'https://eur-lex.europa.eu/legal-content/UK/TXT/?uri=CELEX:42000A0922(02)'],
+  [['Конституція Республіки Польща'], 'https://www.sejm.gov.pl/prawo/konst/rosyjski/kon1.htm'],
+  [['Карта Поляка'], 'https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20080160097'],
+  [['Карту Поляка'], 'https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20080160097'],
+  [['Законодавство Республіки Польща'], 'https://isap.sejm.gov.pl/'],
+  [['Законодавство Польщі'], 'https://isap.sejm.gov.pl/'],
+  [['Закон про адвокатуру'], 'https://isap.sejm.gov.pl/'],
+  [['Закон про вибори до органів місцевого самоврядування'], 'https://isap.sejm.gov.pl/'],
+  [['Закон про громадянство Польщі'], 'https://isap.sejm.gov.pl/'],
+  [['Консульський збір України'], 'https://zakon.rada.gov.ua/laws/show/118-2017-п'],
+];
+
+// Повертає URL повного тексту акта за рядком джерела (explain.ref), або null.
+function legislationLink(ref) {
+  if (!ref) return null;
+  const r = ref.toLowerCase();
+  for (const [keys, url] of LEGISLATION) {
+    for (const k of keys) {
+      if (r.includes(k.toLowerCase())) return url;
+    }
+  }
+  return null;
+}
+
 // Показує пояснення з посиланням на законодавство після відповіді
 function renderExplain(q, isCorrect) {
   const box = document.getElementById('explainBox');
   if (!box) return;
+  const link = legislationLink(q.explain && q.explain.ref);
+  const linkHtml = link
+    ? `<a class="explain-link" href="${link}" target="_blank" rel="noopener noreferrer">📄 Читати повний текст документа</a>`
+    : '';
   if (!isCorrect) {
     // Навіть при помилці показуємо пояснення, щоб закріпити знання
     if (!q.explain) return;
@@ -194,6 +298,7 @@ function renderExplain(q, isCorrect) {
       <div class="explain-title">Пояснення</div>
       <div>${q.explain.text || ''}</div>
       ${q.explain.ref ? `<span class="explain-ref"><strong>Джерело:</strong> ${q.explain.ref}</span>` : ''}
+      ${linkHtml}
     </div>`;
     return;
   }
@@ -208,6 +313,7 @@ function renderExplain(q, isCorrect) {
     <div class="explain-title">Правильно! Це вірна відповідь</div>
     <div>${q.explain.text || ''}</div>
     ${q.explain.ref ? `<span class="explain-ref"><strong>Джерело:</strong> ${q.explain.ref}</span>` : ''}
+    ${linkHtml}
   </div>`;
 }
 

@@ -12,3 +12,5 @@ reports/
 .chystka_backup/
 .registry_cache/
 .stars_cache/
+scripts/.explain_state_v2.json
+scripts/.fix_unverified_state.json
