@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Тренажер — МЗС 2026</title>
 <style>
   :root{
@@ -19,14 +19,18 @@
       --shadow:0 1px 3px rgba(0,0,0,0.5);
     }
   }
-  *{box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; -webkit-text-size-adjust:100%;}
-  html,body{height:100%;}
+  *{box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; -webkit-text-size-adjust:100%; -webkit-touch-callout:none;}
+  html,body{height:100%; height:100dvh; overscroll-behavior-y:none;}
   body{
     background:var(--bg); color:var(--text);
     font-family:system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
     line-height:1.55; overflow-x:hidden;
   }
-  #app{max-width:760px; margin:0 auto; padding:16px 16px 80px; min-height:100%;}
+  #app{max-width:760px; margin:0 auto; padding:16px 16px calc(80px + env(safe-area-inset-bottom)); min-height:100%; min-height:100dvh;}
+  :focus-visible{outline:3px solid var(--accent); outline-offset:2px; border-radius:4px;}
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important; animation:none !important;}
+  }
   .hidden{display:none !important;}
   button{
     font:inherit; cursor:pointer; border:1px solid var(--border);
@@ -66,7 +70,7 @@
   /* Модальне вікно повного тексту акта */
   .law-modal-overlay{position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:1000; display:flex; align-items:stretch; justify-content:center; padding:0;}
   .law-modal{background:var(--bg); width:100%; max-width:860px; height:100%; display:flex; flex-direction:column; box-shadow:0 0 40px rgba(0,0,0,0.4);}
-  .law-modal-header{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 16px; border-bottom:1px solid var(--border); background:var(--card);}
+  .law-modal-header{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 16px; border-bottom:1px solid var(--border); background:var(--card); flex-shrink:0; position:sticky; top:0; z-index:2;}
   .law-modal-header .law-modal-title{font-weight:700; font-size:1rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
   .law-modal-close{flex-shrink:0; width:40px; height:40px; min-height:40px; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.4rem; border-radius:10px; background:var(--card); border:1px solid var(--border); color:var(--text);}
   .law-modal-body{flex:1; overflow-y:auto; -webkit-overflow-scrolling:touch; padding:0;}
@@ -84,7 +88,7 @@
   .section-title{font-weight:600; font-size:1rem;}
   .section-actions{display:flex; gap:10px; margin-top:4px; flex-wrap:wrap;}
   .section-actions button{flex:1; min-width:130px;}
-  .btn-sm{padding:8px 12px; min-height:38px; font-size:0.9rem;}
+  .btn-sm{padding:8px 12px; min-height:44px; font-size:0.9rem;}
   .exam-summary{background:var(--card); border-radius:14px; padding:16px; border:1px solid var(--border);}
   .verdict{font-size:1.4rem; font-weight:700; margin:10px 0;}
   .verdict.pass{color:var(--green);}
@@ -102,6 +106,77 @@
   @media (max-width:480px){
     .top-bar{flex-direction:column; align-items:flex-start;}
   }
+  /* ===== Вибір тем галочками (замість 38 кнопок «Навчання») ===== */
+  .topic-picker{display:flex; flex-direction:column; gap:8px; margin:12px 0;}
+  .topic-picker .topic-row{display:flex; align-items:flex-start; gap:12px; padding:12px 14px; background:var(--card); border:1px solid var(--border); border-radius:12px; cursor:pointer; transition:border-color 0.15s, background 0.15s;}
+  .topic-picker .topic-row:hover{border-color:var(--accent);}
+  .topic-picker .topic-row.selected{border-color:var(--accent); background:var(--accent-soft);}
+  .topic-picker .topic-row input{width:22px; height:22px; flex-shrink:0; margin-top:2px; accent-color:var(--accent);}
+  .topic-picker .topic-row .topic-info{flex:1; min-width:0;}
+  .topic-picker .topic-row .topic-title{font-weight:600; font-size:0.98rem; line-height:1.35; overflow-wrap:break-word; word-break:break-word;}
+  .topic-picker .topic-row .topic-meta{font-size:0.85rem; color:var(--muted); margin-top:2px;}
+  .topic-toolbar{display:flex; gap:10px; margin:8px 0 4px; flex-wrap:wrap;}
+  .topic-toolbar button{flex:1; min-width:120px; padding:10px 12px; min-height:44px; font-size:0.9rem;}
+  .learn-actions{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;}
+  /* ===== Довідка / Інструкція (Nielsen #10) ===== */
+  .help-section{margin-top:20px;}
+  .help-section details{border:1px solid var(--border); border-radius:12px; background:var(--card); overflow:hidden;}
+  .help-section summary{padding:14px 16px; font-weight:600; cursor:pointer; min-height:48px; display:flex; align-items:center; gap:8px; list-style:none;}
+  .help-section summary::-webkit-details-marker{display:none;}
+  .help-section summary::before{content:'❓';}
+  .help-section .help-body{padding:4px 16px 16px; border-top:1px solid var(--border);}
+  .help-section .help-body h4{margin:12px 0 6px; font-size:0.95rem;}
+  .help-section .help-body p, .help-section .help-body li{font-size:0.92rem; color:var(--text); line-height:1.6;}
+  .help-section .help-body ul{padding-left:20px; margin:6px 0;}
+  .help-section .help-body kbd{background:var(--accent-soft); border:1px solid var(--border); border-radius:5px; padding:1px 6px; font-family:inherit; font-size:0.85rem;}
+  /* ===== Інлайн-повідомлення про помилку (WCAG 3.3.1) ===== */
+  .inline-error{background:var(--red-bg); border:1px solid var(--red); color:var(--red); border-radius:10px; padding:10px 14px; margin-top:12px; font-size:0.92rem; font-weight:600; display:flex; align-items:center; gap:8px;}
+  .inline-error::before{content:'⚠️';}
+  /* ===== aria-live регіон для динамічних оновлень ===== */
+  .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}
+  /* ===== Покращений контраст muted тексту (WCAG 1.4.3) ===== */
+  .muted{color:var(--muted); font-size:0.9rem;}
+  @media (prefers-color-scheme: light){
+    .muted{color:#4a525c;}
+  }
+  /* ===== Підказка гарячих клавіш (Shneiderman #2) ===== */
+  .hotkey-hint{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; font-size:0.8rem; color:var(--muted);}
+  .hotkey-hint span{display:inline-flex; align-items:center; gap:4px;}
+  .hotkey-hint kbd{background:var(--accent-soft); border:1px solid var(--border); border-radius:4px; padding:0 5px; font-family:inherit; font-size:0.78rem;}
+  @media (max-width:600px){ .hotkey-hint{display:none;} }
+  .learn-actions button{flex:1; min-width:140px;}
+  /* ===== Бібліотека законів ===== */
+  .law-library-search{width:100%; padding:12px 14px; border:1px solid var(--border); border-radius:12px; background:var(--card); color:var(--text); font:inherit; font-size:1rem; margin-bottom:14px;}
+  .law-library-search:focus{outline:none; border-color:var(--accent);}
+  .law-item{display:flex; align-items:flex-start; gap:12px; padding:14px; background:var(--card); border:1px solid var(--border); border-radius:12px; margin-bottom:10px; cursor:pointer; transition:border-color 0.15s;}
+  .law-item:hover{border-color:var(--accent);}
+  .law-item .law-item-icon{font-size:1.4rem; flex-shrink:0; margin-top:2px;}
+  .law-item .law-item-title{font-weight:600; font-size:0.98rem; line-height:1.4; overflow-wrap:break-word; word-break:break-word;}
+  .law-item .law-item-file{font-size:0.8rem; color:var(--muted); margin-top:3px; overflow-wrap:break-word; word-break:break-word;}
+  .law-category{font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--muted); margin:18px 0 8px;}
+  .law-empty{color:var(--muted); text-align:center; padding:24px;}
+  /* ===== Кнопка «вгору» в модальному вікні закону ===== */
+  .law-modal-toolbar{display:flex; align-items:center; gap:8px; padding:8px 16px; border-bottom:1px solid var(--border); background:var(--card); flex-wrap:wrap;}
+  .law-modal-toolbar .law-tool-btn{flex-shrink:0; width:auto; min-width:44px; min-height:44px; padding:8px 14px; font-size:0.9rem; border-radius:10px; background:var(--card); border:1px solid var(--border); color:var(--text); display:inline-flex; align-items:center; justify-content:center; gap:6px;}
+  .law-modal-toolbar .law-tool-btn:hover{border-color:var(--accent); color:var(--accent);}
+  .law-modal-toolbar .law-tool-btn.primary{background:var(--accent); border-color:var(--accent); color:#fff;}
+  .law-modal-toolbar .law-tool-btn.primary:hover{opacity:0.9;}
+  .law-modal-toolbar .law-toc-toggle{flex:1; text-align:center; font-weight:600;}
+  /* ===== Зміст документа (TOC) ===== */
+  .law-toc{display:none; border-bottom:1px solid var(--border); background:var(--card); max-height:45vh; overflow-y:auto; -webkit-overflow-scrolling:touch;}
+  .law-toc.open{display:block;}
+  .law-toc a{display:block; padding:10px 16px; color:var(--text); text-decoration:none; font-size:0.92rem; border-bottom:1px solid var(--border); line-height:1.4;}
+  .law-toc a:hover{background:var(--accent-soft); color:var(--accent);}
+  .law-toc a.toc-h2{font-weight:700; padding-left:16px;}
+  .law-toc a.toc-h3{padding-left:32px; font-size:0.88rem; color:var(--muted);}
+  /* ===== Покращене форматування тексту законів у iframe ===== */
+  .law-modal-body iframe{background:#fff;}
+  /* ===== Кнопка «вгору» плаваюча ===== */
+  .scroll-top-btn{position:fixed; right:16px; bottom:calc(16px + env(safe-area-inset-bottom)); width:52px; height:52px; border-radius:50%; background:var(--accent); color:#fff; border:none; box-shadow:0 4px 16px rgba(0,0,0,0.25); font-size:1.5rem; display:flex; align-items:center; justify-content:center; z-index:900; opacity:0; pointer-events:none; transition:opacity 0.2s, transform 0.2s;}
+  .scroll-top-btn.visible{opacity:1; pointer-events:auto; transform:translateY(0);}
+  .scroll-top-btn:active{transform:scale(0.95);}
+  /* ===== Секція-заголовок у навчанні з кількох тем ===== */
+  .learn-progress-chip{display:inline-block; padding:4px 10px; border-radius:20px; background:var(--accent-soft); color:var(--accent); font-size:0.8rem; font-weight:600;}
 </style>
 </head>
 <body>
@@ -112,11 +187,17 @@
       <div class="law-modal-title" id="lawModalTitle">Повний текст документа</div>
       <button class="law-modal-close" id="lawModalClose" aria-label="Закрити">✕</button>
     </div>
+    <div class="law-modal-toolbar">
+      <button class="law-tool-btn" id="lawTocToggle" aria-label="Зміст">☰ Зміст</button>
+      <button class="law-tool-btn primary" id="lawScrollTop" aria-label="Вгору">↑ Вгору</button>
+    </div>
+    <div class="law-toc" id="lawToc"></div>
     <div class="law-modal-body" id="lawModalBody">
       <div class="law-modal-loading">Завантаження…</div>
     </div>
   </div>
 </div>
+<button class="scroll-top-btn" id="scrollTopBtn" aria-label="Вгору">↑</button>
 <script>
 'use strict';
 // ====== Стан ======
@@ -126,6 +207,8 @@ const state = {
   bankFile: '',
   screen: 'home', // home | sections | learn | exam-setup | exam | exam-result
   currentSectionId: null,
+  learnSections: [], // масив id розділів для навчання (мульти-тема)
+  learnSectionIndex: 0,
   learnIndex: 0,
   learnAnswers: {}, // id -> 'correct' | 'wrong'
   learnWrongIds: [],
@@ -285,6 +368,125 @@ function legislationLink(ref) {
   return null;
 }
 
+// ====== Бібліотека законів (каталог усіх актів) ======
+// Кожен запис: { file, title, cat } — файл, повна назва, категорія.
+const LAW_LIBRARY = [
+  // Конституційне та виборче право
+  { file: 'laws/vyborchyi-kodeks-ukrainy.html', title: 'Виборчий кодекс України', cat: 'Конституційне та виборче право' },
+  { file: 'laws/zakon-pro-derzhavnyi-reiestr-vyborciv.html', title: 'Закон України «Про Державний реєстр виборців»', cat: 'Конституційне та виборче право' },
+  { file: 'laws/poriadok-vedennia-reiestru-vyborciv.html', title: 'Порядок ведення Державного реєстру виборців', cat: 'Конституційне та виборче право' },
+  { file: 'laws/rehlament-verkhovnoi-rady.html', title: 'Закон України «Про Регламент Верховної Ради України»', cat: 'Конституційне та виборче право' },
+  // Цивільне, сімейне та адміністративне право
+  { file: 'laws/tsyvilnyi-kodeks-ukrainy.html', title: 'Цивільний кодекс України', cat: 'Цивільне та сімейне право' },
+  { file: 'laws/simeinyi-kodeks-ukrainy.html', title: 'Сімейний кодекс України', cat: 'Цивільне та сімейне право' },
+  { file: 'laws/kodeks-ukrainy-pro-administratyvni-pravoporushennia.html', title: 'Кодекс України про адміністративні правопорушення', cat: 'Цивільне та сімейне право' },
+  { file: 'laws/zakon-pro-mizhnarodne-pryvatne-pravo.html', title: 'Закон України «Про міжнародне приватне право»', cat: 'Цивільне та сімейне право' },
+  { file: 'laws/zakon-pro-okhoronu-dytynstva.html', title: 'Закон України «Про охорону дитинства»', cat: 'Цивільне та сімейне право' },
+  { file: 'laws/zakon-pro-derzhavnu-reiestratsiiu-aktiv-tsyvilnoho-stanu.html', title: 'Закон України «Про державну реєстрацію актів цивільного стану»', cat: 'Цивільне та сімейне право' },
+  { file: 'laws/pravyla-derzhavnoi-reiestratsii-aktiv.html', title: 'Правила державної реєстрації актів цивільного стану', cat: 'Цивільне та сімейне право' },
+  // Кримінальне право
+  { file: 'laws/kryminalnyi-kodeks-ukrainy.html', title: 'Кримінальний кодекс України', cat: 'Кримінальне право' },
+  { file: 'laws/kryminalnyi-protsesualnyi-kodeks-ukrainy.html', title: 'Кримінальний процесуальний кодекс України', cat: 'Кримінальне право' },
+  // Громадянство, міграція та статус осіб
+  { file: 'laws/zakon-pro-hromadianstvo.html', title: 'Закон України «Про громадянство України»', cat: 'Громадянство та міграція' },
+  { file: 'laws/poriadok-provadzhennia-hromadianstvo.html', title: 'Порядок провадження за заявами з питань громадянства', cat: 'Громадянство та міграція' },
+  { file: 'laws/zakon-pro-pravovyi-status-inozemtsiv.html', title: 'Закон України «Про правовий статус іноземців та осіб без громадянства»', cat: 'Громадянство та міграція' },
+  { file: 'laws/postanova-kmu-776.html', title: 'Постанова КМУ № 776 «Про затвердження Правил в\'їзду іноземців та осіб без громадянства»', cat: 'Громадянство та міграція' },
+  { file: 'laws/postanova-kmu-954.html', title: 'Постанова КМУ № 954 «Питання пропуску через державний кордон»', cat: 'Громадянство та міграція' },
+  { file: 'laws/zakon-pro-yedynyi-derzhavnyi-demohrafichnyi-reiestr.html', title: 'Закон України «Про Єдиний державний демографічний реєстр»', cat: 'Громадянство та міграція' },
+  // Дипломатична та консульська служба
+  { file: 'laws/zakon-pro-dyplomatychnu-sluzhbu.html', title: 'Закон України «Про дипломатичну службу»', cat: 'Дипломатична та консульська служба' },
+  { file: 'laws/konsulskyi-statut-ukrainy.html', title: 'Консульський статут України', cat: 'Дипломатична та консульська служба' },
+  { file: 'laws/polozhennia-pro-mzs.html', title: 'Положення про МЗС України', cat: 'Дипломатична та консульська служба' },
+  { file: 'laws/polozhennia-pro-pochesnykh-konsuliv.html', title: 'Положення про нештатних (почесних) консулів України', cat: 'Дипломатична та консульська служба' },
+  { file: 'laws/zakon-pro-notariat.html', title: 'Закон України «Про нотаріат»', cat: 'Дипломатична та консульська служба' },
+  { file: 'laws/instruktsiia-vytrebuvannia-dokumentiv.html', title: 'Інструкція про порядок вчинення нотаріальних дій консульськими установами', cat: 'Дипломатична та консульська служба' },
+  // Візові правила та в'їзд
+  { file: 'laws/pravyla-oformlennia-viz.html', title: 'Правила оформлення віз для в\'їзду в Україну', cat: 'Візові правила та в\'їзд' },
+  { file: 'laws/postanova-kmu-368-vizy.html', title: 'Постанова КМУ № 368 «Про затвердження Правил оформлення віз»', cat: 'Візові правила та в\'їзд' },
+  { file: 'laws/postanova-kmu-645.html', title: 'Постанова КМУ № 645', cat: 'Візові правила та в\'їзд' },
+  { file: 'laws/postanova-kmu-651-zakhyst-hromadian.html', title: 'Порядок формування і використання коштів дипломатичними установами', cat: 'Візові правила та в\'їзд' },
+  // Державне управління та діловодство
+  { file: 'laws/rehlament-kabinetu-ministriv.html', title: 'Регламент Кабінету Міністрів України', cat: 'Державне управління' },
+  { file: 'laws/postanova-kmu-55-dokumentuvannia.html', title: 'Постанова КМУ № 55 «Деякі питання документування управлінської діяльності»', cat: 'Державне управління' },
+  { file: 'laws/typova-instruktsiia-dilovodstva.html', title: 'Типова інструкція з діловодства', cat: 'Державне управління' },
+  { file: 'laws/zakon-pro-elektronni-dokumenty.html', title: 'Закон України «Про електронні документи та електронний документообіг»', cat: 'Державне управління' },
+  { file: 'laws/zakon-pro-upravlinnia-obiektamy-derzhavnoi-vlasnosti.html', title: 'Закон України «Про управління об\'єктами державної власності»', cat: 'Державне управління' },
+  { file: 'laws/zakon-pro-mizhnarodni-dohovory.html', title: 'Закон України «Про міжнародні договори України»', cat: 'Державне управління' },
+  { file: 'laws/postanova-kmu-zasidannia-orhaniv-asotsiatsii.html', title: 'Постанова КМУ «Питання підготовки та проведення засідань органів асоціації»', cat: 'Державне управління' },
+  // Фінанси, облік та інвентаризація
+  { file: 'laws/nakaz-minfinu-879-inventaryzatsiia.html', title: 'Наказ Мінфіну № 879 «Про затвердження Положення про інвентаризацію»', cat: 'Фінанси та облік' },
+  { file: 'laws/nakaz-kaznacheistva-130-typovi-formy-zapasiv.html', title: 'Наказ Держказначейства № 130 «Про затвердження типових форм обліку запасів»', cat: 'Фінанси та облік' },
+  // Публічна безпека та надзвичайні ситуації
+  { file: 'laws/zakon-pro-natsionalnu-politsiiu.html', title: 'Закон України «Про Національну поліцію»', cat: 'Публічна безпека' },
+  { file: 'laws/zakon-pro-nadzvychaini-sytuatsii.html', title: 'Закон України «Про правовий режим надзвичайного стану»', cat: 'Публічна безпека' },
+  { file: 'laws/zakon-pro-osnovy-sotsialnoi-zakhyshchenosti.html', title: 'Закон України «Про основи соціальної захищеності осіб з інвалідністю»', cat: 'Публічна безпека' },
+  { file: 'laws/poriadok-pryimannia-ekspluatatsiiu.html', title: 'Порядок приймання в експлуатацію закінчених будівництвом об\'єктів', cat: 'Публічна безпека' },
+  // Міжнародні договори та конвенції
+  { file: 'laws/uhoda-pro-asotsiatsiiu-ukraina-yes.html', title: 'Угода про асоціацію між Україною та ЄС (2014)', cat: 'Міжнародні договори та ЄС' },
+  { file: 'laws/dohovir-pro-funktsionuvannia-yes.html', title: 'Договір про функціонування Європейського Союзу', cat: 'Міжнародні договори та ЄС' },
+  { file: 'laws/dohovir-pro-yevropeiskyi-soiuz.html', title: 'Договір про Європейський Союз', cat: 'Міжнародні договори та ЄС' },
+  { file: 'laws/shenhenska-uhoda.html', title: 'Шенгенська угода 1985 року', cat: 'Міжнародні договори та ЄС' },
+  { file: 'laws/kopenhahenski-kryterii.html', title: 'Копенгагенські критерії членства в ЄС (1993)', cat: 'Міжнародні договори та ЄС' },
+  { file: 'laws/yevropeiska-konventsiia-vzaiemna-dopomoha.html', title: 'Європейська конвенція про взаємну допомогу у кримінальних справах', cat: 'Міжнародні договори та ЄС' },
+  { file: 'laws/haazka-konventsiia-apostyl.html', title: 'Гаазька конвенція про апостиль (легалізація документів)', cat: 'Міжнародні договори та ЄС' },
+  { file: 'laws/postanova-kmu-750-apostyl.html', title: 'Постанова КМУ № 750 «Питання проставлення апостиля»', cat: 'Міжнародні договори та ЄС' },
+  { file: 'laws/videnska-konventsiia-pravo-mizhnarodnykh-dohovoriv.html', title: 'Віденська конвенція про право міжнародних договорів (1969)', cat: 'Міжнародні договори та ЄС' },
+  { file: 'laws/videnska-konventsiia-dyplomatychni-znosyny.html', title: 'Віденська конвенція про дипломатичні зносини (1961)', cat: 'Міжнародні договори та ЄС' },
+  { file: 'laws/videnska-konventsiia-konsulski-znosyny.html', title: 'Віденська конвенція про консульські зносини (1963)', cat: 'Міжнародні договори та ЄС' },
+];
+
+// Рендер екрана «Бібліотека законів» з пошуком і групуванням за категоріями
+function renderLawLibrary() {
+  state.screen = 'lawlib';
+  let html = `<div class="top-bar">
+    <h1>📚 Бібліотека законів</h1>
+    <button class="btn-ghost" id="lawLibBack">← Назад</button>
+  </div>`;
+  html += `<div class="muted" style="margin-bottom:12px;">${LAW_LIBRARY.length} нормативно-правових актів · повні тексти для підготовки до іспиту</div>`;
+  html += `<input type="search" class="law-library-search" id="lawLibSearch" placeholder="🔍 Пошук за назвою або ключовим словом…" aria-label="Пошук у бібліотеці законів">`;
+  html += `<div id="lawLibList"></div>`;
+  app.innerHTML = html;
+  const back = document.getElementById('lawLibBack');
+  if (back) back.onclick = renderHome;
+  const search = document.getElementById('lawLibSearch');
+  if (search) search.oninput = () => renderLawLibList(search.value);
+  renderLawLibList('');
+}
+
+function renderLawLibList(query) {
+  const list = document.getElementById('lawLibList');
+  if (!list) return;
+  const q = (query || '').trim().toLowerCase();
+  const filtered = LAW_LIBRARY.filter(l =>
+    !q || l.title.toLowerCase().includes(q) || l.cat.toLowerCase().includes(q) || l.file.toLowerCase().includes(q)
+  );
+  if (!filtered.length) {
+    list.innerHTML = `<div class="law-empty">Нічого не знайдено за запитом «${escapeHtml(query || '')}»</div>`;
+    return;
+  }
+  // Групуємо за категоріями
+  const groups = {};
+  filtered.forEach(l => { (groups[l.cat] = groups[l.cat] || []).push(l); });
+  let html = '';
+  for (const cat of Object.keys(groups)) {
+    html += `<div class="law-category">${escapeHtml(cat)}</div>`;
+    for (const l of groups[cat]) {
+      html += `<div class="law-item" data-file="${l.file}">
+        <div class="law-item-icon">📄</div>
+        <div>
+          <div class="law-item-title">${escapeHtml(l.title)}</div>
+          <div class="law-item-file">${escapeHtml(l.file.replace(/^laws\//, ''))}</div>
+        </div>
+      </div>`;
+    }
+  }
+  list.innerHTML = html;
+  list.querySelectorAll('.law-item').forEach(el => {
+    el.addEventListener('click', () => openLawModal(el.dataset.file));
+  });
+}
+
 // Показує пояснення з кнопкою перегляду повного тексту акта після відповіді
 function renderExplain(q, isCorrect) {
   const box = document.getElementById('explainBox');
@@ -302,6 +504,7 @@ function renderExplain(q, isCorrect) {
       ${q.explain.ref ? `<span class="explain-ref"><strong>Джерело:</strong> ${q.explain.ref}</span>` : ''}
       ${linkHtml}
     </div>`;
+    wireExplainLink(box);
     return;
   }
   if (!q.explain) {
@@ -317,8 +520,23 @@ function renderExplain(q, isCorrect) {
     ${q.explain.ref ? `<span class="explain-ref"><strong>Джерело:</strong> ${q.explain.ref}</span>` : ''}
     ${linkHtml}
   </div>`;
+  wireExplainLink(box);
+}
+
+// Прив'язує обробник кліку до кнопки перегляду повного тексту акта
+function wireExplainLink(box) {
   const btn = box.querySelector('.explain-link');
   if (btn) btn.onclick = () => openLawModal(btn.getAttribute('data-law'));
+}
+
+// Оголошує динамічні оновлення скрінрідеру через aria-live регіон (WCAG 4.1.3)
+function announce(msg) {
+  const region = document.getElementById('liveRegion');
+  if (region) {
+    region.textContent = '';
+    // Невелика затримка, щоб скрінрідер гарантовано озвучив повторне повідомлення
+    setTimeout(() => { region.textContent = msg; }, 50);
+  }
 }
 
 // ====== Рендер ======
@@ -328,6 +546,10 @@ function renderHome() {
   if (!state.manifest) return;
   state.screen = 'home';
   let html = `<div class="top-bar"><h1>Оберіть банк</h1></div>`;
+  html += `<div class="card" style="margin-bottom:16px; cursor:pointer;" data-action="lawlib">
+    <div style="font-weight:600; font-size:1.1rem;">📚 Бібліотека законів</div>
+    <div class="muted">${LAW_LIBRARY.length} нормативно-правових актів · повні тексти з пошуком</div>
+  </div>`;
   for (const b of state.manifest.banks) {
     const prog = loadProgressForBank(b.file);
     const done = prog ? Object.values(prog).reduce((acc, p) => acc + p.correct.length + p.wrong.length, 0) : 0;
@@ -339,9 +561,47 @@ function renderHome() {
       ${done > 0 ? `<div style="margin-top:8px;">✅ Пройдено ${done}/${total} · правильно ${pct}%</div>` : '<div class="muted" style="margin-top:8px;">Ще не починав</div>'}
     </div>`;
   }
+  // Довідка / Інструкція (евристика Нільсена #10 — допомога та документація)
+  html += `<div class="help-section">
+    <details>
+      <summary>Як користуватися тренажером</summary>
+      <div class="help-body">
+        <h4>📖 Навчання</h4>
+        <ul>
+          <li>Оберіть банк питань на головному екрані.</li>
+          <li>Позначте галочками теми, які хочете повторити (можна обрати кілька одразу), і натисніть «Навчатися за обраними темами».</li>
+          <li>Оберіть відповідь — одразу побачите пояснення та джерело. Кнопка «Читати повний текст документа» відкриє відповідний акт у Бібліотеці законів.</li>
+          <li>Після відповіді натисніть «Наступне →» або клавішу <kbd>Enter</kbd>.</li>
+        </ul>
+        <h4>📝 Екзамен</h4>
+        <ul>
+          <li>Оберіть кількість питань і час. Після завершення побачите результат та історію спроб.</li>
+        </ul>
+        <h4>⌨️ Гарячі клавіші (на комп'ютері)</h4>
+        <ul>
+          <li><kbd>1</kbd>–<kbd>4</kbd> — обрати відповідь</li>
+          <li><kbd>Enter</kbd> — наступне питання</li>
+          <li><kbd>Esc</kbd> — закрити модальне вікно закону</li>
+        </ul>
+        <h4>📚 Бібліотека законів</h4>
+        <ul>
+          <li>Повні тексти нормативно-правових актів із пошуком та навігацією за статтями.</li>
+        </ul>
+        <h4>💾 Прогрес</h4>
+        <ul>
+          <li>Прогрес зберігається автоматично у вашому браузері (localStorage) і не потребує входу.</li>
+        </ul>
+      </div>
+    </details>
+  </div>`;
+  // aria-live регіон для оголошення динамічних оновлень скрінрідером (WCAG 4.1.3)
+  html += `<div class="sr-only" id="liveRegion" aria-live="polite"></div>`;
   app.innerHTML = html;
   app.querySelectorAll('[data-bank]').forEach(el => {
     el.addEventListener('click', () => loadBank(el.dataset.bank));
+  });
+  app.querySelectorAll('[data-action="lawlib"]').forEach(el => {
+    el.addEventListener('click', () => renderLawLibrary());
   });
 }
 function loadProgressForBank(file) {
@@ -375,6 +635,24 @@ function renderSections() {
     <button class="btn-primary" id="btnLearn">📖 Навчання</button>
     <button class="btn-secondary" id="btnExam">📝 Екзамен</button>
   </div>`;
+  // Панель вибору тем галочками (замість 38 окремих кнопок «Навчання»)
+  html += `<div class="card" style="margin-bottom:16px;">
+    <h3 style="margin-bottom:4px;">Оберіть теми для навчання</h3>
+    <div class="muted" style="margin-bottom:8px;">Позначте галочками потрібні теми — можна обрати кілька одразу.</div>
+    <div class="topic-toolbar">
+      <button class="btn-secondary" id="selectAll">☑ Обрати всі</button>
+      <button class="btn-ghost" id="selectNone">☐ Зняти всі</button>
+    </div>
+    <div class="topic-picker" id="topicPicker"></div>
+    <div class="learn-actions">
+      <button class="btn-primary" id="btnLearnSelected">📖 Навчатися за обраними темами</button>
+    </div>
+    <div id="topicError" class="inline-error hidden" role="alert"></div>
+  </div>`;
+  // aria-live регіон для оголошення динамічних оновлень (WCAG 4.1.3)
+  html += `<div class="sr-only" id="liveRegion" aria-live="polite"></div>`;
+  // Прогрес по темах
+  html += `<h3 style="margin:18px 0 8px;">Прогрес по темах</h3>`;
   for (const sec of b.sections) {
     const p = sectionProgress(sec.id);
     const fillClass = p.pct < 75 ? 'low' : '';
@@ -385,12 +663,11 @@ function renderSections() {
       </div>
       <div class="progress-bar"><div class="progress-fill ${fillClass}" style="width:${p.done/sec.count*100}%"></div></div>
       <div class="section-actions">
-        <button class="btn-primary btn-sm" data-learn="${sec.id}">📖 Навчання</button>
-        <button class="btn-ghost btn-sm" data-restart="${sec.id}">↺ Почати з початку</button>
+        <button class="btn-ghost btn-sm" data-restart="${sec.id}">↺ Скинути прогрес теми</button>
       </div>
     </div>`;
   }
-  html += `<div style="margin-top:20px;"><button class="btn-danger" id="resetProgress">Скинути прогрес</button></div>`;
+  html += `<div style="margin-top:20px;"><button class="btn-danger" id="resetProgress">Скинути весь прогрес</button></div>`;
   html += `<div style="margin-top:16px;"><h3>Історія екзаменів</h3>`;
   const allHistory = [];
   for (const sec of b.sections) {
@@ -407,9 +684,51 @@ function renderSections() {
   }
   html += `</div>`;
   app.innerHTML = html;
+  // Побудова списку тем з галочками
+  const picker = document.getElementById('topicPicker');
+  const selected = new Set();
+  b.sections.forEach(sec => {
+    const p = sectionProgress(sec.id);
+    const row = document.createElement('label');
+    row.className = 'topic-row';
+    row.innerHTML = `<input type="checkbox" data-topic="${sec.id}">
+      <span class="topic-info">
+        <span class="topic-title">${sec.title}</span>
+        <span class="topic-meta">${p.done}/${sec.count} питань · ${p.pct}%</span>
+      </span>`;
+    const cb = row.querySelector('input');
+    cb.addEventListener('change', () => {
+      if (cb.checked) { selected.add(sec.id); row.classList.add('selected'); }
+      else { selected.delete(sec.id); row.classList.remove('selected'); }
+    });
+    picker.appendChild(row);
+  });
   document.getElementById('backHome').onclick = () => { state.bank = null; state.bankFile=''; renderHome(); };
-  document.getElementById('btnLearn').onclick = () => startLearning();
+  document.getElementById('btnLearn').onclick = () => {
+    // Якщо нічого не обрано — навчатися за всіма темами
+    const ids = selected.size > 0 ? [...selected] : b.sections.map(s => s.id);
+    startLearning(ids);
+  };
   document.getElementById('btnExam').onclick = () => renderExamSetup();
+  const topicError = document.getElementById('topicError');
+  document.getElementById('btnLearnSelected').onclick = () => {
+    if (selected.size === 0) {
+      // Інлайн-повідомлення про помилку замість alert() (WCAG 3.3.1)
+      topicError.textContent = 'Оберіть хоча б одну тему галочкою.';
+      topicError.classList.remove('hidden');
+      announce('Оберіть хоча б одну тему галочкою.');
+      return;
+    }
+    topicError.classList.add('hidden');
+    startLearning([...selected]);
+  };
+  document.getElementById('selectAll').onclick = () => {
+    picker.querySelectorAll('input[type=checkbox]').forEach(cb => { cb.checked = true; selected.add(cb.dataset.topic); cb.closest('.topic-row').classList.add('selected'); });
+    topicError.classList.add('hidden');
+  };
+  document.getElementById('selectNone').onclick = () => {
+    picker.querySelectorAll('input[type=checkbox]').forEach(cb => { cb.checked = false; selected.delete(cb.dataset.topic); cb.closest('.topic-row').classList.remove('selected'); });
+  };
   document.getElementById('resetProgress').onclick = () => {
     if (confirm('Скинути весь прогрес?')) {
       try { localStorage.removeItem('trenazher:' + state.bankFile); } catch(e) {}
@@ -417,13 +736,10 @@ function renderSections() {
       renderSections();
     }
   };
-  document.querySelectorAll('[data-learn]').forEach(btn => {
-    btn.onclick = () => startLearning(btn.dataset.learn);
-  });
   document.querySelectorAll('[data-restart]').forEach(btn => {
     btn.onclick = () => {
       const secId = btn.dataset.restart;
-      if (!confirm('Почати цей розділ з початку? Поточний прогрес у цьому розділі буде скинуто.')) return;
+      if (!confirm('Скинути прогрес цієї теми?')) return;
       const p = state.progress[secId];
       p.correct.clear();
       p.wrong.clear();
@@ -435,13 +751,14 @@ function renderSections() {
 }
 
 // ====== Навчання ======
-function startLearning(secId) {
-  const sec = secId
-    ? state.bank.sections.find(s => s.id === secId)
-    : state.bank.sections[0];
-  if (!sec) return;
-  state.currentSectionId = sec.id;
-  state.learnIndex = state.progress[sec.id].index || 0;
+// secIds — масив id розділів (тем) для навчання. Якщо не передано — усі розділи.
+function startLearning(secIds) {
+  let ids = secIds;
+  if (!ids || ids.length === 0) ids = state.bank.sections.map(s => s.id);
+  state.learnSections = ids;
+  state.learnSectionIndex = 0;
+  state.currentSectionId = ids[0];
+  state.learnIndex = state.progress[ids[0]].index || 0;
   state.learnAnswers = {};
   state.learnWrongIds = [];
   renderLearn();
@@ -457,19 +774,30 @@ function renderLearn() {
   const pct = answered === 0 ? 0 : Math.round((p.correct.size / answered) * 100);
   const prevAnswer = state.learnAnswers[q.id];
   const options = getShuffledOptions(q);
+  // Чи це останнє питання в останній обраній темі?
+  const isLastOverall = state.learnSectionIndex === state.learnSections.length - 1 && state.learnIndex === total - 1;
+  const multi = state.learnSections.length > 1;
   let html = `<div class="top-bar">
     <button class="btn-ghost" id="backSectionsLearn">← Розділи</button>
     <span>${sec.title}</span>
     <span class="muted">Питання ${state.learnIndex+1} / ${total} · правильно ${p.correct.size} (${pct}%)</span>
   </div>`;
+  if (multi) {
+    html += `<div style="margin-bottom:10px;"><span class="learn-progress-chip">Тема ${state.learnSectionIndex+1} з ${state.learnSections.length}</span></div>`;
+  }
   html += `<div class="card"><div class="question-text" id="qText"></div><div class="options" id="optionsBox"></div><div id="explainBox"></div></div>`;
   html += `<div class="nav-row">`;
-  if (state.learnIndex > 0) html += `<button class="btn-secondary" id="prevBtn">← Назад</button>`;
+  if (state.learnIndex > 0 || state.learnSectionIndex > 0) html += `<button class="btn-secondary" id="prevBtn">← Назад</button>`;
   if (!prevAnswer) html += `<button class="btn-ghost" id="skipBtn">Пропустити →</button>`;
-  html += `<button class="btn-primary" id="nextBtn">${state.learnIndex === total-1 ? 'Завершити' : 'Наступне →'}</button>`;
+  html += `<button class="btn-primary" id="nextBtn">${isLastOverall ? 'Завершити' : 'Наступне →'}</button>`;
   html += `</div>`;
   html += `<div class="nav-row" style="margin-top:8px;">
     <button class="btn-ghost" id="restartLearn">↺ Почати з початку</button>
+  </div>`;
+  // Підказка гарячих клавіш (Шнейдерман #2 — універсальність використання)
+  html += `<div class="hotkey-hint">
+    <span><kbd>1</kbd>–<kbd>4</kbd> відповідь</span>
+    <span><kbd>Enter</kbd> наступне</span>
   </div>`;
   app.innerHTML = html;
   document.getElementById('qText').textContent = q.question;
@@ -499,25 +827,34 @@ function renderLearn() {
         else { p.wrong.add(q.id); state.learnWrongIds.push(q.id); }
         p.index = state.learnIndex;
         saveProgress();
+        announce(isCorrect ? 'Правильна відповідь' : 'Неправильна відповідь');
         renderLearn();
       });
     }
     box.appendChild(btn);
   });
   if (prevAnswer) renderExplain(q, prevAnswer === q.correct);
-  if (state.learnIndex > 0) document.getElementById('prevBtn').onclick = () => {
-    state.learnIndex--;
+  // Перехід до попереднього питання (може бути в попередній темі)
+  const prevBtn = document.getElementById('prevBtn');
+  if (prevBtn) prevBtn.onclick = () => {
+    if (state.learnIndex > 0) {
+      state.learnIndex--;
+    } else if (state.learnSectionIndex > 0) {
+      state.learnSectionIndex--;
+      state.currentSectionId = state.learnSections[state.learnSectionIndex];
+      const prevSec = state.bank.sections.find(s => s.id === state.currentSectionId);
+      state.learnIndex = prevSec.count - 1;
+    }
     renderLearn();
   };
   const skipBtn = document.getElementById('skipBtn');
   if (skipBtn) skipBtn.onclick = () => {
-    state.learnIndex++;
-    saveProgress();
+    advanceLearn();
     renderLearn();
   };
   document.getElementById('nextBtn').onclick = () => {
-    state.learnIndex++;
-    saveProgress();
+    if (isLastOverall) { renderLearnSummary(); return; }
+    advanceLearn();
     renderLearn();
   };
   document.getElementById('backSectionsLearn').onclick = () => {
@@ -525,12 +862,15 @@ function renderLearn() {
     renderSections();
   };
   document.getElementById('restartLearn').onclick = () => {
-    if (!confirm('Почати розділ з початку? Поточний прогрес у цьому розділі буде скинуто.')) return;
-    const secId = state.currentSectionId;
-    const p = state.progress[secId];
-    p.correct.clear();
-    p.wrong.clear();
-    p.index = 0;
+    if (!confirm('Почати навчання з початку? Поточний прогрес у цих темах буде скинуто.')) return;
+    for (const sid of state.learnSections) {
+      const pp = state.progress[sid];
+      pp.correct.clear();
+      pp.wrong.clear();
+      pp.index = 0;
+    }
+    state.learnSectionIndex = 0;
+    state.currentSectionId = state.learnSections[0];
     state.learnIndex = 0;
     state.learnAnswers = {};
     state.learnWrongIds = [];
@@ -538,18 +878,69 @@ function renderLearn() {
     saveProgress();
     renderLearn();
   };
+  // Гарячі клавіші (Шнейдерман #2 — універсальність використання): 1-4 відповідь, Enter наступне
+  const optBtns = box.querySelectorAll('.option:not(.disabled)');
+  const keyHandler = (e) => {
+    if (state.screen !== 'learn') return;
+    if (e.key === 'Escape') { closeLawModal(); return; }
+    if (e.key === 'Enter') {
+      const nb = document.getElementById('nextBtn');
+      if (nb && !nb.disabled) nb.click();
+      return;
+    }
+    const idx = ['1','2','3','4'].indexOf(e.key);
+    if (idx >= 0 && optBtns[idx] && !optBtns[idx].disabled) {
+      optBtns[idx].click();
+    }
+  };
+  document.addEventListener('keydown', keyHandler);
+  // Зберігаємо обробник, щоб зняти його при наступному рендері
+  if (state._learnKeyHandler) document.removeEventListener('keydown', state._learnKeyHandler);
+  state._learnKeyHandler = keyHandler;
+}
+// Перехід до наступного питання; якщо тема закінчилась — до наступної теми
+function advanceLearn() {
+  const sec = state.bank.sections.find(s => s.id === state.currentSectionId);
+  if (state.learnIndex < sec.count - 1) {
+    state.learnIndex++;
+  } else if (state.learnSectionIndex < state.learnSections.length - 1) {
+    state.learnSectionIndex++;
+    state.currentSectionId = state.learnSections[state.learnSectionIndex];
+    state.learnIndex = 0;
+  } else {
+    state.learnIndex = sec.count; // сигнал завершення
+  }
+  saveProgress();
 }
 function renderLearnSummary() {
-  const sec = state.bank.sections.find(s => s.id === state.currentSectionId);
-  const p = state.progress[sec.id];
-  const total = sec.count;
-  const correct = p.correct.size;
-  const pct = total === 0 ? 0 : Math.round((correct / total) * 100);
+  // Підсумок по всіх обраних темах
+  let totalQ = 0, totalCorrect = 0;
+  for (const sid of state.learnSections) {
+    const sec = state.bank.sections.find(s => s.id === sid);
+    const p = state.progress[sid];
+    totalQ += sec.count;
+    totalCorrect += p.correct.size;
+  }
+  const pct = totalQ === 0 ? 0 : Math.round((totalCorrect / totalQ) * 100);
+  const multi = state.learnSections.length > 1;
   let html = `<div class="card" style="text-align:center; padding:30px;">
-    <h2>Розділ завершено!</h2>
+    <h2>${multi ? 'Навчання завершено!' : 'Розділ завершено!'}</h2>
     <div style="font-size:2rem; margin:16px 0;">${pct}%</div>
-    <div class="muted">Правильних: ${correct} з ${total}</div>
-    <div style="margin-top:20px; display:flex; flex-direction:column; gap:10px;">
+    <div class="muted">Правильних: ${totalCorrect} з ${totalQ}</div>`;
+  if (multi) {
+    html += `<div style="margin-top:12px; text-align:left; max-width:420px; margin-left:auto; margin-right:auto;">`;
+    for (const sid of state.learnSections) {
+      const sec = state.bank.sections.find(s => s.id === sid);
+      const p = state.progress[sid];
+      const spct = sec.count === 0 ? 0 : Math.round((p.correct.size / sec.count) * 100);
+      html += `<div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--border); font-size:0.9rem;">
+        <span style="text-align:left; padding-right:10px;">${sec.title}</span>
+        <span class="muted">${p.correct.size}/${sec.count} · ${spct}%</span>
+      </div>`;
+    }
+    html += `</div>`;
+  }
+  html += `<div style="margin-top:20px; display:flex; flex-direction:column; gap:10px;">
       ${state.learnWrongIds.length > 0 ? `<button class="btn-primary" id="retryWrong">Повторити помилки (${state.learnWrongIds.length})</button>` : ''}
       <button class="btn-secondary" id="toSections">До розділів</button>
     </div>
@@ -560,16 +951,23 @@ function renderLearnSummary() {
   if (retry) retry.onclick = () => {
     const wrongIds = state.learnWrongIds;
     state.learnWrongIds = [];
-    state.learnIndex = 0;
-    const secObj = state.bank.sections.find(s => s.id === state.currentSectionId);
-    const wrongQuestions = secObj.questions.filter(q => wrongIds.includes(q.id));
-    // тимчасово замінимо питання розділу
-    const original = secObj.questions;
-    secObj.questions = wrongQuestions;
+    // Збираємо помилкові питання з усіх обраних тем
+    const wrongQuestions = [];
+    for (const sid of state.learnSections) {
+      const secObj = state.bank.sections.find(s => s.id === sid);
+      wrongQuestions.push(...secObj.questions.filter(q => wrongIds.includes(q.id)));
+    }
+    // Тимчасово підставляємо помилкові питання в першу тему
+    const firstSec = state.bank.sections.find(s => s.id === state.learnSections[0]);
+    const original = firstSec.questions;
+    firstSec.questions = wrongQuestions;
+    state.learnSections = [state.learnSections[0]];
+    state.learnSectionIndex = 0;
+    state.currentSectionId = state.learnSections[0];
     state.learnIndex = 0;
     state.learnAnswers = {};
     renderLearn();
-    secObj.questions = original;
+    firstSec.questions = original;
   };
 }
 
@@ -777,15 +1175,48 @@ function finishExam() {
 }
 
 // ====== Модальне вікно повного тексту акта ======
+// Додаткові стилі, що покращують структуру тексту закону всередині iframe
+const LAW_IFRAME_CSS = `
+  .doc-body h1, .doc-body h2, .doc-body h3{
+    scroll-margin-top:16px;
+  }
+  .doc-body h2{
+    margin-top:34px; padding-top:14px; border-top:2px solid var(--border);
+  }
+  .doc-body h3{
+    margin-top:26px; padding:10px 14px; background:var(--accent-soft);
+    border-left:4px solid var(--accent); border-radius:0 8px 8px 0;
+  }
+  .doc-body p{
+    margin:10px 0; text-align:left; line-height:1.75;
+  }
+  .doc-body p + p{ margin-top:12px; }
+  .doc-body ul, .doc-body ol{ margin:10px 0 10px 24px; }
+  .doc-body li{ margin:6px 0; line-height:1.7; }
+  .doc-body .note{
+    margin:14px 0; padding:12px 14px; background:var(--accent-soft);
+    border-left:4px solid var(--accent); border-radius:0 8px 8px 0;
+  }
+  .doc-body table{ width:100%; border-collapse:collapse; margin:14px 0; }
+  .doc-body th, .doc-body td{ border:1px solid var(--border); padding:8px 10px; text-align:left; }
+  .doc-body th{ background:var(--accent-soft); font-weight:700; }
+  .doc-body strong{ font-weight:700; }
+  .doc-body .article-num{ font-weight:700; color:var(--accent); }
+`;
+
 function openLawModal(file) {
   const modal = document.getElementById('lawModal');
   const title = document.getElementById('lawModalTitle');
   const body = document.getElementById('lawModalBody');
+  const toc = document.getElementById('lawToc');
+  const tocToggle = document.getElementById('lawTocToggle');
   if (!modal || !body) return;
   // Назва акта з файлу
   const name = file.replace(/^laws\//, '').replace(/\.html$/, '').replace(/-/g, ' ');
   title.textContent = name.charAt(0).toUpperCase() + name.slice(1);
   body.innerHTML = '<div class="law-modal-loading">Завантаження…</div>';
+  if (toc) { toc.innerHTML = ''; toc.classList.remove('open'); }
+  if (tocToggle) tocToggle.textContent = '☰ Зміст';
   modal.classList.remove('hidden');
   document.body.style.overflow = 'hidden';
   fetch(file)
@@ -797,9 +1228,13 @@ function openLawModal(file) {
       // Вбудовуємо документ у iframe, щоб зберегти його власні стилі
       const iframe = document.createElement('iframe');
       iframe.setAttribute('title', 'Повний текст документа');
-      iframe.srcdoc = html;
+      // Додаємо покращені стилі форматування до документа
+      const styled = html.replace('</head>', '<style>' + LAW_IFRAME_CSS + '</style></head>');
+      iframe.srcdoc = styled;
       body.innerHTML = '';
       body.appendChild(iframe);
+      // Будуємо зміст (TOC) із заголовків документа
+      buildLawToc(iframe, file);
     })
     .catch(err => {
       body.innerHTML = `<div class="law-modal-error">
@@ -810,11 +1245,77 @@ function openLawModal(file) {
     });
 }
 
+// Будує зміст документа з заголовків h1/h2/h3 всередині iframe
+function buildLawToc(iframe, file) {
+  const toc = document.getElementById('lawToc');
+  const tocToggle = document.getElementById('lawTocToggle');
+  if (!toc || !iframe) return;
+  iframe.onload = () => {
+    let doc;
+    try { doc = iframe.contentDocument; } catch (e) { return; }
+    if (!doc) return;
+    const headings = doc.querySelectorAll('.doc-body h1, .doc-body h2, .doc-body h3');
+    if (!headings.length) return;
+    let tocHtml = '';
+    headings.forEach((h, i) => {
+      const level = h.tagName.toLowerCase();
+      const text = (h.textContent || '').trim();
+      if (!text) return;
+      // Додаємо id кожному заголовку для навігації
+      const id = 'law-sec-' + i;
+      h.id = id;
+      tocHtml += `<a href="#${id}" class="toc-${level}" data-target="${id}">${escapeHtml(text)}</a>`;
+    });
+    toc.innerHTML = tocHtml;
+    // Клік по пункту змісту — прокручуємо iframe до відповідного заголовка
+    toc.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = a.getAttribute('data-target');
+        const target = doc.getElementById(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Закриваємо зміст на мобільних після вибору
+          toc.classList.remove('open');
+          if (tocToggle) tocToggle.textContent = '☰ Зміст';
+        }
+      });
+    });
+  };
+}
+
+function escapeHtml(s) {
+  return s.replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>').replace(/"/g, '"');
+}
+
+// Прокрутити вміст iframe вгору
+function scrollLawTop() {
+  const iframe = document.querySelector('#lawModalBody iframe');
+  if (iframe && iframe.contentWindow) {
+    try { iframe.contentWindow.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+  }
+  const body = document.getElementById('lawModalBody');
+  if (body) body.scrollTop = 0;
+}
+
+// Перемкнути показ змісту
+function toggleLawToc() {
+  const toc = document.getElementById('lawToc');
+  const tocToggle = document.getElementById('lawTocToggle');
+  if (!toc) return;
+  const open = toc.classList.toggle('open');
+  if (tocToggle) tocToggle.textContent = open ? '✕ Закрити зміст' : '☰ Зміст';
+}
+
 function closeLawModal() {
   const modal = document.getElementById('lawModal');
   const body = document.getElementById('lawModalBody');
+  const toc = document.getElementById('lawToc');
+  const tocToggle = document.getElementById('lawTocToggle');
   if (modal) modal.classList.add('hidden');
   if (body) body.innerHTML = '<div class="law-modal-loading">Завантаження…</div>';
+  if (toc) { toc.innerHTML = ''; toc.classList.remove('open'); }
+  if (tocToggle) tocToggle.textContent = '☰ Зміст';
   document.body.style.overflow = '';
 }
 
@@ -822,9 +1323,22 @@ function closeLawModal() {
 document.addEventListener('DOMContentLoaded', () => {
   const closeBtn = document.getElementById('lawModalClose');
   const modal = document.getElementById('lawModal');
+  const tocToggle = document.getElementById('lawTocToggle');
+  const lawScrollTop = document.getElementById('lawScrollTop');
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
   if (closeBtn) closeBtn.onclick = closeLawModal;
   if (modal) modal.onclick = (e) => { if (e.target === modal) closeLawModal(); };
+  if (tocToggle) tocToggle.onclick = toggleLawToc;
+  if (lawScrollTop) lawScrollTop.onclick = scrollLawTop;
+  if (scrollTopBtn) scrollTopBtn.onclick = scrollLawTop;
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLawModal(); });
+  // Показуємо плаваючу кнопку «вгору» після прокрутки вниз
+  const app = document.getElementById('app');
+  if (app) {
+    app.addEventListener('scroll', () => {
+      if (scrollTopBtn) scrollTopBtn.classList.toggle('visible', app.scrollTop > 400);
+    }, { passive: true });
+  }
 });
 
 // ====== Ініціалізація ======

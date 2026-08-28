@@ -1,0 +1,33 @@
+# ============================================================================
+# E2E-тестування тренажера МЗС (fayna-edu-trenazher)
+# Образ: headless-браузер (Playwright/Chromium) + Python для семантичних перевірок
+# Запуск: docker compose -f docker-compose.e2e.yml up --build
+# ============================================================================
+FROM mcr.microsoft.com/playwright:v1.62.1-noble
+
+# Робоча директорія
+WORKDIR /app
+
+# --- Python для семантичних перевірок (verify_human_answers.py) ---
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+# --- Node.js (Playwright уже встановлений в базовому образі) ---
+# Базовий образ mcr.microsoft.com/playwright містить Node.js та Playwright.
+
+# Копіюємо проєкт (статичний SPA + тести)
+COPY . .
+
+# Встановлюємо залежності E2E (playwright вже є, але для node_modules)
+WORKDIR /app/e2e
+RUN npm install --no-audit --no-fund || true
+
+WORKDIR /app
+
+# Порт HTTP-сервера для статичного SPA
+EXPOSE 8080
+
+# За замовчуванням запускаємо HTTP-сервер (перевизначається в compose)
+CMD ["python3", "-m", "http.server", "8080"]

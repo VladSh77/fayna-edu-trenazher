@@ -1,0 +1,65 @@
+# ============================================================================
+# Docker Compose для E2E-тестування тренажера МЗС (fayna-edu-trenazher)
+#
+# Запуск:
+#   docker compose -f docker-compose.e2e.yml up --build
+#
+# Що робить:
+#   1. Піднімає HTTP-сервер (python3 -m http.server) зі статичним SPA
+#   2. Запускає E2E-тест (Playwright/Chromium) — проклік 1088 питань
+#   3. Запускає семантичну перевірку відповідей (Python)
+#   4. Генерує звіти E2E_DOCKER_REPORT.md та UI_HUMAN_AUDIT_REPORT.md
+# ============================================================================
+services:
+  # --- HTTP-сервер зі статичним SPA ---
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.e2e
+    container_name: trenazher-e2e-web
+    command: ["python3", "-m", "http.server", "8080", "--bind", "0.0.0.0"]
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/index.html')"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
+
+  # --- E2E-тест (Playwright/Chromium) ---
+  e2e:
+    build:
+      context: .
+      dockerfile: Dockerfile.e2e
+    container_name: trenazher-e2e-runner
+    depends_on:
+      web:
+        condition: service_healthy
+    environment:
+      - E2E_BASE_URL=http://web:8080/
+      - E2E_REPORT=/app/E2E_DOCKER_REPORT.md
+    volumes:
+      - .:/app
+    working_dir: /app/e2e
+    command: >
+      sh -c "node e2e_test.js 2>&1 | tee /app/e2e_run.log;
+             echo '--- E2E завершено, код: ' $? '---'"
+
+  # --- Семантична перевірка відповідей (Python) ---
+  verify:
+    build:
+      context: .
+      dockerfile: Dockerfile.e2e
+    container_name: trenazher-e2e-verify
+    depends_on:
+      web:
+        condition: service_healthy
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: >
+      sh -c "python3 tools/verify_human_answers.py 2>&1 | tee /app/verify_run.log;
+             echo '--- verify завершено ---'"

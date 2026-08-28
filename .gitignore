@@ -14,3 +14,10 @@ reports/
 .stars_cache/
 scripts/.explain_state_v2.json
 scripts/.fix_unverified_state.json
+# Проміжні файли банку (не для продакшну)
+banks/mzs-2026.fixed*.json
+banks/mzs-2026.fixed*.json.bak*
+banks/mzs-2026.json.bak*
+banks/mzs-2026.json.bak-pre-v2
+# E2E залежності
+e2e/node_modules/
