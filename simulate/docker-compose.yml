@@ -1,0 +1,68 @@
+# Повна перевірочна симуляція тестів МЗС у Docker.
+#
+# Використання (з кореня проєкту fayna-edu-trenazher):
+#   docker compose -f simulate/docker-compose.yml build
+#   docker compose -f simulate/docker-compose.yml run --rm simulate
+#
+# Монтує корінь проєкту в /app, щоб скрипт бачив banks/ та laws/.
+#
+# Приклади зі змінними середовища:
+#   # Повний прогон усіх 1088 питань:
+#   docker compose -f simulate/docker-compose.yml run --rm simulate
+#
+#   # Прогон по розділах (37 блоків), збереження логів у simulation_results.json:
+#   docker compose -f simulate/docker-compose.yml run --rm \
+#     -e BATCH_MODE=section simulate
+#
+#   # Прогон блоками по 100 питань:
+#   docker compose -f simulate/docker-compose.yml run --rm \
+#     -e BATCH_SIZE=100 simulate
+#
+#   # Продовжити з місця зупинки (resume):
+#   docker compose -f simulate/docker-compose.yml run --rm \
+#     -e RESUME=1 simulate
+#
+#   # Без LLM (лише лексика):
+#   docker compose -f simulate/docker-compose.yml run --rm \
+#     -e NO_LLM=1 simulate
+#
+#   # Обмежений прогон (напр. 50 питань) для швидкої перевірки:
+#   docker compose -f simulate/docker-compose.yml run --rm \
+#     -e LIMIT=50 simulate
+services:
+  simulate:
+    build:
+      # Файл compose лежить у simulate/, тому контекст — сама ця текуща тека.
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      # Корінь проєкту (../ відносно simulate/) монтується в /app,
+      # щоб скрипт бачив banks/ та laws/.
+      - ../:/app
+      # docs-sorter монтується для LLM-перевірки (team_llm).
+      - ../../docs-sorter:/docs-sorter
+      # Секрети (API-ключі) монтуються в /root/.secrets, бо team_llm/llm_backend
+      # читають ключі з Path.home()/.secrets/ai_apis.env (у контейнері home=/root).
+      - /Users/kobzar/.secrets:/root/.secrets:ro
+    environment:
+      # Який банк перевіряти (шлях відносно /app).
+      - BANK_FILE=${BANK_FILE:-banks/mzs-2026.fixed2.json}
+      # 1 = детальний вивід по кожному питанню; 0 = тільки зведення.
+      - VERBOSE=${VERBOSE:-0}
+      # Максимум питань для перевірки (0 = всі 1088).
+      # Перевизначити з шела: LIMIT=50 docker compose run --rm simulate
+      - LIMIT=${LIMIT:-0}
+      # 1 = вимкнути LLM-семантичну перевірку (лише лексика).
+      - NO_LLM=${NO_LLM:-0}
+      # Батчинг: 0 = без батчингу; N>0 = блоками по N питань.
+      # Напр. BATCH_SIZE=100 — по 100 питань за блок.
+      - BATCH_SIZE=${BATCH_SIZE:-0}
+      # Батчинг по розділах: 1 = 37 блоків (по розділу); 0 = вимкнено.
+      # Якщо BATCH_MODE=section, то BATCH_SIZE ігнорується.
+      - BATCH_MODE=${BATCH_MODE:-0}
+      # 1 = продовжити з місця зупинки (пропустити вже оброблені id).
+      - RESUME=${RESUME:-0}
+      # Шлях до файлу результатів (відносно /app).
+      - OUT_FILE=${OUT_FILE:-simulate/simulation_results.json}
+      # Шлях до team_llm у контейнері (для LLM-семантичної перевірки).
+      - DOCS_SORTER_DIR=/docs-sorter

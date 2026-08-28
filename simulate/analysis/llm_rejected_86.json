@@ -1,0 +1,748 @@
+[
+  {
+    "id": "2019-11-26-dod2-1049",
+    "correct": "Суд",
+    "ref": "Закон України «Про дипломатичну службу», ст. 25, п. 15",
+    "cur_fname": "zakon-pro-dyplomatychnu-sluzhbu.html",
+    "found": null
+  },
+  {
+    "id": "2019-11-26-dod2-1148",
+    "correct": "працівники консульської установи можуть викликатися в якості свідків при розгляді судових ",
+    "ref": "Віденська конвенція про консульські зносини, ст. 31",
+    "cur_fname": "videnska-konventsiia-konsulski-znosyny.html",
+    "found": null
+  },
+  {
+    "id": "2019-11-26-dod2-1150",
+    "correct": "від єдиного соціального внеску та пенсійного збору в країні перебування",
+    "ref": "Віденська конвенція про консульські зносини, ст. 49",
+    "cur_fname": "videnska-konventsiia-konsulski-znosyny.html",
+    "found": [
+      "zakon-pro-pravovyi-status-inozemtsiv.html",
+      "Стаття 5. Посвідка на постійне проживання та посвідка на тимчасове проживання",
+      0.8571428571428571
+    ]
+  },
+  {
+    "id": "2019-11-26-dod2-1153",
+    "correct": "має надавати всі необхідні імунітети, які можуть бути необхідними для транзитної поїздки, ",
+    "ref": "Віденська конвенція про консульські зносини, ст. 5",
+    "cur_fname": "videnska-konventsiia-konsulski-znosyny.html",
+    "found": null
+  },
+  {
+    "id": "2019-11-26-dod2-1198",
+    "correct": "у формі закону України",
+    "ref": "Віденська конвенція про право міжнародних договорів, ст. 65",
+    "cur_fname": "videnska-konventsiia-pravo-mizhnarodnykh-dohovoriv.html",
+    "found": [
+      "zakon-pro-natsionalnu-politsiiu.html",
+      "Стаття 23. Основні повноваження поліції",
+      1.0
+    ]
+  },
+  {
+    "id": "2019-11-26-dod2-1240",
+    "correct": "вільний рух транспорту",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+    "cur_fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "found": null
+  },
+  {
+    "id": "2019-11-26-dod2-1245",
+    "correct": "Південні та східні країни-сусіди ЄС",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+    "cur_fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "found": null
+  },
+  {
+    "id": "2019-11-26-dod2-1248",
+    "correct": "сприяння процесам реформ у країнах-партнерах, у тому числі шляхом укладення угод про асоці",
+    "ref": "Угода про асоціацію між Україною та ЄС, ст. 85",
+    "cur_fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "found": null
+  },
+  {
+    "id": "2019-11-26-dod2-1249",
+    "correct": "політичний, економічний, безпековий",
+    "ref": "Угода про асоціацію між Україною та ЄС, ст. 153",
+    "cur_fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "found": null
+  },
+  {
+    "id": "2019-11-26-dod2-1267",
+    "correct": "Європейська Рада",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+    "cur_fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "found": null
+  },
+  {
+    "id": "2019-11-26-dod2-1270",
+    "correct": "Європейський Парламент",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+    "cur_fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "found": null
+  },
+  {
+    "id": "2019-11-26-dod2-1284",
+    "correct": "Урядовий офіс координації європейської та євроатлантичної інтеграції",
+    "ref": "Угода про асоціацію між Україною та ЄС, ст. 89",
+    "cur_fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "found": null
+  },
+  {
+    "id": "2019-11-26-dod2-1285",
+    "correct": "Лісабонська угода",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+    "cur_fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "found": null
+  },
+  {
+    "id": "2019-11-26-dod2-1287",
+    "correct": "на принципах диференціації, спільної відповідальності, «більше за більше»",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+    "cur_fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "found": null
+  },
+  {
+    "id": "2019-11-26-dod2-1293",
+    "correct": "Парламентська Асамблея ЄВРОНЕСТ",
+    "ref": "Угода про асоціацію між Україною та ЄС, ст. 1",
+    "cur_fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "found": null
+  },
+  {
+    "id": "2019-11-26-dod2-1295",
+    "correct": "Ісландія, Ліхтенштейн, Норвегія, Швейцарія",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+    "cur_fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "found": null
+  },
+  {
+    "id": "2019-11-26-dod2-1296",
+    "correct": "Європейська служба зовнішньої діяльності",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+    "cur_fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "found": [
+      "zakon-pro-dyplomatychnu-sluzhbu.html",
+      "Стаття 1. Дипломатична служба",
+      0.75
+    ]
+  },
+  {
+    "id": "2019-11-26-dod2-1297",
+    "correct": "Віце-президент ЄК, Високий Представник ЄС із закордонних справ та безпекової політики",
+    "ref": "Угода про асоціацію між Україною та ЄС, ст. 1",
+    "cur_fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "found": null
+  },
+  {
+    "id": "2019-11-26-dod2-1303",
+    "correct": "рішення, директиви, регламенти і висновки",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 5",
+    "cur_fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "found": null
+  },
+  {
+    "id": "2019-11-26-dod2-1312",
+    "correct": "кластерування",
+    "ref": "Угода про асоціацію між Україною та ЄС, ст. 1",
+    "cur_fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "found": null
+  },
+  {
+    "id": "2019-11-26-dod2-996",
+    "correct": "визначення зовнішньополітичних пріоритетів України",
+    "ref": "Закон України «Про дипломатичну службу», ст. 1",
+    "cur_fname": "zakon-pro-dyplomatychnu-sluzhbu.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1662",
+    "correct": "окрема для кожного виду актового запису і на початку нового року починається з першого ном",
+    "ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 6",
+    "cur_fname": "zakon-pro-derzhavnu-reiestratsiiu-aktiv-tsyvilnoho-stanu.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1663",
+    "correct": "стосується інформації про кількість отриманих та витрачених бланків свідоцтв, складених ак",
+    "ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 3",
+    "cur_fname": "zakon-pro-derzhavnu-reiestratsiiu-aktiv-tsyvilnoho-stanu.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1666",
+    "correct": "лише його прізвище, ім'я, по батькові та дата народження",
+    "ref": "Сімейний кодекс України, ст. 135",
+    "cur_fname": "simeinyi-kodeks-ukrainy.html",
+    "found": [
+      "vyborchyi-kodeks-ukrainy.html",
+      "Стаття 60. Офіційні спостерігачі від громадських організацій",
+      1.0
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1667",
+    "correct": "30 календарних днів",
+    "ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 13",
+    "cur_fname": "zakon-pro-derzhavnu-reiestratsiiu-aktiv-tsyvilnoho-stanu.html",
+    "found": [
+      "zakon-pro-natsionalnu-politsiiu.html",
+      "Стаття 53. Оприлюднення інформації про проведення конкурсу",
+      1.0
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1684",
+    "correct": "будь-яка кількість за бажанням довірителя",
+    "ref": "Закон України «Про нотаріат», ст. 59",
+    "cur_fname": "zakon-pro-notariat.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1695",
+    "correct": "іноземні офіційні документи, складені і засвідчені на території консульського округу орган",
+    "ref": "Закон України «Про міжнародні договори України», ст. 5",
+    "cur_fname": "zakon-pro-mizhnarodni-dohovory.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1697",
+    "correct": "українські офіційні документи, засвідчені в порядку консульської легалізації в ДКС МЗС Укр",
+    "ref": "Закон України «Про міжнародні договори України», ст. 1",
+    "cur_fname": "zakon-pro-mizhnarodni-dohovory.html",
+    "found": [
+      "zakon-pro-pravovyi-status-inozemtsiv.html",
+      "Стаття 5. Посвідка на постійне проживання та посвідка на тимчасове проживання",
+      0.75
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1699",
+    "correct": "у 2003 році",
+    "ref": "Закон України «Про міжнародні договори України», ст. 9",
+    "cur_fname": "zakon-pro-mizhnarodni-dohovory.html",
+    "found": [
+      "zakon-pro-natsionalnu-politsiiu.html",
+      "Стаття 93. Обчислення тривалості відпусток поліцейських",
+      1.0
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1705",
+    "correct": "оригінали трудових книжок та дублікати дипломів про вищу освіту",
+    "ref": "Закон України «Про нотаріат», ст. 34",
+    "cur_fname": "zakon-pro-notariat.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1706",
+    "correct": "близьких родичів особи, щодо якої складено актовий запис (без будь-якого додаткового підтв",
+    "ref": "Закон України «Про нотаріат», ст. 47",
+    "cur_fname": "zakon-pro-notariat.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1709",
+    "correct": "довідка, оформлена МЗС України на підставі інформації, отриманої з МВС України",
+    "ref": "Закон України «Про консульську службу», ст. 10",
+    "cur_fname": "konsulskyi-statut-ukrainy.html",
+    "found": [
+      "vyborchyi-kodeks-ukrainy.html",
+      "Стаття 289. Додаткові вибори депутатів сільських, селищних рад від територіальної громади, що приєдналася до іншої територіальної громади",
+      0.8571428571428571
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1710",
+    "correct": "після перевірки документів прийняти у заявника власноручно написану заяву, копію його пасп",
+    "ref": "Закон України «Про консульські установи», ст. 10",
+    "cur_fname": "konsulskyi-statut-ukrainy.html",
+    "found": [
+      "vyborchyi-kodeks-ukrainy.html",
+      "Стаття 289. Додаткові вибори депутатів сільських, селищних рад від територіальної громади, що приєдналася до іншої територіальної громади",
+      0.6
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1711",
+    "correct": "дипломатичною/командирською поштою",
+    "ref": "Закон України «Про нотаріат», ст. 10",
+    "cur_fname": "zakon-pro-notariat.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1712",
+    "correct": "безпосередньо запитувачу або його законному представнику за наявності підтвердження повнов",
+    "ref": "Закон України «Про нотаріат», ст. 45",
+    "cur_fname": "zakon-pro-notariat.html",
+    "found": [
+      "vyborchyi-kodeks-ukrainy.html",
+      "Стаття 140. Утворення окружних виборчих комісій",
+      0.625
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1714",
+    "correct": "запит ЗДУ з оригіналами двох примірників належним чином заповнених анкет та, у відповідних",
+    "ref": "Закон України «Про нотаріат», ст. 45",
+    "cur_fname": "zakon-pro-notariat.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1720",
+    "correct": "документ особи віком від 14 до 16 років, що посвідчує особу та підтверджує її належність д",
+    "ref": "Закон України «Про громадянство України», ст. 3",
+    "cur_fname": "zakon-pro-hromadianstvo.html",
+    "found": [
+      "vyborchyi-kodeks-ukrainy.html",
+      "Стаття 289. Додаткові вибори депутатів сільських, селищних рад від територіальної громади, що приєдналася до іншої територіальної громади",
+      0.725
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1722",
+    "correct": "протягом п’яти робочих днів інформує заявника в письмовій формі засобами поштового або еле",
+    "ref": "Закон України «Про громадянство України», ст. 25",
+    "cur_fname": "zakon-pro-hromadianstvo.html",
+    "found": [
+      "vyborchyi-kodeks-ukrainy.html",
+      "Стаття 289. Додаткові вибори депутатів сільських, селищних рад від територіальної громади, що приєдналася до іншої територіальної громади",
+      0.6829268292682927
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1727",
+    "correct": "Керівник закордонної дипломатичної установи України",
+    "ref": "Закон України «Про громадянство України», ст. 18",
+    "cur_fname": "zakon-pro-hromadianstvo.html",
+    "found": [
+      "vyborchyi-kodeks-ukrainy.html",
+      "Стаття 289. Додаткові вибори депутатів сільських, селищних рад від територіальної громади, що приєдналася до іншої територіальної громади",
+      1.0
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1730",
+    "correct": "про прийняте рішення ЗДУ протягом п’яти робочих днів повідомляє заявника у письмовій формі",
+    "ref": "Закон України «Про громадянство України», ст. 1",
+    "cur_fname": "zakon-pro-hromadianstvo.html",
+    "found": [
+      "vyborchyi-kodeks-ukrainy.html",
+      "Стаття 289. Додаткові вибори депутатів сільських, селищних рад від територіальної громади, що приєдналася до іншої територіальної громади",
+      0.7272727272727273
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1731",
+    "correct": "рішення про оформлення документів для залишення на постійне проживання за кордоном або про",
+    "ref": "Закон України «Про громадянство України», ст. 24",
+    "cur_fname": "zakon-pro-hromadianstvo.html",
+    "found": [
+      "zakon-pro-yedynyi-derzhavnyi-demohrafichnyi-reiestr.html",
+      "Стаття 10. Порядок ведення Єдиного державного демографічного реєстру",
+      0.7027027027027027
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1746",
+    "correct": "відомості, що подаються за формою 9.1, повинні включати період з першого до останнього кал",
+    "ref": "Закон України «Про Державний реєстр виборців», ст. 18",
+    "cur_fname": "zakon-pro-derzhavnyi-reiestr-vyborciv.html",
+    "found": [
+      "vyborchyi-kodeks-ukrainy.html",
+      "Стаття 289. Додаткові вибори депутатів сільських, селищних рад від територіальної громади, що приєдналася до іншої територіальної громади",
+      0.6785714285714286
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1747",
+    "correct": "відомості подаються за період з 1 по останнє число місяця, що передує місяцю подання відом",
+    "ref": "Закон України «Про Державний реєстр виборців», ст. 18",
+    "cur_fname": "zakon-pro-derzhavnyi-reiestr-vyborciv.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1756",
+    "correct": "надсилання запитів до ДКС, територіального органу/підрозділу Державної міграційної служби ",
+    "ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 12",
+    "cur_fname": "zakon-pro-yedynyi-derzhavnyi-demohrafichnyi-reiestr.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1758",
+    "correct": "особі, яка не досягла дванадцятирічного віку або особі, яка не може пересуватися самостійн",
+    "ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 10",
+    "cur_fname": "zakon-pro-yedynyi-derzhavnyi-demohrafichnyi-reiestr.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1759",
+    "correct": "2",
+    "ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 12",
+    "cur_fname": "zakon-pro-yedynyi-derzhavnyi-demohrafichnyi-reiestr.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1762",
+    "correct": "на термін, вказаний заявником у заяві про прийняття на тимчасовий консульський облік",
+    "ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 10",
+    "cur_fname": "zakon-pro-yedynyi-derzhavnyi-demohrafichnyi-reiestr.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1774",
+    "correct": "Транспортними засобами закордонних дипломатичних та консульських установ у супроводі консу",
+    "ref": "Кодекс України про адміністративні правопорушення, ст. 14",
+    "cur_fname": "kodeks-ukrainy-pro-administratyvni-pravoporushennia.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1775",
+    "correct": "Повідомлення компетентних органів країни перебування або будь-яка інформація після її підт",
+    "ref": "Закон України «Про консульську службу», ст. 14",
+    "cur_fname": "konsulskyi-statut-ukrainy.html",
+    "found": [
+      "vyborchyi-kodeks-ukrainy.html",
+      "Стаття 289. Додаткові вибори депутатів сільських, селищних рад від територіальної громади, що приєдналася до іншої територіальної громади",
+      0.7142857142857143
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1776",
+    "correct": "Встановлення особи померлого/загиблого",
+    "ref": "Закон України «Про консульську службу», ст. 12",
+    "cur_fname": "konsulskyi-statut-ukrainy.html",
+    "found": [
+      "zakon-pro-derzhavnu-reiestratsiiu-aktiv-tsyvilnoho-stanu.html",
+      "Стаття 17. Державна реєстрація смерті",
+      0.75
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1780",
+    "correct": "вжиття заходів до забезпечення чи поновлення громадянам України права на проживання в іноз",
+    "ref": "Віденська конвенція про консульські зносини, ст. 5",
+    "cur_fname": "videnska-konventsiia-konsulski-znosyny.html",
+    "found": [
+      "zakon-pro-natsionalnu-politsiiu.html",
+      "Стаття 23. Основні повноваження поліції",
+      0.6
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1781",
+    "correct": "усиновлювачі, опікуни, прийомні батьки, батьки-вихователі дитячого будинку сімейного типу",
+    "ref": "Закон України «Про охорону дитинства», ст. 5",
+    "cur_fname": "zakon-pro-okhoronu-dytynstva.html",
+    "found": [
+      "simeinyi-kodeks-ukrainy.html",
+      "Стаття 256 - 6 . Батьки-вихователі дитячого будинку сімейного типу",
+      0.7777777777777778
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1783",
+    "correct": "Дарницька районна у м.Києві державна адміністрація, виконавчий комітет Броварської міської",
+    "ref": "Закон України «Про охорону дитинства», ст. 5",
+    "cur_fname": "zakon-pro-okhoronu-dytynstva.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1784",
+    "correct": "встановлює опіку (піклування) над неповнолітніми, недієздатними або обмеженими в дієздатно",
+    "ref": "Закон України «Про дипломатичну службу», ст. 12",
+    "cur_fname": "zakon-pro-dyplomatychnu-sluzhbu.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1787",
+    "correct": "Дарницька районна у м.Києві державна адміністрація, виконавчий комітет Броварської міської",
+    "ref": "Закон України «Про охорону дитинства», ст. 5",
+    "cur_fname": "zakon-pro-okhoronu-dytynstva.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1794",
+    "correct": "три",
+    "ref": "Правила оформлення візових документів, пункт 8 - 1",
+    "cur_fname": "pravyla-oformlennia-viz.html",
+    "found": null
+  },
+  {
+    "id": "bank_dodatok3-1810",
+    "correct": "можуть за умови постійного проживання на території відповідного консульського округу протя",
+    "ref": "Віденська конвенція про консульські зносини, ст. 5",
+    "cur_fname": "videnska-konventsiia-konsulski-znosyny.html",
+    "found": [
+      "zakon-pro-pravovyi-status-inozemtsiv.html",
+      "Стаття 5. Посвідка на постійне проживання та посвідка на тимчасове проживання",
+      0.6363636363636364
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1811",
+    "correct": "глава дипломатичного представництва України, штатної консульської установи України в країн",
+    "ref": "Віденська конвенція про консульські зносини, ст. 4",
+    "cur_fname": "videnska-konventsiia-konsulski-znosyny.html",
+    "found": [
+      "zakon-pro-mizhnarodne-pryvatne-pravo.html",
+      "Стаття 24. Опіка та піклування",
+      0.6470588235294118
+    ]
+  },
+  {
+    "id": "bank_dodatok3-1814",
+    "correct": "за зверненнями осіб, з інвалідністю I та II груп, дітей з інвалідністю або законних предст",
+    "ref": "Інструкція про порядок справляння сум консульського збору, п. 5",
+    "cur_fname": "pravyla-oformlennia-viz.html",
+    "found": [
+      "zakon-pro-notariat.html",
+      "Стаття 38. Нотаріальні дії, вчинювані консульськими установами України",
+      1.0
+    ]
+  },
+  {
+    "id": "dodatok-01-2-1600",
+    "correct": "більше половини посадового складу Кабінету Міністрів України",
+    "ref": "Постанова Кабінету Міністрів України «Про Регламент Кабінету Міністрів України», § 28 - 6",
+    "cur_fname": "rehlament-kabinetu-ministriv.html",
+    "found": [
+      "kryminalnyi-protsesualnyi-kodeks-ukrainy.html",
+      "Стаття 31. Склад суду",
+      0.8571428571428571
+    ]
+  },
+  {
+    "id": "dodatok-01-2-1601",
+    "correct": "щосереди о 10-й годині",
+    "ref": "Постанова Кабінету Міністрів України «Про Регламент Кабінету Міністрів», § 14, п. 2",
+    "cur_fname": "rehlament-kabinetu-ministriv.html",
+    "found": null
+  },
+  {
+    "id": "dodatok-01-2-1608",
+    "correct": "орган, який вносить проєкт акту до Кабінету Міністрів",
+    "ref": "Постанова Кабінету Міністрів України «Про Регламент Кабінету Міністрів», § 28 - 1",
+    "cur_fname": "rehlament-kabinetu-ministriv.html",
+    "found": [
+      "kryminalnyi-protsesualnyi-kodeks-ukrainy.html",
+      "Стаття 636. Виконання рішень Міжнародного кримінального суду",
+      0.8333333333333334
+    ]
+  },
+  {
+    "id": "dodatok-4-004",
+    "correct": "ні, не може",
+    "ref": "Закон України «Про громадянство України», ст. 9",
+    "cur_fname": "zakon-pro-hromadianstvo.html",
+    "found": null
+  },
+  {
+    "id": "dodatok-4-016",
+    "correct": "дворічного терміну від цієї дати",
+    "ref": "Закон України «Про громадянство України», ст. 1",
+    "cur_fname": "zakon-pro-hromadianstvo.html",
+    "found": [
+      "videnska-konventsiia-pravo-mizhnarodnykh-dohovoriv.html",
+      "Стаття 85 Автентичні тексти",
+      0.75
+    ]
+  },
+  {
+    "id": "dodatok-4-031",
+    "correct": "не пізніш ніж у місячний строк з дня надходження документів",
+    "ref": "Закон України «Про громадянство України», ст. 10",
+    "cur_fname": "zakon-pro-hromadianstvo.html",
+    "found": [
+      "vyborchyi-kodeks-ukrainy.html",
+      "Стаття 86. Повноваження Центральної виборчої комісії щодо організації підготовки та проведення виборів Президента України",
+      1.0
+    ]
+  },
+  {
+    "id": "dodatok-4-042",
+    "correct": "не повинен перевищувати один рік",
+    "ref": "Закон України «Про громадянство України», ст. 9",
+    "cur_fname": "zakon-pro-hromadianstvo.html",
+    "found": [
+      "vyborchyi-kodeks-ukrainy.html",
+      "Стаття 150. Загальні засади утворення та функціонування виборчого фонду партії, власного виборчого фонду кандидата у депутати. Контроль виборчих фондів",
+      1.0
+    ]
+  },
+  {
+    "id": "dodatok-4-043",
+    "correct": "у письмовій формі не пізніш ніж у тижневий строк з дня його прийняття",
+    "ref": "Закон України «Про громадянство України», ст. 10",
+    "cur_fname": "zakon-pro-hromadianstvo.html",
+    "found": [
+      "zakon-pro-natsionalnu-politsiiu.html",
+      "Стаття 51. Поліцейські комісії",
+      0.8333333333333334
+    ]
+  },
+  {
+    "id": "dodatok-4-102",
+    "correct": "будь який громадянин України стосовно своєї дитини, народженої на території за кордоном, д",
+    "ref": "Закон України «Про громадянство України», ст. 3",
+    "cur_fname": "zakon-pro-hromadianstvo.html",
+    "found": [
+      "vyborchyi-kodeks-ukrainy.html",
+      "Стаття 289. Додаткові вибори депутатів сільських, селищних рад від територіальної громади, що приєдналася до іншої територіальної громади",
+      0.6
+    ]
+  },
+  {
+    "id": "dodatok-4-108",
+    "correct": "В, C, D",
+    "ref": "Правила оформлення віз для в’їзду в Україну, п. 3",
+    "cur_fname": "pravyla-oformlennia-viz.html",
+    "found": null
+  },
+  {
+    "id": "dodatok-4-129",
+    "correct": "одноразова",
+    "ref": "Правила оформлення віз для в’їзду в Україну і транзитного проїзду, п. 3",
+    "cur_fname": "pravyla-oformlennia-viz.html",
+    "found": [
+      "zakon-pro-natsionalnu-politsiiu.html",
+      "Стаття 97. Одноразова грошова допомога в разі загибелі (смерті) чи втрати працездатності поліцейського",
+      1.0
+    ]
+  },
+  {
+    "id": "dodatok-4-138",
+    "correct": "транзитні, короткострокові та довгострокові",
+    "ref": "Правила оформлення віз для в’їзду в Україну і транзитного проїзду, п. 23",
+    "cur_fname": "pravyla-oformlennia-viz.html",
+    "found": null
+  },
+  {
+    "id": "dodatok-4-141",
+    "correct": "запрошення філіалу, відділення, представництва або іншого структурного осередку громадсько",
+    "ref": "Правила оформлення віз для в’їзду в Україну і транзитного проїзду, п. 7",
+    "cur_fname": "pravyla-oformlennia-viz.html",
+    "found": null
+  },
+  {
+    "id": "dodatok-4-150",
+    "correct": "короткострокові та транзитні",
+    "ref": "Правила оформлення віз для в’їзду в Україну і транзитного проїзду, п. 20",
+    "cur_fname": "pravyla-oformlennia-viz.html",
+    "found": null
+  },
+  {
+    "id": "dodatok-4-165",
+    "correct": "В",
+    "ref": "Правила оформлення віз для в’їзду в Україну і транзитного проїзду, п. 3",
+    "cur_fname": "pravyla-oformlennia-viz.html",
+    "found": null
+  },
+  {
+    "id": "dodatok-4-166",
+    "correct": "С",
+    "ref": "Правила оформлення віз для в’їзду в Україну, п. 3",
+    "cur_fname": "pravyla-oformlennia-viz.html",
+    "found": null
+  },
+  {
+    "id": "dodatok-4-167",
+    "correct": "D",
+    "ref": "Закон України «Про правовий статус іноземців та осіб без громадянства», ст. 5",
+    "cur_fname": "zakon-pro-pravovyi-status-inozemtsiv.html",
+    "found": null
+  },
+  {
+    "id": "dodatok-4-269",
+    "correct": "за свідоцтвом про народження за умови підтвердження батьками одним з батьків) того, що ця ",
+    "ref": "Закон України «Про нотаріат», ст. 8",
+    "cur_fname": "zakon-pro-notariat.html",
+    "found": [
+      "zakon-pro-hromadianstvo.html",
+      "Стаття 18. Вихід з громадянства України",
+      0.7
+    ]
+  },
+  {
+    "id": "dodatok-4-281",
+    "correct": "від імені та за особистої присутності заповідача",
+    "ref": "Закон України «Про нотаріат», ст. 34",
+    "cur_fname": "zakon-pro-notariat.html",
+    "found": null
+  },
+  {
+    "id": "dodatok-4-307",
+    "correct": "нотаріус видає свідоцтво.",
+    "ref": "Закон України «Про Державний реєстр виборців», ст. 23",
+    "cur_fname": "zakon-pro-derzhavnyi-reiestr-vyborciv.html",
+    "found": [
+      "tsyvilnyi-kodeks-ukrainy.html",
+      "Стаття 1297. Обов'язок спадкоємця звернутися за свідоцтвом про право на спадщину",
+      1.0
+    ]
+  },
+  {
+    "id": "dodatok-4-327",
+    "correct": "щомісячно",
+    "ref": "Закон України «Про Державний реєстр виборців», ст. 10",
+    "cur_fname": "zakon-pro-derzhavnyi-reiestr-vyborciv.html",
+    "found": [
+      "zakon-pro-natsionalnu-politsiiu.html",
+      "Стаття 68. Порядок призначення поліцейських на посади під час здійснення реорганізації",
+      1.0
+    ]
+  },
+  {
+    "id": "dodatok-4-440",
+    "correct": "важкі кліматичні умови або складна безпекова ситуація в країні призначення",
+    "ref": "Закон України «Про дипломатичну службу», ст. 28",
+    "cur_fname": "zakon-pro-dyplomatychnu-sluzhbu.html",
+    "found": null
+  },
+  {
+    "id": "dodatok-4-497",
+    "correct": "від єдиного соціального внеску та пенсійного збору в країні перебування",
+    "ref": "Віденська конвенція про дипломатичні зносини, ст. 33",
+    "cur_fname": "videnska-konventsiia-dyplomatychni-znosyny.html",
+    "found": [
+      "zakon-pro-pravovyi-status-inozemtsiv.html",
+      "Стаття 5. Посвідка на постійне проживання та посвідка на тимчасове проживання",
+      0.8571428571428571
+    ]
+  },
+  {
+    "id": "dodatok-4-529",
+    "correct": "21.09.2006",
+    "ref": "Закон України «Про управління об'єктами державної власності», ст. 1",
+    "cur_fname": "zakon-pro-upravlinnia-obiektamy-derzhavnoi-vlasnosti.html",
+    "found": null
+  },
+  {
+    "id": "dodatok-4-542",
+    "correct": "Міністерство розвитку економіки, торгівлі та сільського господарства України",
+    "ref": "Закон України «Про управління об'єктами державної власності», ст. 1",
+    "cur_fname": "zakon-pro-upravlinnia-obiektamy-derzhavnoi-vlasnosti.html",
+    "found": null
+  },
+  {
+    "id": "dodatok-4-564",
+    "correct": "2 примірники",
+    "ref": "Наказ Міністерства фінансів України від 02.09.2014 № 879, п. 4",
+    "cur_fname": "nakaz-minfinu-879-inventaryzatsiia.html",
+    "found": [
+      "vyborchyi-kodeks-ukrainy.html",
+      "Стаття 107. Інформаційні плакати кандидатів на пост Президента України",
+      1.0
+    ]
+  },
+  {
+    "id": "dodatok-4-723",
+    "correct": "210 х 297",
+    "ref": "Постанова Кабінету Міністрів України «Деякі питання документування…», п. 19",
+    "cur_fname": "postanova-kmu-55-dokumentuvannia.html",
+    "found": null
+  }
+]

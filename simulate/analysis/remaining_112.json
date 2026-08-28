@@ -1,0 +1,898 @@
+[
+  {
+    "id": "2019-11-26-dod2-1049",
+    "ref": "Закон України «Про дипломатичну службу», ст. 25, п. 15",
+    "fname": "zakon-pro-dyplomatychnu-sluzhbu.html",
+    "cat": "GENUINE",
+    "correct": "Суд",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1084",
+    "ref": "Віденська конвенція про дипломатичні зносини, ст. 3",
+    "fname": "videnska-konventsiia-dyplomatychni-znosyny.html",
+    "cat": "GENUINE",
+    "correct": "визначення основних зовнішньополітичних пріоритетів акредитуючої держави",
+    "cur_ratio": 0.16666666666666666
+  },
+  {
+    "id": "2019-11-26-dod2-1089",
+    "ref": "Віденська конвенція про дипломатичні зносини, ст. 9",
+    "fname": "videnska-konventsiia-dyplomatychni-znosyny.html",
+    "cat": "GENUINE",
+    "correct": "країна перебування не зобов’язана повідомляти про причини оголошення особи небаж",
+    "cur_ratio": 0.1111111111111111
+  },
+  {
+    "id": "2019-11-26-dod2-1097",
+    "ref": "Віденська конвенція про дипломатичні зносини, ст. 14",
+    "fname": "videnska-konventsiia-dyplomatychni-znosyny.html",
+    "cat": "GENUINE",
+    "correct": "має бути однаковим по відношенню до представників кожного класу",
+    "cur_ratio": 0.2
+  },
+  {
+    "id": "2019-11-26-dod2-1139",
+    "ref": "Віденська конвенція про консульські зносини, ст. 29",
+    "fname": "videnska-konventsiia-konsulski-znosyny.html",
+    "cat": "GENUINE",
+    "correct": "дозволяється на приміщеннях консульської установи, резиденції глави консульської",
+    "cur_ratio": 0.5625
+  },
+  {
+    "id": "2019-11-26-dod2-1148",
+    "ref": "Віденська конвенція про консульські зносини, ст. 31",
+    "fname": "videnska-konventsiia-konsulski-znosyny.html",
+    "cat": "GENUINE",
+    "correct": "працівники консульської установи можуть викликатися в якості свідків при розгляд",
+    "cur_ratio": 0.13043478260869565
+  },
+  {
+    "id": "2019-11-26-dod2-1149",
+    "ref": "Віденська конвенція про консульські зносини, ст. 46",
+    "fname": "videnska-konventsiia-konsulski-znosyny.html",
+    "cat": "GENUINE",
+    "correct": "від всіх зобов’язань пов’язаних з реєстрацією в якості іноземних громадян та від",
+    "cur_ratio": 0.18181818181818182
+  },
+  {
+    "id": "2019-11-26-dod2-1150",
+    "ref": "Віденська конвенція про консульські зносини, ст. 49",
+    "fname": "videnska-konventsiia-konsulski-znosyny.html",
+    "cat": "GENUINE",
+    "correct": "від єдиного соціального внеску та пенсійного збору в країні перебування",
+    "cur_ratio": 0.14285714285714285
+  },
+  {
+    "id": "2019-11-26-dod2-1153",
+    "ref": "Віденська конвенція про консульські зносини, ст. 5",
+    "fname": "videnska-konventsiia-konsulski-znosyny.html",
+    "cat": "GENUINE",
+    "correct": "має надавати всі необхідні імунітети, які можуть бути необхідними для транзитної",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1159",
+    "ref": "Віденська конвенція про консульські зносини, ст. 41",
+    "fname": "videnska-konventsiia-konsulski-znosyny.html",
+    "cat": "GENUINE",
+    "correct": "зобов’язана з’явитись до компетентних органах",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1162",
+    "ref": "Віденська конвенція про консульські зносини, ст. 5",
+    "fname": "videnska-konventsiia-konsulski-znosyny.html",
+    "cat": "GENUINE",
+    "correct": "визначення основних зовнішньополітичних пріоритетів акредитуючої держави",
+    "cur_ratio": 0.16666666666666666
+  },
+  {
+    "id": "2019-11-26-dod2-1198",
+    "ref": "Віденська конвенція про право міжнародних договорів, ст. 65",
+    "fname": "videnska-konventsiia-pravo-mizhnarodnykh-dohovoriv.html",
+    "cat": "GENUINE",
+    "correct": "у формі закону України",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1239",
+    "ref": "Угода про асоціацію між Україною та ЄС, ст. 460",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "Саміт Україна-ЄС",
+    "cur_ratio": 0.5
+  },
+  {
+    "id": "2019-11-26-dod2-1240",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "вільний рух транспорту",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1245",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "Південні та східні країни-сусіди ЄС",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1248",
+    "ref": "Угода про асоціацію між Україною та ЄС, ст. 85",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "сприяння процесам реформ у країнах-партнерах, у тому числі шляхом укладення угод",
+    "cur_ratio": 0.125
+  },
+  {
+    "id": "2019-11-26-dod2-1249",
+    "ref": "Угода про асоціацію між Україною та ЄС, ст. 153",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "політичний, економічний, безпековий",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1255",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 2",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "яка поважає європейські цінності та віддана їх поширенню",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1267",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "Європейська Рада",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1270",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "Європейський Парламент",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1284",
+    "ref": "Угода про асоціацію між Україною та ЄС, ст. 89",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "Урядовий офіс координації європейської та євроатлантичної інтеграції",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1285",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "Лісабонська угода",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1287",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "на принципах диференціації, спільної відповідальності, «більше за більше»",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1293",
+    "ref": "Угода про асоціацію між Україною та ЄС, ст. 1",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "Парламентська Асамблея ЄВРОНЕСТ",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1295",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "Ісландія, Ліхтенштейн, Норвегія, Швейцарія",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1296",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "Європейська служба зовнішньої діяльності",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1297",
+    "ref": "Угода про асоціацію між Україною та ЄС, ст. 1",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "Віце-президент ЄК, Високий Представник ЄС із закордонних справ та безпекової пол",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1303",
+    "ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 5",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "рішення, директиви, регламенти і висновки",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-1310",
+    "ref": "Угода про асоціацію між Україною та ЄС, ст. 460",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "у форматі самітів",
+    "cur_ratio": 0.5
+  },
+  {
+    "id": "2019-11-26-dod2-1312",
+    "ref": "Угода про асоціацію між Україною та ЄС, ст. 1",
+    "fname": "uhoda-pro-asotsiatsiiu-ukraina-yes.html",
+    "cat": "GENUINE",
+    "correct": "кластерування",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "2019-11-26-dod2-996",
+    "ref": "Закон України «Про дипломатичну службу», ст. 1",
+    "fname": "zakon-pro-dyplomatychnu-sluzhbu.html",
+    "cat": "GENUINE",
+    "correct": "визначення зовнішньополітичних пріоритетів України",
+    "cur_ratio": 0.25
+  },
+  {
+    "id": "bank_dodatok3-1662",
+    "ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 6",
+    "fname": "zakon-pro-derzhavnu-reiestratsiiu-aktiv-tsyvilnoho-stanu.html",
+    "cat": "GENUINE",
+    "correct": "окрема для кожного виду актового запису і на початку нового року починається з п",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "bank_dodatok3-1663",
+    "ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 3",
+    "fname": "zakon-pro-derzhavnu-reiestratsiiu-aktiv-tsyvilnoho-stanu.html",
+    "cat": "GENUINE",
+    "correct": "стосується інформації про кількість отриманих та витрачених бланків свідоцтв, ск",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "bank_dodatok3-1666",
+    "ref": "Сімейний кодекс України, ст. 135",
+    "fname": "simeinyi-kodeks-ukrainy.html",
+    "cat": "GENUINE",
+    "correct": "лише його прізвище, ім'я, по батькові та дата народження",
+    "cur_ratio": 0.5714285714285714
+  },
+  {
+    "id": "bank_dodatok3-1667",
+    "ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 13",
+    "fname": "zakon-pro-derzhavnu-reiestratsiiu-aktiv-tsyvilnoho-stanu.html",
+    "cat": "GENUINE",
+    "correct": "30 календарних днів",
+    "cur_ratio": 0.5
+  },
+  {
+    "id": "bank_dodatok3-1683",
+    "ref": "Закон України «Про нотаріат», ст. 58",
+    "fname": "zakon-pro-notariat.html",
+    "cat": "GENUINE",
+    "correct": "на будь-який визначений заявником термін, в.т.ч. безстроково",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "bank_dodatok3-1684",
+    "ref": "Закон України «Про нотаріат», ст. 59",
+    "fname": "zakon-pro-notariat.html",
+    "cat": "GENUINE",
+    "correct": "будь-яка кількість за бажанням довірителя",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "bank_dodatok3-1695",
+    "ref": "Закон України «Про міжнародні договори України», ст. 5",
+    "fname": "zakon-pro-mizhnarodni-dohovory.html",
+    "cat": "GENUINE",
+    "correct": "іноземні офіційні документи, складені і засвідчені на території консульського ок",
+    "cur_ratio": 0.13793103448275862
+  },
+  {
+    "id": "bank_dodatok3-1697",
+    "ref": "Закон України «Про міжнародні договори України», ст. 1",
+    "fname": "zakon-pro-mizhnarodni-dohovory.html",
+    "cat": "GENUINE",
+    "correct": "українські офіційні документи, засвідчені в порядку консульської легалізації в Д",
+    "cur_ratio": 0.125
+  },
+  {
+    "id": "bank_dodatok3-1699",
+    "ref": "Закон України «Про міжнародні договори України», ст. 9",
+    "fname": "zakon-pro-mizhnarodni-dohovory.html",
+    "cat": "GENUINE",
+    "correct": "у 2003 році",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "bank_dodatok3-1705",
+    "ref": "Закон України «Про нотаріат», ст. 34",
+    "fname": "zakon-pro-notariat.html",
+    "cat": "GENUINE",
+    "correct": "оригінали трудових книжок та дублікати дипломів про вищу освіту",
+    "cur_ratio": 0.14285714285714285
+  },
+  {
+    "id": "bank_dodatok3-1706",
+    "ref": "Закон України «Про нотаріат», ст. 47",
+    "fname": "zakon-pro-notariat.html",
+    "cat": "GENUINE",
+    "correct": "близьких родичів особи, щодо якої складено актовий запис (без будь-якого додатко",
+    "cur_ratio": 0.08333333333333333
+  },
+  {
+    "id": "bank_dodatok3-1709",
+    "ref": "Закон України «Про консульську службу», ст. 10",
+    "fname": "konsulskyi-statut-ukrainy.html",
+    "cat": "GENUINE",
+    "correct": "довідка, оформлена МЗС України на підставі інформації, отриманої з МВС України",
+    "cur_ratio": 0.2857142857142857
+  },
+  {
+    "id": "bank_dodatok3-1710",
+    "ref": "Закон України «Про консульські установи», ст. 10",
+    "fname": "konsulskyi-statut-ukrainy.html",
+    "cat": "GENUINE",
+    "correct": "після перевірки документів прийняти у заявника власноручно написану заяву, копію",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "bank_dodatok3-1711",
+    "ref": "Закон України «Про нотаріат», ст. 10",
+    "fname": "zakon-pro-notariat.html",
+    "cat": "GENUINE",
+    "correct": "дипломатичною/командирською поштою",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "bank_dodatok3-1712",
+    "ref": "Закон України «Про нотаріат», ст. 45",
+    "fname": "zakon-pro-notariat.html",
+    "cat": "GENUINE",
+    "correct": "безпосередньо запитувачу або його законному представнику за наявності підтвердже",
+    "cur_ratio": 0.125
+  },
+  {
+    "id": "bank_dodatok3-1714",
+    "ref": "Закон України «Про нотаріат», ст. 45",
+    "fname": "zakon-pro-notariat.html",
+    "cat": "GENUINE",
+    "correct": "запит ЗДУ з оригіналами двох примірників належним чином заповнених анкет та, у в",
+    "cur_ratio": 0.0625
+  },
+  {
+    "id": "bank_dodatok3-1720",
+    "ref": "Закон України «Про громадянство України», ст. 3",
+    "fname": "zakon-pro-hromadianstvo.html",
+    "cat": "GENUINE",
+    "correct": "документ особи віком від 14 до 16 років, що посвідчує особу та підтверджує її на",
+    "cur_ratio": 0.25
+  },
+  {
+    "id": "bank_dodatok3-1722",
+    "ref": "Закон України «Про громадянство України», ст. 25",
+    "fname": "zakon-pro-hromadianstvo.html",
+    "cat": "GENUINE",
+    "correct": "протягом п’яти робочих днів інформує заявника в письмовій формі засобами поштово",
+    "cur_ratio": 0.24390243902439024
+  },
+  {
+    "id": "bank_dodatok3-1726",
+    "ref": "Закон України «Про громадянство України», ст. 18",
+    "fname": "zakon-pro-hromadianstvo.html",
+    "cat": "GENUINE",
+    "correct": "В закордонній дипломатичній установі України за місцем постійного проживання",
+    "cur_ratio": 0.2857142857142857
+  },
+  {
+    "id": "bank_dodatok3-1727",
+    "ref": "Закон України «Про громадянство України», ст. 18",
+    "fname": "zakon-pro-hromadianstvo.html",
+    "cat": "GENUINE",
+    "correct": "Керівник закордонної дипломатичної установи України",
+    "cur_ratio": 0.2
+  },
+  {
+    "id": "bank_dodatok3-1730",
+    "ref": "Закон України «Про громадянство України», ст. 1",
+    "fname": "zakon-pro-hromadianstvo.html",
+    "cat": "GENUINE",
+    "correct": "про прийняте рішення ЗДУ протягом п’яти робочих днів повідомляє заявника у письм",
+    "cur_ratio": 0.2727272727272727
+  },
+  {
+    "id": "bank_dodatok3-1731",
+    "ref": "Закон України «Про громадянство України», ст. 24",
+    "fname": "zakon-pro-hromadianstvo.html",
+    "cat": "GENUINE",
+    "correct": "рішення про оформлення документів для залишення на постійне проживання за кордон",
+    "cur_ratio": 0.2972972972972973
+  },
+  {
+    "id": "bank_dodatok3-1744",
+    "ref": "Закон України «Про Державний реєстр виборців», ст. 6",
+    "fname": "zakon-pro-derzhavnyi-reiestr-vyborciv.html",
+    "cat": "GENUINE",
+    "correct": "поле залишається порожнім",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "bank_dodatok3-1746",
+    "ref": "Закон України «Про Державний реєстр виборців», ст. 18",
+    "fname": "zakon-pro-derzhavnyi-reiestr-vyborciv.html",
+    "cat": "GENUINE",
+    "correct": "відомості, що подаються за формою 9.1, повинні включати період з першого до оста",
+    "cur_ratio": 0.07142857142857142
+  },
+  {
+    "id": "bank_dodatok3-1747",
+    "ref": "Закон України «Про Державний реєстр виборців», ст. 18",
+    "fname": "zakon-pro-derzhavnyi-reiestr-vyborciv.html",
+    "cat": "GENUINE",
+    "correct": "відомості подаються за період з 1 по останнє число місяця, що передує місяцю под",
+    "cur_ratio": 0.07692307692307693
+  },
+  {
+    "id": "bank_dodatok3-1756",
+    "ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 12",
+    "fname": "zakon-pro-yedynyi-derzhavnyi-demohrafichnyi-reiestr.html",
+    "cat": "GENUINE",
+    "correct": "надсилання запитів до ДКС, територіального органу/підрозділу Державної міграційн",
+    "cur_ratio": 0.1111111111111111
+  },
+  {
+    "id": "bank_dodatok3-1758",
+    "ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 10",
+    "fname": "zakon-pro-yedynyi-derzhavnyi-demohrafichnyi-reiestr.html",
+    "cat": "GENUINE",
+    "correct": "особі, яка не досягла дванадцятирічного віку або особі, яка не може пересуватися",
+    "cur_ratio": 0.11764705882352941
+  },
+  {
+    "id": "bank_dodatok3-1759",
+    "ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 12",
+    "fname": "zakon-pro-yedynyi-derzhavnyi-demohrafichnyi-reiestr.html",
+    "cat": "GENUINE",
+    "correct": "2",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "bank_dodatok3-1762",
+    "ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 10",
+    "fname": "zakon-pro-yedynyi-derzhavnyi-demohrafichnyi-reiestr.html",
+    "cat": "GENUINE",
+    "correct": "на термін, вказаний заявником у заяві про прийняття на тимчасовий консульський о",
+    "cur_ratio": 0.25
+  },
+  {
+    "id": "bank_dodatok3-1774",
+    "ref": "Кодекс України про адміністративні правопорушення, ст. 14",
+    "fname": "kodeks-ukrainy-pro-administratyvni-pravoporushennia.html",
+    "cat": "GENUINE",
+    "correct": "Транспортними засобами закордонних дипломатичних та консульських установ у супро",
+    "cur_ratio": 0.18181818181818182
+  },
+  {
+    "id": "bank_dodatok3-1775",
+    "ref": "Закон України «Про консульську службу», ст. 14",
+    "fname": "konsulskyi-statut-ukrainy.html",
+    "cat": "GENUINE",
+    "correct": "Повідомлення компетентних органів країни перебування або будь-яка інформація піс",
+    "cur_ratio": 0.35714285714285715
+  },
+  {
+    "id": "bank_dodatok3-1776",
+    "ref": "Закон України «Про консульську службу», ст. 12",
+    "fname": "konsulskyi-statut-ukrainy.html",
+    "cat": "GENUINE",
+    "correct": "Встановлення особи померлого/загиблого",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "bank_dodatok3-1780",
+    "ref": "Віденська конвенція про консульські зносини, ст. 5",
+    "fname": "videnska-konventsiia-konsulski-znosyny.html",
+    "cat": "GENUINE",
+    "correct": "вжиття заходів до забезпечення чи поновлення громадянам України права на прожива",
+    "cur_ratio": 0.3
+  },
+  {
+    "id": "bank_dodatok3-1781",
+    "ref": "Закон України «Про охорону дитинства», ст. 5",
+    "fname": "zakon-pro-okhoronu-dytynstva.html",
+    "cat": "GENUINE",
+    "correct": "усиновлювачі, опікуни, прийомні батьки, батьки-вихователі дитячого будинку сімей",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "bank_dodatok3-1783",
+    "ref": "Закон України «Про охорону дитинства», ст. 5",
+    "fname": "zakon-pro-okhoronu-dytynstva.html",
+    "cat": "GENUINE",
+    "correct": "Дарницька районна у м.Києві державна адміністрація, виконавчий комітет Броварськ",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "bank_dodatok3-1784",
+    "ref": "Закон України «Про дипломатичну службу», ст. 12",
+    "fname": "zakon-pro-dyplomatychnu-sluzhbu.html",
+    "cat": "GENUINE",
+    "correct": "встановлює опіку (піклування) над неповнолітніми, недієздатними або обмеженими в",
+    "cur_ratio": 0.0625
+  },
+  {
+    "id": "bank_dodatok3-1787",
+    "ref": "Закон України «Про охорону дитинства», ст. 5",
+    "fname": "zakon-pro-okhoronu-dytynstva.html",
+    "cat": "GENUINE",
+    "correct": "Дарницька районна у м.Києві державна адміністрація, виконавчий комітет Броварськ",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "bank_dodatok3-1788",
+    "ref": "Закон України «Про дипломатичну службу», ст. 6; Віденська конвенція про консульські зносини, ст. 5",
+    "fname": "zakon-pro-dyplomatychnu-sluzhbu.html",
+    "cat": "GENUINE",
+    "correct": "вживати заходів для того, щоб громадяни України в державі перебування користувал",
+    "cur_ratio": 0.18181818181818182
+  },
+  {
+    "id": "bank_dodatok3-1794",
+    "ref": "Правила оформлення візових документів, пункт 8 - 1",
+    "fname": "pravyla-oformlennia-viz.html",
+    "cat": "GENUINE",
+    "correct": "три",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "bank_dodatok3-1810",
+    "ref": "Віденська конвенція про консульські зносини, ст. 5",
+    "fname": "videnska-konventsiia-konsulski-znosyny.html",
+    "cat": "GENUINE",
+    "correct": "можуть за умови постійного проживання на території відповідного консульського ок",
+    "cur_ratio": 0.2727272727272727
+  },
+  {
+    "id": "bank_dodatok3-1811",
+    "ref": "Віденська конвенція про консульські зносини, ст. 4",
+    "fname": "videnska-konventsiia-konsulski-znosyny.html",
+    "cat": "GENUINE",
+    "correct": "глава дипломатичного представництва України, штатної консульської установи Украї",
+    "cur_ratio": 0.29411764705882354
+  },
+  {
+    "id": "bank_dodatok3-1814",
+    "ref": "Інструкція про порядок справляння сум консульського збору, п. 5",
+    "fname": "pravyla-oformlennia-viz.html",
+    "cat": "GENUINE",
+    "correct": "за зверненнями осіб, з інвалідністю I та II груп, дітей з інвалідністю або закон",
+    "cur_ratio": 0.25806451612903225
+  },
+  {
+    "id": "dodatok-01-2-1600",
+    "ref": "Постанова Кабінету Міністрів України «Про Регламент Кабінету Міністрів України», § 28 - 6",
+    "fname": "rehlament-kabinetu-ministriv.html",
+    "cat": "GENUINE",
+    "correct": "більше половини посадового складу Кабінету Міністрів України",
+    "cur_ratio": 0.42857142857142855
+  },
+  {
+    "id": "dodatok-01-2-1601",
+    "ref": "Постанова Кабінету Міністрів України «Про Регламент Кабінету Міністрів», § 14, п. 2",
+    "fname": "rehlament-kabinetu-ministriv.html",
+    "cat": "GENUINE",
+    "correct": "щосереди о 10-й годині",
+    "cur_ratio": 0.5
+  },
+  {
+    "id": "dodatok-01-2-1608",
+    "ref": "Постанова Кабінету Міністрів України «Про Регламент Кабінету Міністрів», § 28 - 1",
+    "fname": "rehlament-kabinetu-ministriv.html",
+    "cat": "GENUINE",
+    "correct": "орган, який вносить проєкт акту до Кабінету Міністрів",
+    "cur_ratio": 0.3333333333333333
+  },
+  {
+    "id": "dodatok-4-004",
+    "ref": "Закон України «Про громадянство України», ст. 9",
+    "fname": "zakon-pro-hromadianstvo.html",
+    "cat": "GENUINE",
+    "correct": "ні, не може",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-016",
+    "ref": "Закон України «Про громадянство України», ст. 1",
+    "fname": "zakon-pro-hromadianstvo.html",
+    "cat": "GENUINE",
+    "correct": "дворічного терміну від цієї дати",
+    "cur_ratio": 0.25
+  },
+  {
+    "id": "dodatok-4-031",
+    "ref": "Закон України «Про громадянство України», ст. 10",
+    "fname": "zakon-pro-hromadianstvo.html",
+    "cat": "GENUINE",
+    "correct": "не пізніш ніж у місячний строк з дня надходження документів",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-036",
+    "ref": "Закон України «Про громадянство України», ст. 25",
+    "fname": "zakon-pro-hromadianstvo.html",
+    "cat": "GENUINE",
+    "correct": "керівник дипломатичного представництва чи консульської установи України",
+    "cur_ratio": 0.3333333333333333
+  },
+  {
+    "id": "dodatok-4-042",
+    "ref": "Закон України «Про громадянство України», ст. 9",
+    "fname": "zakon-pro-hromadianstvo.html",
+    "cat": "GENUINE",
+    "correct": "не повинен перевищувати один рік",
+    "cur_ratio": 0.5
+  },
+  {
+    "id": "dodatok-4-043",
+    "ref": "Закон України «Про громадянство України», ст. 10",
+    "fname": "zakon-pro-hromadianstvo.html",
+    "cat": "GENUINE",
+    "correct": "у письмовій формі не пізніш ніж у тижневий строк з дня його прийняття",
+    "cur_ratio": 0.3333333333333333
+  },
+  {
+    "id": "dodatok-4-096",
+    "ref": "Закон України «Про громадянство України», ст. 24",
+    "fname": "zakon-pro-hromadianstvo.html",
+    "cat": "GENUINE",
+    "correct": "Державна міграційна служба України",
+    "cur_ratio": 0.25
+  },
+  {
+    "id": "dodatok-4-102",
+    "ref": "Закон України «Про громадянство України», ст. 3",
+    "fname": "zakon-pro-hromadianstvo.html",
+    "cat": "GENUINE",
+    "correct": "будь який громадянин України стосовно своєї дитини, народженої на території за к",
+    "cur_ratio": 0.2
+  },
+  {
+    "id": "dodatok-4-103",
+    "ref": "Закон України «Про громадянство України», ст. 26",
+    "fname": "zakon-pro-hromadianstvo.html",
+    "cat": "GENUINE",
+    "correct": "у суді",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-108",
+    "ref": "Правила оформлення віз для в’їзду в Україну, п. 3",
+    "fname": "pravyla-oformlennia-viz.html",
+    "cat": "GENUINE",
+    "correct": "В, C, D",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-129",
+    "ref": "Правила оформлення віз для в’їзду в Україну і транзитного проїзду, п. 3",
+    "fname": "pravyla-oformlennia-viz.html",
+    "cat": "GENUINE",
+    "correct": "одноразова",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-138",
+    "ref": "Правила оформлення віз для в’їзду в Україну і транзитного проїзду, п. 23",
+    "fname": "pravyla-oformlennia-viz.html",
+    "cat": "GENUINE",
+    "correct": "транзитні, короткострокові та довгострокові",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-141",
+    "ref": "Правила оформлення віз для в’їзду в Україну і транзитного проїзду, п. 7",
+    "fname": "pravyla-oformlennia-viz.html",
+    "cat": "GENUINE",
+    "correct": "запрошення філіалу, відділення, представництва або іншого структурного осередку ",
+    "cur_ratio": 0.5333333333333333
+  },
+  {
+    "id": "dodatok-4-150",
+    "ref": "Правила оформлення віз для в’їзду в Україну і транзитного проїзду, п. 20",
+    "fname": "pravyla-oformlennia-viz.html",
+    "cat": "GENUINE",
+    "correct": "короткострокові та транзитні",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-165",
+    "ref": "Правила оформлення віз для в’їзду в Україну і транзитного проїзду, п. 3",
+    "fname": "pravyla-oformlennia-viz.html",
+    "cat": "GENUINE",
+    "correct": "В",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-166",
+    "ref": "Правила оформлення віз для в’їзду в Україну, п. 3",
+    "fname": "pravyla-oformlennia-viz.html",
+    "cat": "GENUINE",
+    "correct": "С",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-167",
+    "ref": "Закон України «Про правовий статус іноземців та осіб без громадянства», ст. 5",
+    "fname": "zakon-pro-pravovyi-status-inozemtsiv.html",
+    "cat": "GENUINE",
+    "correct": "D",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-262",
+    "ref": "Закон України «Про нотаріат», ст. 7",
+    "fname": "zakon-pro-notariat.html",
+    "cat": "GENUINE",
+    "correct": "видача повторного свідоцтва про державну реєстрацію акту цивільного стану",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-269",
+    "ref": "Закон України «Про нотаріат», ст. 8",
+    "fname": "zakon-pro-notariat.html",
+    "cat": "GENUINE",
+    "correct": "за свідоцтвом про народження за умови підтвердження батьками одним з батьків) то",
+    "cur_ratio": 0.1
+  },
+  {
+    "id": "dodatok-4-281",
+    "ref": "Закон України «Про нотаріат», ст. 34",
+    "fname": "zakon-pro-notariat.html",
+    "cat": "GENUINE",
+    "correct": "від імені та за особистої присутності заповідача",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-304",
+    "ref": "Закон України «Про нотаріат», ст. 50",
+    "fname": "zakon-pro-notariat.html",
+    "cat": "GENUINE",
+    "correct": "у суді",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-307",
+    "ref": "Закон України «Про Державний реєстр виборців», ст. 23",
+    "fname": "zakon-pro-derzhavnyi-reiestr-vyborciv.html",
+    "cat": "GENUINE",
+    "correct": "нотаріус видає свідоцтво.",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-327",
+    "ref": "Закон України «Про Державний реєстр виборців», ст. 10",
+    "fname": "zakon-pro-derzhavnyi-reiestr-vyborciv.html",
+    "cat": "GENUINE",
+    "correct": "щомісячно",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-420",
+    "ref": "Закон України «Про дипломатичну службу», ст. 4",
+    "fname": "zakon-pro-dyplomatychnu-sluzhbu.html",
+    "cat": "GENUINE",
+    "correct": "конформізм",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-440",
+    "ref": "Закон України «Про дипломатичну службу», ст. 28",
+    "fname": "zakon-pro-dyplomatychnu-sluzhbu.html",
+    "cat": "GENUINE",
+    "correct": "важкі кліматичні умови або складна безпекова ситуація в країні призначення",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-483",
+    "ref": "Віденська конвенція про дипломатичні зносини, ст. 9",
+    "fname": "videnska-konventsiia-dyplomatychni-znosyny.html",
+    "cat": "GENUINE",
+    "correct": "persona non grata",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-497",
+    "ref": "Віденська конвенція про дипломатичні зносини, ст. 33",
+    "fname": "videnska-konventsiia-dyplomatychni-znosyny.html",
+    "cat": "GENUINE",
+    "correct": "від єдиного соціального внеску та пенсійного збору в країні перебування",
+    "cur_ratio": 0.2857142857142857
+  },
+  {
+    "id": "dodatok-4-498",
+    "ref": "Віденська конвенція про дипломатичні зносини, ст. 35",
+    "fname": "videnska-konventsiia-dyplomatychni-znosyny.html",
+    "cat": "GENUINE",
+    "correct": "від військової повинності, а також від всіх форм трудової та державної повинност",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-502",
+    "ref": "Віденська конвенція про дипломатичні зносини, ст. 37",
+    "fname": "videnska-konventsiia-dyplomatychni-znosyny.html",
+    "cat": "GENUINE",
+    "correct": "користуються переважною більшістю привілеїв та імунітетів, передбачених конвенці",
+    "cur_ratio": 0.14285714285714285
+  },
+  {
+    "id": "dodatok-4-529",
+    "ref": "Закон України «Про управління об'єктами державної власності», ст. 1",
+    "fname": "zakon-pro-upravlinnia-obiektamy-derzhavnoi-vlasnosti.html",
+    "cat": "GENUINE",
+    "correct": "21.09.2006",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-542",
+    "ref": "Закон України «Про управління об'єктами державної власності», ст. 1",
+    "fname": "zakon-pro-upravlinnia-obiektamy-derzhavnoi-vlasnosti.html",
+    "cat": "GENUINE",
+    "correct": "Міністерство розвитку економіки, торгівлі та сільського господарства України",
+    "cur_ratio": 0.14285714285714285
+  },
+  {
+    "id": "dodatok-4-564",
+    "ref": "Наказ Міністерства фінансів України від 02.09.2014 № 879, п. 4",
+    "fname": "nakaz-minfinu-879-inventaryzatsiia.html",
+    "cat": "GENUINE",
+    "correct": "2 примірники",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-576",
+    "ref": "Наказ Міністерства фінансів України від 02.09.2014 № 879, п. 7",
+    "fname": "nakaz-minfinu-879-inventaryzatsiia.html",
+    "cat": "GENUINE",
+    "correct": "в правоохоронні органи",
+    "cur_ratio": 0.5
+  },
+  {
+    "id": "dodatok-4-723",
+    "ref": "Постанова Кабінету Міністрів України «Деякі питання документування…», п. 19",
+    "fname": "postanova-kmu-55-dokumentuvannia.html",
+    "cat": "GENUINE",
+    "correct": "210 х 297",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-738",
+    "ref": "Постанова Кабінету Міністрів України «Деякі питання документування…», п. 87",
+    "fname": "postanova-kmu-55-dokumentuvannia.html",
+    "cat": "GENUINE",
+    "correct": "«Про…»",
+    "cur_ratio": 0.0
+  },
+  {
+    "id": "dodatok-4-751",
+    "ref": "Постанова Кабінету Міністрів України «Деякі питання документування…», п. 181",
+    "fname": "postanova-kmu-55-dokumentuvannia.html",
+    "cat": "GENUINE",
+    "correct": "так",
+    "cur_ratio": 0.0
+  }
+]

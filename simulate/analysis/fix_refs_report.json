@@ -1,0 +1,2207 @@
+{
+  "total_changes": 166,
+  "skipped": [
+    {
+      "qid": "dodatok-4-004",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-016",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-031",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-032",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-036",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-042",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-043",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-065",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-073",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-075",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-077",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-081",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-082",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-084",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-088",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-094",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-096",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-099",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-102",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-103",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-420",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-440",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-445",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-996",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1049",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1239",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1240",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1245",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1248",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1249",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1255",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1267",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1270",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1284",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1285",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1287",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1293",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1295",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1296",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1297",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1303",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1310",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1312",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-108",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-121",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-123",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-129",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-138",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-141",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-144",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-150",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-165",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-166",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-208",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-262",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-269",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-281",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-304",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-478",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-479",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-480",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-481",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-482",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-483",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-484",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-485",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-486",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-487",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-489",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-491",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-492",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-493",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-494",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-495",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-497",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-498",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-499",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-500",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-501",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-502",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-504",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-505",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-506",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-507",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1084",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1086",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1089",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1091",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1092",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1093",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1094",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1095",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1096",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1097",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1098",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1122",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1123",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1124",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1125",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1126",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1127",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1128",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1129",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1130",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1131",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1132",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1133",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1134",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1135",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1136",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1137",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1138",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1139",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1140",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1141",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1142",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1143",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1144",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1145",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1146",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1147",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1148",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1149",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1150",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1152",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1153",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1154",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1155",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1156",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1158",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1159",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1160",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1161",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1162",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1164",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1166",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1167",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-723",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-733",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-738",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-751",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-307",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-324",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-327",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-337",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-392",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-394",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-403",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-167",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1168",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1175",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1176",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1179",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1187",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-01-2-1523",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-01-2-1562",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-01-2-1571",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-01-2-1579",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-01-2-1600",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-01-2-1601",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-01-2-1608",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-529",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-535",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-542",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-517",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1198",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1203",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1683",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1684",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1756",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1758",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1759",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1762",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1794",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1720",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1721",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1722",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1726",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1727",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1730",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1731",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1780",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1781",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1782",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1783",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1784",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1787",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1788",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-564",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-565",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-576",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1774",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1775",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1776",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1744",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1746",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1747",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-713",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-719",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1695",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1697",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1699",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1705",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1706",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1709",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1710",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1711",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1712",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1714",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1662",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1663",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1666",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1667",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1816",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1810",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1811",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1812",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1814",
+      "reason": "no_verbatim_match ratio=0.00"
+    }
+  ],
+  "changes": [
+    {
+      "qid": "dodatok-4-006",
+      "old_ref": "Закон України «Про громадянство України», ст. 3",
+      "new_ref": "Закон України «Про громадянство України», ст. 1",
+      "correct_article": "Стаття 1. Визначення термінів",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-010",
+      "old_ref": "Закон України «Про громадянство України», ст. 9",
+      "new_ref": "Закон України «Про громадянство України», ст. 6",
+      "correct_article": "Стаття 6. Підстави набуття громадянства України",
+      "ratio": 0.937,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-015",
+      "old_ref": "Закон України «Про громадянство України», ст. 8",
+      "new_ref": "Закон України «Про громадянство України», ст. 1",
+      "correct_article": "Стаття 1. Визначення термінів",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-018",
+      "old_ref": "Закон України «Про громадянство України», ст. 19",
+      "new_ref": "Закон України «Про громадянство України», ст. 10",
+      "correct_article": "Стаття 10. Поновлення у громадянстві України",
+      "ratio": 0.7,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-022",
+      "old_ref": "Закон України «Про громадянство України», ст. 2",
+      "new_ref": "Закон України «Про громадянство України», ст. 29",
+      "correct_article": "Стаття 29. Відповідальність посадових і службових осіб за порушення законодавства про громадянство",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-023",
+      "old_ref": "Закон України «Про громадянство України», ст. 24",
+      "new_ref": "Закон України «Про громадянство України», ст. 29",
+      "correct_article": "Стаття 29. Відповідальність посадових і службових осіб за порушення законодавства про громадянство",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-025",
+      "old_ref": "Закон України «Про громадянство України», ст. 3",
+      "new_ref": "Закон України «Про громадянство України», ст. 1",
+      "correct_article": "Стаття 1. Визначення термінів",
+      "ratio": 0.867,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-026",
+      "old_ref": "Закон України «Про громадянство України», ст. 21",
+      "new_ref": "Закон України «Про громадянство України», ст. 5",
+      "correct_article": "Стаття 5. Документи, що підтверджують громадянство України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-027",
+      "old_ref": "Закон України «Про громадянство України», ст. 6",
+      "new_ref": "Закон України «Про громадянство України», ст. 10",
+      "correct_article": "Стаття 10. Поновлення у громадянстві України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-033",
+      "old_ref": "Закон України «Про громадянство України», ст. 6",
+      "new_ref": "Закон України «Про громадянство України», ст. 10",
+      "correct_article": "Стаття 10. Поновлення у громадянстві України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-049",
+      "old_ref": "Закон України «Про громадянство України», ст. 6",
+      "new_ref": "Закон України «Про громадянство України», ст. 8",
+      "correct_article": "Стаття 8. Набуття громадянства України за територіальним походженням",
+      "ratio": 0.625,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-056",
+      "old_ref": "Закон України «Про громадянство України», ст. 5",
+      "new_ref": "Закон України «Про громадянство України», ст. 9",
+      "correct_article": "Стаття 9. Прийняття до громадянства України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-063",
+      "old_ref": "Закон України «Про громадянство України», ст. 3",
+      "new_ref": "Закон України «Про громадянство України», ст. 1",
+      "correct_article": "Стаття 1. Визначення термінів",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-069",
+      "old_ref": "Закон України «Про громадянство України», ст. 1",
+      "new_ref": "Закон України «Про громадянство України», ст. 2",
+      "correct_article": "Стаття 2. Принципи законодавства України про громадянство",
+      "ratio": 0.8,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-070",
+      "old_ref": "Закон України «Про громадянство України», ст. 1",
+      "new_ref": "Закон України «Про громадянство України», ст. 6",
+      "correct_article": "Стаття 6. Підстави набуття громадянства України",
+      "ratio": 0.636,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-071",
+      "old_ref": "Закон України «Про громадянство України», ст. 3",
+      "new_ref": "Закон України «Про громадянство України», ст. 9",
+      "correct_article": "Стаття 9. Прийняття до громадянства України",
+      "ratio": 0.667,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-074",
+      "old_ref": "Закон України «Про громадянство України», ст. 3",
+      "new_ref": "Закон України «Про громадянство України», ст. 7",
+      "correct_article": "Стаття 7. Набуття громадянства України за народженням",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-078",
+      "old_ref": "Закон України «Про громадянство України», ст. 1",
+      "new_ref": "Закон України «Про громадянство України», ст. 9",
+      "correct_article": "Стаття 9. Прийняття до громадянства України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-080",
+      "old_ref": "Закон України «Про громадянство України», ст. 4",
+      "new_ref": "Закон України «Про громадянство України», ст. 9",
+      "correct_article": "Стаття 9. Прийняття до громадянства України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-085",
+      "old_ref": "Закон України «Про громадянство України», ст. 17",
+      "new_ref": "Закон України «Про громадянство України», ст. 19",
+      "correct_article": "Стаття 19. Підстави для втрати громадянства України",
+      "ratio": 0.769,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-091",
+      "old_ref": "Закон України «Про громадянство України», ст. 24",
+      "new_ref": "Закон України «Про громадянство України», ст. 18",
+      "correct_article": "Стаття 18. Вихід з громадянства України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-095",
+      "old_ref": "Закон України «Про громадянство України», ст. 24",
+      "new_ref": "Закон України «Про громадянство України», ст. 1",
+      "correct_article": "Стаття 1. Визначення термінів",
+      "ratio": 0.75,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-101",
+      "old_ref": "Закон України «Про громадянство України», ст. 3",
+      "new_ref": "Закон України «Про громадянство України», ст. 10",
+      "correct_article": "Стаття 10. Поновлення у громадянстві України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-105",
+      "old_ref": "Закон України «Про громадянство України», ст. 28",
+      "new_ref": "Закон України «Про громадянство України», ст. 27",
+      "correct_article": "Стаття 27. Оскарження дій та бездіяльності посадових і службових осіб, які порушують порядок розгляду справ про громадянство",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-419",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 1",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 2",
+      "correct_article": "Стаття 2. Визначення термінів",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-426",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 4",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 2",
+      "correct_article": "Стаття 2. Визначення термінів",
+      "ratio": 0.8,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-427",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 22",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 8",
+      "correct_article": "Стаття 8. Посади дипломатичної служби та посади працівників, які виконують функції з обслуговування",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-428",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 22",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 8",
+      "correct_article": "Стаття 8. Посади дипломатичної служби та посади працівників, які виконують функції з обслуговування",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-429",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 2",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 7",
+      "correct_article": "Стаття 7. Основні функції органів дипломатичної служби",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-450",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 22, п. 5",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 21, п. 5",
+      "correct_article": "Стаття 21. Перебування посадових осіб дипломатичної служби у розпорядженні Міністерства закордонних справ України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-451",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 23",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 16",
+      "correct_article": "Стаття 16. Проходження дипломатичної служби",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-455",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 3",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 28",
+      "correct_article": "Стаття 28. Підстави для припинення дипломатичної служби",
+      "ratio": 0.944,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-461",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 2",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 32",
+      "correct_article": "Стаття 32. Особливості виплати заробітної плати працівникам дипломатичної служби в закордонних дипломатичних установах України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-474",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 3",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 39",
+      "correct_article": "Стаття 39. Професійне навчання посадових осіб дипломатичної служби",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-992",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 4",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 5",
+      "correct_article": "Стаття 5. Система органів дипломатичної служби",
+      "ratio": 0.833,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1003",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 2",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 7",
+      "correct_article": "Стаття 7. Основні функції органів дипломатичної служби",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1006",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 4",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 8",
+      "correct_article": "Стаття 8. Посади дипломатичної служби та посади працівників, які виконують функції з обслуговування",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1030",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 4",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 5",
+      "correct_article": "Стаття 5. Система органів дипломатичної служби",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1036",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 27",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 24",
+      "correct_article": "Стаття 24. Перелік дипломатичних рангів",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1044",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 26, ч. 7",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 5, ч. 7",
+      "correct_article": "Стаття 5. Система органів дипломатичної служби",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1048",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 12",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 25",
+      "correct_article": "Стаття 25. Порядок присвоєння та позбавлення дипломатичних рангів",
+      "ratio": 0.958,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1073",
+      "old_ref": "Закон України «Про дипломатичну службу», ст. 6",
+      "new_ref": "Закон України «Про дипломатичну службу», ст. 2",
+      "correct_article": "Стаття 2. Визначення термінів",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1253",
+      "old_ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+      "new_ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 8",
+      "correct_article": "Стаття 8 Міжнародний кримінальний суд",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1265",
+      "old_ref": "Угода про асоціацію між Україною та ЄС, ст. 1",
+      "new_ref": "Угода про асоціацію між Україною та ЄС, ст. 466",
+      "correct_article": "Стаття 466",
+      "ratio": 0.75,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1268",
+      "old_ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 460",
+      "new_ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 315",
+      "correct_article": "Стаття 315 Тимчасові заходи захисту в разі невиконання",
+      "ratio": 0.8,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1269",
+      "old_ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 7",
+      "new_ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 462",
+      "correct_article": "Стаття 462",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1273",
+      "old_ref": "Угода про асоціацію між Україною та ЄС, ст. 89",
+      "new_ref": "Угода про асоціацію між Україною та ЄС, ст. 55",
+      "correct_article": "Стаття 55 Технічне співробітництво",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1275",
+      "old_ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 460",
+      "new_ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 486",
+      "correct_article": "Стаття 486 Набрання чинності та тимчасове застосування",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1286",
+      "old_ref": "Угода про асоціацію між Україною та ЄС, ст. 1",
+      "new_ref": "Угода про асоціацію між Україною та ЄС, ст. 479",
+      "correct_article": "Стаття 479 Взаємозв’язок з іншими угодами",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1288",
+      "old_ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+      "new_ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 18",
+      "correct_article": "Стаття 18 Мобільність працівників",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1289",
+      "old_ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+      "new_ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 37",
+      "correct_article": "Стаття 37 Спеціальні положення щодо адміністративного співробітництва",
+      "ratio": 0.667,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1292",
+      "old_ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 1",
+      "new_ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 422",
+      "correct_article": "Стаття 422",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1298",
+      "old_ref": "Угода про асоціацію між Україною та ЄС, ст. 1",
+      "new_ref": "Угода про асоціацію між Україною та ЄС, ст. 18",
+      "correct_article": "Стаття 18 Мобільність працівників",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1309",
+      "old_ref": "Угода про асоціацію між Україною та ЄС, ст. 1",
+      "new_ref": "Угода про асоціацію між Україною та ЄС, ст. 65",
+      "correct_article": "Стаття 65 Визнання для цілей торгівлі стану здоров’я тварин та статусу шкідників і регіональних умов",
+      "ratio": 0.75,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1313",
+      "old_ref": "Угода про асоціацію між Україною та ЄС, ст. 299",
+      "new_ref": "Угода про асоціацію між Україною та ЄС, ст. 127",
+      "correct_article": "Стаття 127 Ефективне та прозоре регулювання",
+      "ratio": 0.6,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1315",
+      "old_ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 486",
+      "new_ref": "Угода про асоціацію між Україною та Європейським Союзом, ст. 34",
+      "correct_article": "Стаття 34 Національний режим",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1319",
+      "old_ref": "Угода про асоціацію між Україною та ЄС, ст. 463",
+      "new_ref": "Угода про асоціацію між Україною та ЄС, ст. 5",
+      "correct_article": "Стаття 5 Форуми проведення політичного діалогу",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1320",
+      "old_ref": "Угода про асоціацію між Україною та ЄС, ст. 1",
+      "new_ref": "Угода про асоціацію між Україною та ЄС, ст. 451",
+      "correct_article": "Стаття 451",
+      "ratio": 0.7,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1324",
+      "old_ref": "Угода про асоціацію між Україною та ЄС, ст. 114",
+      "new_ref": "Угода про асоціацію між Україною та ЄС, ст. 455",
+      "correct_article": "Стаття 455",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-198",
+      "old_ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 1, ч. 2",
+      "new_ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 16, ч. 2",
+      "correct_article": "Стаття 16. Державна реєстрація зміни імені",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-207",
+      "old_ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 6",
+      "new_ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 4",
+      "correct_article": "Стаття 4. Органи державної реєстрації актів цивільного стану",
+      "ratio": 0.667,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-216",
+      "old_ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 3",
+      "new_ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 11",
+      "correct_article": "Стаття 11. Державний реєстр актів цивільного стану громадян",
+      "ratio": 0.964,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-228",
+      "old_ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 5",
+      "new_ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 14",
+      "correct_article": "Стаття 14. Державна реєстрація шлюбу",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-229",
+      "old_ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 14, ч. 5",
+      "new_ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 6, ч. 5",
+      "correct_article": "Стаття 6. Компетенція органів державної реєстрації актів цивільного стану",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-248",
+      "old_ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 3",
+      "new_ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 9",
+      "correct_article": "Стаття 9. Державна реєстрація актів цивільного стану",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-259",
+      "old_ref": "Закон України «Про нотаріат», ст. 1",
+      "new_ref": "Закон України «Про нотаріат», ст. 40",
+      "correct_article": "Стаття 40. Заповіти (крім секретних) і довіреності, прирівнювані до нотаріально посвідчених",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-282",
+      "old_ref": "Закон України «Про нотаріат», ст. 8",
+      "new_ref": "Закон України «Про нотаріат», ст. 38",
+      "correct_article": "Стаття 38. Нотаріальні дії, вчинювані консульськими установами України",
+      "ratio": 0.667,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-293",
+      "old_ref": "Закон України «Про нотаріат», ст. 3",
+      "new_ref": "Закон України «Про нотаріат», ст. 13",
+      "correct_article": "Стаття 13. Помічник нотаріуса",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-303",
+      "old_ref": "Закон України «Про нотаріат», ст. 29 - 1, п. 2",
+      "new_ref": "Закон України «Про нотаріат», ст. 28, п. 2",
+      "correct_article": "Стаття 28. Страхування відповідальності приватного нотаріуса",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-346",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 11",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 128",
+      "correct_article": "Стаття 128. Повторне голосування",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-347",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 15",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 3",
+      "correct_article": "Стаття 3. Типи виборів",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-348",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 2",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 39",
+      "correct_article": "Стаття 39. Складання попередніх списків виборців для звичайних виборчих дільниць",
+      "ratio": 0.857,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-349",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 27",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 138",
+      "correct_article": "Стаття 138. Територіальна організація виборів народних депутатів України",
+      "ratio": 0.958,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-350",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 2",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 8",
+      "correct_article": "Стаття 8. Документи, які підтверджують особу та громадянство виборця",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-351",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 2",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 8",
+      "correct_article": "Стаття 8. Документи, які підтверджують особу та громадянство виборця",
+      "ratio": 0.923,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-352",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 26",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 32",
+      "correct_article": "Стаття 32. Виборчі комісії",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-353",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 24",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 36",
+      "correct_article": "Стаття 36. Організація роботи виборчих комісій",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-354",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 26",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 35",
+      "correct_article": "Стаття 35. Набуття та припинення окружною та територіальною виборчими комісіями статусу юридичної особи",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-356",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 25",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 62",
+      "correct_article": "Стаття 62. Приміщення дільничної виборчої комісії та приміщення для голосування",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-357",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 25",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 62",
+      "correct_article": "Стаття 62. Приміщення дільничної виборчої комісії та приміщення для голосування",
+      "ratio": 0.857,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-358",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 25",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 62",
+      "correct_article": "Стаття 62. Приміщення дільничної виборчої комісії та приміщення для голосування",
+      "ratio": 0.857,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-359",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 26",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 10",
+      "correct_article": "Стаття 10. Право бути обраним",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-363",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 25, п. 14",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 10, п. 14",
+      "correct_article": "Стаття 10. Право бути обраним",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-364",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 25",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 59",
+      "correct_article": "Стаття 59. Офіційні спостерігачі від іноземних держав, міжнародних організацій",
+      "ratio": 0.778,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-365",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 27",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 113",
+      "correct_article": "Стаття 113. Виборчий бюлетень",
+      "ratio": 0.955,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-366",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 11",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 28",
+      "correct_article": "Стаття 28. Виборчі дільниці",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-367",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 11",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 62",
+      "correct_article": "Стаття 62. Приміщення дільничної виборчої комісії та приміщення для голосування",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-368",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 11",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 62",
+      "correct_article": "Стаття 62. Приміщення дільничної виборчої комісії та приміщення для голосування",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-369",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 28",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 14",
+      "correct_article": "Стаття 14. Вільні вибори",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-370",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 28",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 127",
+      "correct_article": "Стаття 127. Встановлення результатів виборів Президента України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-372",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 26",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 128",
+      "correct_article": "Стаття 128. Повторне голосування",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-373",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 1",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 6",
+      "correct_article": "Стаття 6. Виборчі права громадян України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-374",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 6, ч. 3",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 14, ч. 3",
+      "correct_article": "Стаття 14. Вільні вибори",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-375",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 9",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 75",
+      "correct_article": "Стаття 75. Право бути кандидатом на пост Президента України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-376",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 11, ч. 7",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 79, ч. 7",
+      "correct_article": "Стаття 79. Виборчий процес виборів Президента України",
+      "ratio": 0.926,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-378",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 15",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 3",
+      "correct_article": "Стаття 3. Типи виборів",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-379",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 17",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 78",
+      "correct_article": "Стаття 78. Строки призначення та проведення виборів",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-380",
+      "old_ref": "Закон України «Про вибори Президента України», ст. 25",
+      "new_ref": "Закон України «Про вибори Президента України», ст. 9",
+      "correct_article": "Стаття 9. Права виборців на участь у виборчому процесі, пов’язані з правом голосу",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-313",
+      "old_ref": "Закон України «Про Державний реєстр виборців», ст. 10",
+      "new_ref": "Закон України «Про Державний реєстр виборців», ст. 22",
+      "correct_article": "Стаття 22. Порядок періодичного поновлення персональних даних Реєстру",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-314",
+      "old_ref": "Закон України «Про Державний реєстр виборців», ст. 5",
+      "new_ref": "Закон України «Про Державний реєстр виборців», ст. 20",
+      "correct_article": "Стаття 20. Порядок звернення виборця за власною ініціативою до органу ведення Реєстру щодо зміни його персональних даних",
+      "ratio": 0.75,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-328",
+      "old_ref": "Закон України «Про Державний реєстр виборців», ст. 16",
+      "new_ref": "Закон України «Про Державний реєстр виборців», ст. 22",
+      "correct_article": "Стаття 22. Порядок періодичного поновлення персональних даних Реєстру",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-331",
+      "old_ref": "Закон України «Про Державний реєстр виборців», ст. 11",
+      "new_ref": "Закон України «Про Державний реєстр виборців», ст. 26",
+      "correct_article": "Стаття 26. Цілі використання персональних даних Реєстру",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-334",
+      "old_ref": "Закон України «Про Державний реєстр виборців», ст. 21",
+      "new_ref": "Закон України «Про Державний реєстр виборців», ст. 22",
+      "correct_article": "Стаття 22. Порядок періодичного поновлення персональних даних Реєстру",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-345",
+      "old_ref": "Закон України «Про Державний реєстр виборців», ст. 21",
+      "new_ref": "Закон України «Про Державний реєстр виборців», ст. 27",
+      "correct_article": "Стаття 27. Складання попередніх списків виборців",
+      "ratio": 0.742,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-381",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 26",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 6",
+      "correct_article": "Стаття 6. Виборчі права громадян України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-382",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 1",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 3",
+      "correct_article": "Стаття 3. Типи виборів",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-383",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 15",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 3",
+      "correct_article": "Стаття 3. Типи виборів",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-384",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 30",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 135",
+      "correct_article": "Стаття 135. Види виборів народних депутатів України та порядок їх призначення",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-386",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 3",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 28",
+      "correct_article": "Стаття 28. Виборчі дільниці",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-393",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 80",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 35",
+      "correct_article": "Стаття 35. Набуття та припинення окружною та територіальною виборчими комісіями статусу юридичної особи",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-396",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 44, п. 4",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 30, п. 4",
+      "correct_article": "Стаття 30. Спеціальна виборча дільниця",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-398",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 9",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 1",
+      "correct_article": "Стаття 1. Вибори як форма безпосередньої демократії",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-399",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 2",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 4",
+      "correct_article": "Стаття 4. Порядок обчислення строків",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-400",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 32",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 41",
+      "correct_article": "Стаття 41. Передача попередніх списків виборців та іменних запрошень виборчим комісіям звичайних виборчих дільниць",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-401",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 25",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 17",
+      "correct_article": "Стаття 17. Особисте голосування",
+      "ratio": 0.833,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-402",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 37",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 152",
+      "correct_article": "Стаття 152. Порядок формування виборчого фонду партії, власного виборчого фонду кандидата та використання його коштів",
+      "ratio": 0.929,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-404",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 31",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 30",
+      "correct_article": "Стаття 30. Спеціальна виборча дільниця",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-405",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 3",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 7",
+      "correct_article": "Стаття 7. Загальне виборче право",
+      "ratio": 0.8,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-406",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 72",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 14",
+      "correct_article": "Стаття 14. Вільні вибори",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-407",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 30",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 113",
+      "correct_article": "Стаття 113. Виборчий бюлетень",
+      "ratio": 0.958,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-408",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 37",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 62",
+      "correct_article": "Стаття 62. Приміщення дільничної виборчої комісії та приміщення для голосування",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-409",
+      "old_ref": "Закон України «Про вибори народних депутатів України», ст. 27",
+      "new_ref": "Закон України «Про вибори народних депутатів України», ст. 62",
+      "correct_article": "Стаття 62. Приміщення дільничної виборчої комісії та приміщення для голосування",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-174",
+      "old_ref": "Закон України «Про правовий статус іноземців та осіб без громадянства», ст. 4",
+      "new_ref": "Закон України «Про правовий статус іноземців та осіб без громадянства», ст. 16",
+      "correct_article": "Стаття 16. Реєстрація іноземців та осіб без громадянства, які в'їжджають в Україну або перебувають на території України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1169",
+      "old_ref": "Закон України «Про міжнародні договори України», ст. 8",
+      "new_ref": "Закон України «Про міжнародні договори України», ст. 1",
+      "correct_article": "Стаття 1. Сфера застосування Закону",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1172",
+      "old_ref": "Закон України «Про міжнародні договори України», ст. 13",
+      "new_ref": "Закон України «Про міжнародні договори України», ст. 2",
+      "correct_article": "Стаття 2. Визначення термінів",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1173",
+      "old_ref": "Закон України «Про міжнародні договори України», ст. 4",
+      "new_ref": "Закон України «Про міжнародні договори України», ст. 2",
+      "correct_article": "Стаття 2. Визначення термінів",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1177",
+      "old_ref": "Закон України «Про міжнародні договори України», ст. 5",
+      "new_ref": "Закон України «Про міжнародні договори України», ст. 3",
+      "correct_article": "Стаття 3. Види міжнародних договорів України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1194",
+      "old_ref": "Закон України «Про міжнародні договори України», ст. 3",
+      "new_ref": "Закон України «Про міжнародні договори України», ст. 4",
+      "correct_article": "Стаття 4. Пропозиції щодо укладення міжнародних договорів України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-01-2-1565",
+      "old_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 3",
+      "new_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 14",
+      "correct_article": "Стаття 14. Порядок складення присяги народним депутатом України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-01-2-1568",
+      "old_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 28",
+      "new_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 30",
+      "correct_article": "Стаття 30. Процедура повного обговорення питань на пленарному засіданні Верховної Ради",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-01-2-1570",
+      "old_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 7-1",
+      "new_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 46",
+      "correct_article": "Стаття 46. Види рішень Верховної Ради",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-01-2-1575",
+      "old_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 26",
+      "new_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 13",
+      "correct_article": "Стаття 13. Формування та організація роботи Підготовчої депутатської групи",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-01-2-1578",
+      "old_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 89",
+      "new_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 1",
+      "correct_article": "Стаття 1. Правові засади роботи Верховної Ради України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-01-2-1581",
+      "old_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 104",
+      "new_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 93",
+      "correct_article": "Стаття 93. Попередній розгляд законопроектів, проектів інших актів у комітетах",
+      "ratio": 0.63,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-01-2-1582",
+      "old_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 116",
+      "new_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 10",
+      "correct_article": "Стаття 10. Чергові сесії Верховної Ради",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-01-2-1583",
+      "old_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 20",
+      "new_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 145",
+      "correct_article": "Стаття 145. Підготовка до розгляду питання про включення законопроекту про внесення змін до Конституції України до порядку денного сесії Верховної Ради та про порядок продовження роботи над ним",
+      "ratio": 0.667,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-01-2-1585",
+      "old_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 154",
+      "new_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 153",
+      "correct_article": "Стаття 153. Підготовка до розгляду проекту закону про Державний бюджет України на наступний рік",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-01-2-1589",
+      "old_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 228, п. 9",
+      "new_ref": "Постанова Кабінету Міністрів «Про Регламент Верховної Ради України», ст. 227, п. 9",
+      "correct_article": "Стаття 227. Розгляд питання про схвалення Програми діяльності Кабінету Міністрів України",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-534",
+      "old_ref": "Закон України «Про управління об'єктами державної власності», ст. 5 - 2",
+      "new_ref": "Закон України «Про управління об'єктами державної власності», ст. 3",
+      "correct_article": "Стаття 3. Об'єкти управління державної власності",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1207",
+      "old_ref": "Віденська конвенція про право міжнародних договорів, ст. 2, п. 1, б)",
+      "new_ref": "Віденська конвенція про право міжнародних договорів, ст. 77, п. 1, б)",
+      "correct_article": "Стаття 77 Функції депозитаріїв",
+      "ratio": 0.857,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1211",
+      "old_ref": "Віденська конвенція про право міжнародних договорів, ст. 1",
+      "new_ref": "Віденська конвенція про право міжнародних договорів, ст. 5",
+      "correct_article": "Стаття 5 Договори, які встановлюють міжнародні організації, і договори, прийняті в рамках міжнародної організації",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1680",
+      "old_ref": "Закон України «Про нотаріат», ст. 34, п. 15",
+      "new_ref": "Закон України «Про нотаріат», ст. 24, п. 15",
+      "correct_article": "Стаття 24. Реєстрація приватної нотаріальної діяльності. Реєстраційне посвідчення",
+      "ratio": 0.75,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1681",
+      "old_ref": "Цивільний кодекс України, ст. 6",
+      "new_ref": "Цивільний кодекс України, ст. 25",
+      "correct_article": "Стаття 25. Цивільна правоздатність фізичної особи",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1688",
+      "old_ref": "Закон України «Про нотаріат», ст. 43",
+      "new_ref": "Закон України «Про нотаріат», ст. 44",
+      "correct_article": "Стаття 44. Визначення обсягу цивільної дієздатності фізичних осіб і перевірка цивільної правоздатності та дієздатності юридичних осіб, перевірка повноважень представника фізичної або юридичної особи. Встановлення намірів сторін вчиняти правочин",
+      "ratio": 0.778,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1690",
+      "old_ref": "Закон України «Про нотаріат», ст. 39",
+      "new_ref": "Закон України «Про нотаріат», ст. 55",
+      "correct_article": "Стаття 55. Посвідчення договорів про відчуження та заставу майна",
+      "ratio": 0.714,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1691",
+      "old_ref": "Закон України «Про нотаріат», ст. 1",
+      "new_ref": "Закон України «Про нотаріат», ст. 25",
+      "correct_article": "Стаття 25. Робоче місце (контора) приватного нотаріуса",
+      "ratio": 0.75,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1750",
+      "old_ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 6",
+      "new_ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 2",
+      "correct_article": "Стаття 2. Уповноважені суб'єкти",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1751",
+      "old_ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 12",
+      "new_ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 25",
+      "correct_article": "Стаття 25. Посвідчення особи моряка",
+      "ratio": 0.8,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1753",
+      "old_ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 10",
+      "new_ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 22",
+      "correct_article": "Стаття 22. Паспорт громадянина України для виїзду за кордон",
+      "ratio": 0.75,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1754",
+      "old_ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 12",
+      "new_ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 25",
+      "correct_article": "Стаття 25. Посвідчення особи моряка",
+      "ratio": 0.75,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1755",
+      "old_ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 6",
+      "new_ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 27",
+      "correct_article": "Стаття 27. Посвідчення особи на повернення в Україну",
+      "ratio": 0.625,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1757",
+      "old_ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 10",
+      "new_ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 7",
+      "correct_article": "Стаття 7. Інформація Єдиного державного демографічного реєстру",
+      "ratio": 0.8,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1761",
+      "old_ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 10",
+      "new_ref": "Закон України «Про Єдиний державний демографічний реєстр», ст. 16",
+      "correct_article": "Стаття 16. Оформлення, видача, обмін, пересилання, вилучення, повернення державі, знищення документів",
+      "ratio": 0.778,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1734",
+      "old_ref": "Закон України «Про громадянство України», ст. 3",
+      "new_ref": "Закон України «Про громадянство України», ст. 1",
+      "correct_article": "Стаття 1. Визначення термінів",
+      "ratio": 0.625,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1785",
+      "old_ref": "Закон України «Про охорону дитинства», ст. 12",
+      "new_ref": "Закон України «Про охорону дитинства», ст. 10-1",
+      "correct_article": "Стаття 10 - 1 . Механізми унеможливлення насильства та жорстокого поводження з дитиною",
+      "ratio": 0.667,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1793",
+      "old_ref": "Кримінальний процесуальний кодекс України, ст. 570",
+      "new_ref": "Кримінальний процесуальний кодекс України, ст. 636",
+      "correct_article": "Стаття 636. Виконання рішень Міжнародного кримінального суду",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1778",
+      "old_ref": "Закон України «Про громадянство України», ст. 5",
+      "new_ref": "Закон України «Про громадянство України», ст. 1",
+      "correct_article": "Стаття 1. Визначення термінів",
+      "ratio": 0.8,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1735",
+      "old_ref": "Закон України «Про Державний реєстр виборців», ст. 1",
+      "new_ref": "Закон України «Про Державний реєстр виборців», ст. 22",
+      "correct_article": "Стаття 22. Порядок періодичного поновлення персональних даних Реєстру",
+      "ratio": 0.697,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1738",
+      "old_ref": "Закон України «Про Державний реєстр виборців», ст. 16",
+      "new_ref": "Закон України «Про Державний реєстр виборців», ст. 22",
+      "correct_article": "Стаття 22. Порядок періодичного поновлення персональних даних Реєстру",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1739",
+      "old_ref": "Закон України «Про Державний реєстр виборців», ст. 13",
+      "new_ref": "Закон України «Про Державний реєстр виборців», ст. 22",
+      "correct_article": "Стаття 22. Порядок періодичного поновлення персональних даних Реєстру",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1745",
+      "old_ref": "Закон України «Про Державний реєстр виборців», ст. 16",
+      "new_ref": "Закон України «Про Державний реєстр виборців», ст. 22",
+      "correct_article": "Стаття 22. Порядок періодичного поновлення персональних даних Реєстру",
+      "ratio": 0.706,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1749",
+      "old_ref": "Закон України «Про Державний реєстр виборців», ст. 9",
+      "new_ref": "Закон України «Про Державний реєстр виборців», ст. 22",
+      "correct_article": "Стаття 22. Порядок періодичного поновлення персональних даних Реєстру",
+      "ratio": 0.75,
+      "matched": true
+    },
+    {
+      "qid": "dodatok-4-711",
+      "old_ref": "Закон України «Про електронні документи та електронний документообіг», ст. 6",
+      "new_ref": "Закон України «Про електронні документи та електронний документообіг», ст. 1",
+      "correct_article": "Стаття 1. Визначення термінів",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1704",
+      "old_ref": "Закон України «Про нотаріат», ст. 1",
+      "new_ref": "Закон України «Про нотаріат», ст. 2-1",
+      "correct_article": "Стаття 2 - 1 . Державне регулювання нотаріальної діяльності",
+      "ratio": 0.6,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1708",
+      "old_ref": "Закон України «Про консульську службу», ст. 9",
+      "new_ref": "Закон України «Про консульську службу», ст. 21",
+      "correct_article": "Стаття 21",
+      "ratio": 0.833,
+      "matched": true
+    },
+    {
+      "qid": "bank_dodatok3-1650",
+      "old_ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 6",
+      "new_ref": "Закон України «Про державну реєстрацію актів цивільного стану», ст. 8",
+      "correct_article": "Стаття 8. Діяльність органів державної реєстрації актів цивільного стану",
+      "ratio": 1.0,
+      "matched": true
+    }
+  ]
+}

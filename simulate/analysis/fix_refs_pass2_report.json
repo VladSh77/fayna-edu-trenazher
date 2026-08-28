@@ -1,0 +1,755 @@
+{
+  "total_changes": 14,
+  "skipped": [
+    {
+      "qid": "dodatok-4-004",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-016",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-031",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-032",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-036",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-042",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-043",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-065",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-073",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-075",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-077",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-081",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-082",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-084",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-088",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-094",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-096",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-099",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-102",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-103",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-420",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-440",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-445",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-996",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1049",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1239",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1240",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1245",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1248",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1249",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1255",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1267",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1270",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1284",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1285",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1287",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1293",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1295",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1296",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1297",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1303",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1310",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1312",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-108",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-121",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-123",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-129",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-138",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-141",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-144",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-150",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-165",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-166",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-208",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-262",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-269",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-281",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-304",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-483",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-484",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-497",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-498",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-499",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-502",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1084",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1089",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1094",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1097",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1136",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1139",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1144",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1148",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1149",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1150",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1153",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1154",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1159",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1162",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1164",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-723",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-733",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-738",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-751",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-307",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-324",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-327",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-337",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-392",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-394",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-403",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-167",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1168",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1175",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1176",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1179",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1187",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-01-2-1523",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-01-2-1562",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-01-2-1571",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-01-2-1579",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-01-2-1600",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-01-2-1601",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-01-2-1608",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-529",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-535",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-542",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-517",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1198",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "2019-11-26-dod2-1203",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1683",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1684",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1756",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1758",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1759",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1762",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1794",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1720",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1721",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1722",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1726",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1727",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1730",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1731",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1780",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1781",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1783",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1784",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1787",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1788",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-564",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-565",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-576",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1774",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1775",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1776",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1744",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1746",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1747",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-713",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "dodatok-4-719",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1695",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1697",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1699",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1705",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1706",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1709",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1710",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1711",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1712",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1714",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1662",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1663",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1666",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1667",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1816",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1810",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1811",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1812",
+      "reason": "no_verbatim_match ratio=0.00"
+    },
+    {
+      "qid": "bank_dodatok3-1814",
+      "reason": "no_verbatim_match ratio=0.00"
+    }
+  ],
+  "changes": [
+    {
+      "qid": "dodatok-4-507",
+      "old_ref": "Віденська конвенція про дипломатичні зносини, ст. 5",
+      "new_ref": "Віденська конвенція про дипломатичні зносини, ст. 40",
+      "correct_article": "Стаття 40",
+      "ratio": 0.818,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1093",
+      "old_ref": "Віденська конвенція про дипломатичні зносини, ст. 3",
+      "new_ref": "Віденська конвенція про дипломатичні зносини, ст. 39",
+      "correct_article": "Стаття 39",
+      "ratio": 0.8,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1122",
+      "old_ref": "Віденська конвенція про дипломатичні зносини, ст. 3",
+      "new_ref": "Віденська конвенція про дипломатичні зносини, ст. 42",
+      "correct_article": "Стаття 42",
+      "ratio": 0.889,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1123",
+      "old_ref": "Віденська конвенція про консульські зносини, ст. 45",
+      "new_ref": "Віденська конвенція про консульські зносини, ст. 27",
+      "correct_article": "Стаття 27",
+      "ratio": 0.8,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1124",
+      "old_ref": "Віденська конвенція про консульські зносини, ст. 1",
+      "new_ref": "Віденська конвенція про консульські зносини, ст. 79",
+      "correct_article": "Стаття 79",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1128",
+      "old_ref": "Віденська конвенція про консульські зносини, ст. 5",
+      "new_ref": "Віденська конвенція про консульські зносини, ст. 12",
+      "correct_article": "Стаття 12",
+      "ratio": 0.667,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1130",
+      "old_ref": "Віденська конвенція про консульські зносини, ст. 1",
+      "new_ref": "Віденська конвенція про консульські зносини, ст. 11",
+      "correct_article": "Стаття 11",
+      "ratio": 1.0,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1132",
+      "old_ref": "Віденська конвенція про консульські зносини, ст. 5",
+      "new_ref": "Віденська конвенція про консульські зносини, ст. 17",
+      "correct_article": "Стаття 17",
+      "ratio": 0.792,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1135",
+      "old_ref": "Віденська конвенція про консульські зносини, ст. 5",
+      "new_ref": "Віденська конвенція про консульські зносини, ст. 15",
+      "correct_article": "Стаття 15",
+      "ratio": 0.857,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1138",
+      "old_ref": "Віденська конвенція про консульські зносини, ст. 25",
+      "new_ref": "Віденська конвенція про консульські зносини, ст. 27",
+      "correct_article": "Стаття 27",
+      "ratio": 0.625,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1140",
+      "old_ref": "Віденська конвенція про консульські зносини, ст. 23",
+      "new_ref": "Віденська конвенція про консульські зносини, ст. 32",
+      "correct_article": "Стаття 32",
+      "ratio": 0.688,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1143",
+      "old_ref": "Віденська конвенція про консульські зносини, ст. 36",
+      "new_ref": "Віденська конвенція про консульські зносини, ст. 35",
+      "correct_article": "Стаття 35",
+      "ratio": 0.75,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1158",
+      "old_ref": "Віденська конвенція про консульські зносини, ст. 5",
+      "new_ref": "Віденська конвенція про консульські зносини, ст. 62",
+      "correct_article": "Стаття 62",
+      "ratio": 0.667,
+      "matched": true
+    },
+    {
+      "qid": "2019-11-26-dod2-1160",
+      "old_ref": "Віденська конвенція про консульські зносини, ст. 5",
+      "new_ref": "Віденська конвенція про консульські зносини, ст. 15",
+      "correct_article": "Стаття 15",
+      "ratio": 0.875,
+      "matched": true
+    }
+  ]
+}
