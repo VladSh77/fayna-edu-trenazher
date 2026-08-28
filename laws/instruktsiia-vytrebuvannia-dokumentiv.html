@@ -1,84 +1,97 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-<meta charset="UTF-8">
+<!DOCTYPE html><html lang="uk"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Інструкція про порядок вчинення нотаріальних дій консульськими установами України (витребування документів)</title>
+
 <style>
-  :root{
-    --bg:#ffffff; --text:#1a1a1a; --muted:#5b6470;
-    --border:#d0d7de; --accent:#1a6fb5; --accent-soft:#e7f0f8;
-    --green:#1a7f37; --red:#cf222e;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --bg:#0d1117; --text:#e6edf3; --muted:#8b949e;
-      --border:#30363d; --accent:#58a6ff; --accent-soft:#1f2a3a;
-      --green:#3fb950; --red:#f85149;
-    }
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  body{
-    background:var(--bg); color:var(--text);
-    font-family:Georgia, 'Times New Roman', serif;
-    line-height:1.7; font-size:16px;
-    padding:24px 20px 60px;
-  }
-  .doc{max-width:820px; margin:0 auto;}
-  .doc-header{
-    border-bottom:2px solid var(--accent); padding-bottom:16px; margin-bottom:20px;
-  }
-  .doc-header h1{font-size:1.5rem; line-height:1.4; color:var(--accent); font-weight:700;}
-  .doc-meta{
-    margin-top:10px; font-size:0.9rem; color:var(--muted);
-    font-family:system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-    display:flex; flex-wrap:wrap; gap:8px 16px;
-  }
-  .doc-meta .badge{
-    display:inline-block; padding:2px 10px; border-radius:20px;
-    font-weight:600; font-size:0.8rem;
-  }
-  .badge.valid{background:var(--green); color:#fff;}
-  .badge.invalid{background:var(--red); color:#fff;}
-  .badge.neutral{background:var(--accent-soft); color:var(--accent);}
-  .doc-body h1{
-    font-size:1.3rem; margin:24px 0 10px; color:var(--accent);
-    font-family:system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  }
-  .doc-body h2{
-    font-size:1.15rem; margin:28px 0 10px; color:var(--accent);
-    font-family:system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-    border-bottom:1px solid var(--border); padding-bottom:4px;
-  }
-  .doc-body h3{
-    font-size:1.02rem; margin:20px 0 6px; font-weight:700;
-    font-family:system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  }
-  .doc-body p{margin:8px 0; text-align:justify;}
-  .doc-body .note{
-    color:var(--muted); font-size:0.9rem; font-style:italic;
-    border-left:3px solid var(--border); padding-left:10px; margin:8px 0;
-  }
-  .doc-body .center{text-align:center; font-weight:700; margin:14px 0;}
-  .doc-footer{
-    margin-top:30px; padding-top:14px; border-top:1px solid var(--border);
-    font-size:0.85rem; color:var(--muted);
-    font-family:system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  }
-</style>
-</head>
-<body>
-<div class="doc">
-  <div class="doc-header">
-    <h1>Інструкція про порядок вчинення нотаріальних дій консульськими установами України (витребування документів)</h1>
-    <div class="doc-meta">
-      <span class="badge valid">Чинний</span>
-      <span>Джерело: zakon.rada.gov.ua</span>
-    </div>
-  </div>
-  <div class="doc-body">
-<p class="center">ДЕРЖАВНИЙ КОМІТЕТ МОЛОДІЖНОЇ ПОЛІТИКИ,</p>
-<p class="center">СПОРТУ І ТУРИЗМУ УКРАЇНИ</p>
+:root{
+  --bg:#ffffff; --text:#1a1a1a; --muted:#5b6470;
+  --border:#d0d7de; --accent:#1a6fb5; --accent-soft:#e7f0f8;
+  --green:#1a7f37; --red:#cf222e;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0d1117; --text:#e6edf3; --muted:#8b949e;
+  --border:#30363d; --accent:#58a6ff; --accent-soft:#1f2a3a;
+  --green:#3fb950; --red:#f85149;
+}}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:Georgia,'Times New Roman',serif;
+  line-height:1.75; font-size:16px;
+}
+.law{max-width:860px; margin:0 auto;}
+/* Sticky-шапка: текст скролиться ПІД нею, ніколи не перекривається */
+.law-header{
+  position:sticky; top:0; z-index:100;
+  background:var(--bg); border-bottom:2px solid var(--accent);
+  padding:14px 20px; box-shadow:0 2px 8px rgba(0,0,0,0.06);
+}
+.law-header h1{
+  font-size:1.35rem; line-height:1.35; color:var(--accent);
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  font-weight:700;
+}
+.law-meta{
+  margin-top:6px; font-size:0.85rem; color:var(--muted);
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+.law-content{padding:20px 20px 40px;}
+/* Блок статті з відступами */
+.law-article{
+  margin:0 0 22px; padding:0 0 18px;
+  border-bottom:1px solid var(--border);
+}
+.law-article:last-child{border-bottom:none;}
+.law-article-title{
+  font-size:1.05rem; font-weight:700; margin:0 0 10px;
+  padding:10px 14px; background:var(--accent-soft);
+  border-left:4px solid var(--accent); border-radius:0 8px 8px 0;
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  scroll-margin-top:90px;
+}
+.law-content h2{
+  font-size:1.15rem; margin:26px 0 12px; color:var(--accent);
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  border-bottom:1px solid var(--border); padding-bottom:4px;
+  scroll-margin-top:90px;
+}
+.law-content p{
+  margin:12px 0; text-align:left; line-height:1.75;
+}
+.law-content p + p{margin-top:14px;}
+.law-content .note{
+  margin:14px 0; padding:12px 14px; background:var(--accent-soft);
+  border-left:4px solid var(--accent); border-radius:0 8px 8px 0;
+  font-size:0.9rem; color:var(--muted); font-style:italic;
+}
+.law-content details.law-amendments{
+  margin:14px 0; border:1px solid var(--border); border-radius:8px;
+  background:var(--accent-soft);
+}
+.law-content details.law-amendments summary{
+  cursor:pointer; padding:10px 14px; font-weight:600;
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  color:var(--accent); user-select:none;
+}
+.law-content details.law-amendments summary:hover{background:rgba(0,0,0,0.03);}
+.law-content details.law-amendments .law-amendments-body{
+  padding:0 14px 12px; font-size:0.9rem; color:var(--muted);
+  max-height:320px; overflow-y:auto; line-height:1.6;
+}
+.law-footer{
+  margin-top:10px; padding:14px 20px; border-top:1px solid var(--border);
+  font-size:0.85rem; color:var(--muted);
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+</style></head><body><div class="law">
+<header class="law-header">
+<h1>Інструкція про порядок вчинення нотаріальних дій консульськими установами України (витребування документів)</h1>
+<div class="law-meta">Джерело: zakon.rada.gov.ua</div>
+</header>
+<div class="law-content">
+<p>ДЕРЖАВНИЙ КОМІТЕТ МОЛОДІЖНОЇ ПОЛІТИКИ,</p>
+<p>СПОРТУ І ТУРИЗМУ УКРАЇНИ</p>
 <p>Н А К А З</p>
 <p>N 2854 від 27.09.2001 Зареєстровано в Міністерстві</p>
 <p>юстиції України</p>
@@ -87,7 +100,7 @@
 <p>Про втрату чинності деяких наказів Міністерства</p>
 <p>України у справах молоді і спорту та Державного</p>
 <p>комітету з фізичної культури і спорту</p>
-<p>Відповідно до п.2 постанови Кабінету Міністрів України від 28</p>
+<p>Відповідно до п. 2 постанови Кабінету Міністрів України від 28</p>
 <p>грудня 1992 р. N 731 ( 731-92-п ) "Про затвердження Положення про</p>
 <p>державну реєстрацію нормативно-правових актів міністерств та інших</p>
 <p>органів виконавчої влади" (із змінами і доповненнями) та з метою</p>
@@ -111,10 +124,6 @@
 <p>Міністерстві юстиції України 05.01.98 за N 1/2441.</p>
 <p>2. Контроль за виконанням наказу залишаю за собою.</p>
 <p>Голова Комітету В.І.Цибух</p>
-  </div>
-  <div class="doc-footer">
-    Повний текст документа. Джерело: zakon.rada.gov.ua. Завантажено та перевірено станом на 28.08.2026.
-  </div>
 </div>
-</body>
-</html>
+<footer class="law-footer">Повний текст документа. Джерело: zakon.rada.gov.ua. Завантажено та перевірено станом на 28.08.2026.</footer>
+</div></body></html>

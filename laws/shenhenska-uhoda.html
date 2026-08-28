@@ -1,82 +1,95 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-<meta charset="UTF-8">
+<!DOCTYPE html><html lang="uk"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Шенгенська угода 1985 року</title>
+
 <style>
-  :root{
-    --bg:#ffffff; --text:#1a1a1a; --muted:#5b6470;
-    --border:#d0d7de; --accent:#1a6fb5; --accent-soft:#e7f0f8;
-    --green:#1a7f37; --red:#cf222e;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --bg:#0d1117; --text:#e6edf3; --muted:#8b949e;
-      --border:#30363d; --accent:#58a6ff; --accent-soft:#1f2a3a;
-      --green:#3fb950; --red:#f85149;
-    }
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  body{
-    background:var(--bg); color:var(--text);
-    font-family:Georgia, 'Times New Roman', serif;
-    line-height:1.7; font-size:16px;
-    padding:24px 20px 60px;
-  }
-  .doc{max-width:820px; margin:0 auto;}
-  .doc-header{
-    border-bottom:2px solid var(--accent); padding-bottom:16px; margin-bottom:20px;
-  }
-  .doc-header h1{font-size:1.5rem; line-height:1.4; color:var(--accent); font-weight:700;}
-  .doc-meta{
-    margin-top:10px; font-size:0.9rem; color:var(--muted);
-    font-family:system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-    display:flex; flex-wrap:wrap; gap:8px 16px;
-  }
-  .doc-meta .badge{
-    display:inline-block; padding:2px 10px; border-radius:20px;
-    font-weight:600; font-size:0.8rem;
-  }
-  .badge.valid{background:var(--green); color:#fff;}
-  .badge.invalid{background:var(--red); color:#fff;}
-  .badge.neutral{background:var(--accent-soft); color:var(--accent);}
-  .doc-body h1{
-    font-size:1.3rem; margin:24px 0 10px; color:var(--accent);
-    font-family:system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  }
-  .doc-body h2{
-    font-size:1.15rem; margin:28px 0 10px; color:var(--accent);
-    font-family:system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-    border-bottom:1px solid var(--border); padding-bottom:4px;
-  }
-  .doc-body h3{
-    font-size:1.02rem; margin:20px 0 6px; font-weight:700;
-    font-family:system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  }
-  .doc-body p{margin:8px 0; text-align:justify;}
-  .doc-body .note{
-    color:var(--muted); font-size:0.9rem; font-style:italic;
-    border-left:3px solid var(--border); padding-left:10px; margin:8px 0;
-  }
-  .doc-body .center{text-align:center; font-weight:700; margin:14px 0;}
-  .doc-footer{
-    margin-top:30px; padding-top:14px; border-top:1px solid var(--border);
-    font-size:0.85rem; color:var(--muted);
-    font-family:system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  }
-</style>
-</head>
-<body>
-<div class="doc">
-  <div class="doc-header">
-    <h1>Шенгенська угода 1985 року</h1>
-    <div class="doc-meta">
-      <span class="badge valid">Чинний</span>
-      <span>Джерело: zakon.rada.gov.ua</span>
-    </div>
-  </div>
-  <div class="doc-body">
+:root{
+  --bg:#ffffff; --text:#1a1a1a; --muted:#5b6470;
+  --border:#d0d7de; --accent:#1a6fb5; --accent-soft:#e7f0f8;
+  --green:#1a7f37; --red:#cf222e;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0d1117; --text:#e6edf3; --muted:#8b949e;
+  --border:#30363d; --accent:#58a6ff; --accent-soft:#1f2a3a;
+  --green:#3fb950; --red:#f85149;
+}}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:Georgia,'Times New Roman',serif;
+  line-height:1.75; font-size:16px;
+}
+.law{max-width:860px; margin:0 auto;}
+/* Sticky-шапка: текст скролиться ПІД нею, ніколи не перекривається */
+.law-header{
+  position:sticky; top:0; z-index:100;
+  background:var(--bg); border-bottom:2px solid var(--accent);
+  padding:14px 20px; box-shadow:0 2px 8px rgba(0,0,0,0.06);
+}
+.law-header h1{
+  font-size:1.35rem; line-height:1.35; color:var(--accent);
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  font-weight:700;
+}
+.law-meta{
+  margin-top:6px; font-size:0.85rem; color:var(--muted);
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+.law-content{padding:20px 20px 40px;}
+/* Блок статті з відступами */
+.law-article{
+  margin:0 0 22px; padding:0 0 18px;
+  border-bottom:1px solid var(--border);
+}
+.law-article:last-child{border-bottom:none;}
+.law-article-title{
+  font-size:1.05rem; font-weight:700; margin:0 0 10px;
+  padding:10px 14px; background:var(--accent-soft);
+  border-left:4px solid var(--accent); border-radius:0 8px 8px 0;
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  scroll-margin-top:90px;
+}
+.law-content h2{
+  font-size:1.15rem; margin:26px 0 12px; color:var(--accent);
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  border-bottom:1px solid var(--border); padding-bottom:4px;
+  scroll-margin-top:90px;
+}
+.law-content p{
+  margin:12px 0; text-align:left; line-height:1.75;
+}
+.law-content p + p{margin-top:14px;}
+.law-content .note{
+  margin:14px 0; padding:12px 14px; background:var(--accent-soft);
+  border-left:4px solid var(--accent); border-radius:0 8px 8px 0;
+  font-size:0.9rem; color:var(--muted); font-style:italic;
+}
+.law-content details.law-amendments{
+  margin:14px 0; border:1px solid var(--border); border-radius:8px;
+  background:var(--accent-soft);
+}
+.law-content details.law-amendments summary{
+  cursor:pointer; padding:10px 14px; font-weight:600;
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  color:var(--accent); user-select:none;
+}
+.law-content details.law-amendments summary:hover{background:rgba(0,0,0,0.03);}
+.law-content details.law-amendments .law-amendments-body{
+  padding:0 14px 12px; font-size:0.9rem; color:var(--muted);
+  max-height:320px; overflow-y:auto; line-height:1.6;
+}
+.law-footer{
+  margin-top:10px; padding:14px 20px; border-top:1px solid var(--border);
+  font-size:0.85rem; color:var(--muted);
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+</style></head><body><div class="law">
+<header class="law-header">
+<h1>Шенгенська угода 1985 року</h1>
+<div class="law-meta">Джерело: zakon.rada.gov.ua</div>
+</header>
+<div class="law-content">
 <p>Конвенція</p>
 <p>про фізичний захист ядерного матеріалу та</p>
 <p>ядерних установок</p>
@@ -114,7 +127,8 @@
 <p>такий матеріал знаходиться і надалі знаходитиметься під суворим</p>
 <p>фізичним захистом,</p>
 <p>домовились про таке:</p>
-<h3>Стаття 1</h3>
+<div class="law-article" id="article-1">
+<h3 class="law-article-title">Стаття 1</h3>
 <p>Для цілей цієї Конвенції:</p>
 <p>a) "ядерний матеріал" означає плутоній, за винятком плутонію</p>
 <p>з концентрацією ізотопів, що перевищує 80% по плутонію-238,</p>
@@ -133,7 +147,9 @@
 <p>походить вантаж, починаючи з його відправлення з установки</p>
 <p>відправника в цій державі і закінчуючи прибуттям на установку</p>
 <p>отримувача у державі кінцевого призначення.</p>
-<h3>Стаття 2</h3>
+</div>
+<div class="law-article" id="article-2">
+<h3 class="law-article-title">Стаття 2</h3>
 <p>1. Ця Конвенція застосовується до ядерного матеріалу, що</p>
 <p>використовується в мирних цілях і знаходиться в процесі</p>
 <p>міжнародного перевезення.</p>
@@ -148,7 +164,9 @@
 <p>не тлумачиться як таке, що зачіпає суверенні права держави щодо</p>
 <p>використання, зберігання і перевезення такого ядерного матеріалу</p>
 <p>всередині держави.</p>
-<h3>Стаття 3</h3>
+</div>
+<div class="law-article" id="article-3">
+<h3 class="law-article-title">Стаття 3</h3>
 <p>Кожна держава-учасниця в рамках свого національного</p>
 <p>законодавства і згідно з міжнародним правом вживає належних</p>
 <p>заходів для забезпечення, в міру можливості, того, щоб під час</p>
@@ -157,7 +175,9 @@
 <p>її юрисдикцією, якщо такий корабель або літак беруть участь у</p>
 <p>перевезенні до цієї держави або з неї, захищався на рівнях,</p>
 <p>описаних у Додатку 1.</p>
-<h3>Стаття 4</h3>
+</div>
+<div class="law-article" id="article-4">
+<h3 class="law-article-title">Стаття 4</h3>
 <p>1. Кожна держава-учасниця не експортує або не дозволяє</p>
 <p>експортувати ядерний матеріал, якщо ця держава-учасниця не</p>
 <p>отримала гарантії в тому, що такий матеріал під час міжнародного</p>
@@ -193,7 +213,9 @@
 <p>чином зачіпає територіальний суверенітет і юрисдикцію держави,</p>
 <p>включаючи суверенітет і юрисдикцію над її повітряним простором і</p>
 <p>територіальним морем.</p>
-<h3>Стаття 5</h3>
+</div>
+<div class="law-article" id="article-5">
+<h3 class="law-article-title">Стаття 5</h3>
 <p>1. Держави-учасниці визначають свій центральний орган і пункт</p>
 <p>зв'язку, що відповідають за фізичний захист ядерного матеріалу і</p>
 <p>за погоджені заходи щодо повернення і за дії у відповідь у разі</p>
@@ -232,7 +254,9 @@
 <p>міжнародної організації, з метою отримання рекомендацій щодо</p>
 <p>організації, експлуатації і поліпшення систем фізичного захисту</p>
 <p>ядерного матеріалу в процесі міжнародного перевезення.</p>
-<h3>Стаття 6</h3>
+</div>
+<div class="law-article" id="article-6">
+<h3 class="law-article-title">Стаття 6</h3>
 <p>1. Держави-учасниці вживають відповідних заходів, сумісних зі</p>
 <p>своїм національним законодавством, для охорони таємності будь-якої</p>
 <p>інформації, яку вони отримують від іншої держави-учасниці</p>
@@ -246,7 +270,9 @@
 <p>поширювати згідно з національним законодавством або яка може</p>
 <p>поставити під загрозу безпеку заінтересованої держави, або</p>
 <p>фізичний захист ядерного матеріалу.</p>
-<h3>Стаття 7</h3>
+</div>
+<div class="law-article" id="article-7">
+<h3 class="law-article-title">Стаття 7</h3>
 <p>1. Навмисне вчинення:</p>
 <p>a) без дозволу компетентних органів такі дії, як отримання,</p>
 <p>володіння, використання, передавання, видозмінення, знищення чи</p>
@@ -276,7 +302,9 @@
 <p>2. Кожна держава-учасниця вживає відповідних заходів</p>
 <p>покарання за вчинені правопорушення, зазначені в цій статті, з</p>
 <p>урахуванням серйозності цих правопорушень.</p>
-<h3>Стаття 8</h3>
+</div>
+<div class="law-article" id="article-8">
+<h3 class="law-article-title">Стаття 8</h3>
 <p>1. Кожна держава-учасниця вживає таких заходів, які можуть</p>
 <p>бути необхідними для встановлення своєї юрисдикції щодо</p>
 <p>правопорушень, зазначених у статті 7, у таких випадках:</p>
@@ -296,7 +324,9 @@
 <p>свою юрисдикцію щодо правопорушень, викладених у статті 7, коли</p>
 <p>вона у перевезенні ядерного матеріалу є експортуючою або</p>
 <p>імпортуючою державою.</p>
-<h3>Стаття 9</h3>
+</div>
+<div class="law-article" id="article-9">
+<h3 class="law-article-title">Стаття 9</h3>
 <p>Переконавшись у наявності достатніх на те підстав,</p>
 <p>держава-учасниця, на території якої знаходиться передбачуваний</p>
 <p>правопорушник, вживає належних заходів, включаючи взяття під</p>
@@ -305,13 +335,17 @@
 <p>Держави, від яких вимагається встановлення юрисдикції згідно зі</p>
 <p>статтею 8, і, коли це необхідно, всі інші заінтересовані держави</p>
 <p>негайно інформуються про заходи, вжиті згідно з цією статтею.</p>
-<h3>Стаття 10</h3>
+</div>
+<div class="law-article" id="article-10">
+<h3 class="law-article-title">Стаття 10</h3>
 <p>Держава-учасниця, на території якої знаходиться</p>
 <p>передбачуваний правопорушник, якщо вона не видає його, без</p>
 <p>будь-яких винятків і невиправданих затримок передає справу своїм</p>
 <p>компетентним органам в цілях кримінального переслідування шляхом</p>
 <p>судового розгляду згідно з законодавством цієї держави.</p>
-<h3>Стаття 11</h3>
+</div>
+<div class="law-article" id="article-11">
+<h3 class="law-article-title">Стаття 11</h3>
 <p>1. Правопорушення, зазначені у статті 7, розглядаються як</p>
 <p>правопорушення, пов'язані з видачею правопорушників, включені до</p>
 <p>будь-якої угоди про видачу, що існує між державами-учасницями.</p>
@@ -334,12 +368,16 @@
 <p>не тільки в тому місці, де воно сталося, але також і на території</p>
 <p>держав-учасниць, від яких вимагається застосувати свою юрисдикцію</p>
 <p>згідно з пунктом 1 статті 8.</p>
-<h3>Стаття 12</h3>
+</div>
+<div class="law-article" id="article-12">
+<h3 class="law-article-title">Стаття 12</h3>
 <p>Будь-якій особі, щодо якої проводиться судовий розгляд у</p>
 <p>зв'язку з будь-яким з правопорушень, згаданих у статті 7,</p>
 <p>гарантується справедливе ставлення на всіх етапах судового</p>
 <p>розгляду.</p>
-<h3>Стаття 13</h3>
+</div>
+<div class="law-article" id="article-13">
+<h3 class="law-article-title">Стаття 13</h3>
 <p>1. Держави-учасниці надають одна одній максимальне сприяння у</p>
 <p>зв'язку з кримінальним судовим розглядом, розпочатим щодо</p>
 <p>правопорушень, згаданих у статті 7, включаючи надання наявних</p>
@@ -350,7 +388,9 @@
 <p>будь-яким іншим договором, двостороннім або багатостороннім, який</p>
 <p>регулює або регулюватиме, повністю або частково, взаємну допомогу</p>
 <p>щодо кримінальних справ.</p>
-<h3>Стаття 14</h3>
+</div>
+<div class="law-article" id="article-14">
+<h3 class="law-article-title">Стаття 14</h3>
 <p>1. Кожна держава-учасниця інформує депозитарій про свої</p>
 <p>закони і постанови, що стосуються реалізації цієї Конвенції.</p>
 <p>Депозитарій періодично направляє таку інформацію всім</p>
@@ -369,9 +409,13 @@
 <p>Конвенції не буде тлумачитися як вимога до держави-учасниці</p>
 <p>надавати інформацію стосовно кримінального судового розгляду, що</p>
 <p>випливає з такого правопорушення.</p>
-<h3>Стаття 15</h3>
+</div>
+<div class="law-article" id="article-15">
+<h3 class="law-article-title">Стаття 15</h3>
 <p>Додатки становлять невід'ємну частину цієї Конвенції.</p>
-<h3>Стаття 16</h3>
+</div>
+<div class="law-article" id="article-16">
+<h3 class="law-article-title">Стаття 16</h3>
 <p>1. Після закінчення п'яти років з дня набуття чинності цією</p>
 <p>Конвенцією депозитарій скликає конференцію держав-учасниць щодо</p>
 <p>розгляду питання про виконання цієї Конвенції і про відповідність</p>
@@ -381,7 +425,9 @@
 <p>більшість держав-учасниць Конвенції може скликати наступні</p>
 <p>конференції з тією ж метою, звернувшись з відповідною пропозицією</p>
 <p>до депозитарію.</p>
-<h3>Стаття 17</h3>
+</div>
+<div class="law-article" id="article-17">
+<h3 class="law-article-title">Стаття 17</h3>
 <p>1. У разі виникнення спору між двома або кількома</p>
 <p>державами-учасницями щодо тлумачення або застосування цієї</p>
 <p>Конвенції, такі держави-учасниці проводять спільні консультації з</p>
@@ -410,7 +456,9 @@
 <p>4. Будь-яка держава-учасниця, яка зробила застереження згідно</p>
 <p>з пунктом 3, може в будь-який час зняти це застереження шляхом</p>
 <p>повідомлення про це депозитарія.</p>
-<h3>Стаття 18</h3>
+</div>
+<div class="law-article" id="article-18">
+<h3 class="law-article-title">Стаття 18</h3>
 <p>1. Ця Конвенція буде відкрита для підписання всіма державами</p>
 <p>у Центральних закладах Міжнародного агентства з атомної енергії у</p>
 <p>Відні і в Центральних закладах Організації Об'єднаних Націй у</p>
@@ -436,7 +484,9 @@
 <p>голосів її держав-членів.</p>
 <p>5. Документи про ратифікацію, прийняття, схвалення чи</p>
 <p>приєднання здаються на зберігання депозитарію.</p>
-<h3>Стаття 19</h3>
+</div>
+<div class="law-article" id="article-19">
+<h3 class="law-article-title">Стаття 19</h3>
 <p>1. Ця Конвенція набуває чинності на тридцятий день після дати</p>
 <p>передачі на зберігання депозитарію двадцять першого документа про</p>
 <p>ратифікацію, прийняття або схвалення.</p>
@@ -446,7 +496,9 @@
 <p>Конвенція набуває чинності на тридцятий день після передачі такою</p>
 <p>державою свого документа про ратифікацію, прийняття, схвалення або</p>
 <p>приєднання.</p>
-<h3>Стаття 20</h3>
+</div>
+<div class="law-article" id="article-20">
+<h3 class="law-article-title">Стаття 20</h3>
 <p>1. Без шкоди для статті 16 держава-учасниця може</p>
 <p>запропонувати поправки до цієї Конвенції. Запропонована поправка</p>
 <p>направляється депозитарію, який негайно розсилає її всім</p>
@@ -465,12 +517,16 @@
 <p>поправка набуває чинності для будь-якої іншої держави-учасниці в</p>
 <p>день передачі цією державою на зберігання свого документа про</p>
 <p>ратифікацію, прийняття чи схвалення поправки.</p>
-<h3>Стаття 21</h3>
+</div>
+<div class="law-article" id="article-21">
+<h3 class="law-article-title">Стаття 21</h3>
 <p>1. Будь-яка держава-учасниця може денонсувати цю Конвенцію</p>
 <p>шляхом письмового повідомлення депозитарію.</p>
 <p>2. Денонсація набуває чинності через сто вісімдесят днів</p>
 <p>після дати отримання депозитарієм повідомлення.</p>
-<h3>Стаття 22</h3>
+</div>
+<div class="law-article" id="article-22">
+<h3 class="law-article-title">Стаття 22</h3>
 <p>Депозитарій негайно повідомляє всі держави:</p>
 <p>a) про кожне підписання цієї Конвенції;</p>
 <p>b) про кожне здавання на зберігання документа про</p>
@@ -482,7 +538,9 @@
 <p>e) про набуття чинності цією Конвенцією;</p>
 <p>f) про набуття чинності будь-якої поправки до цієї Конвенції;</p>
 <p>g) про будь-яку денонсацію, оголошену згідно зі статтею 21.</p>
-<h3>Стаття 23</h3>
+</div>
+<div class="law-article" id="article-23">
+<h3 class="law-article-title">Стаття 23</h3>
 <p>Оригінал цієї Конвенції, тексти якої англійською, арабською,</p>
 <p>іспанською, китайською, російською і французькою мовами є однаково</p>
 <p>автентичними, здається на зберігання Генеральному директору</p>
@@ -491,10 +549,10 @@
 <p>На посвідчення чого нижчепідписані, належним чином</p>
 <p>уповноважені, підписали цю Конвенцію, відкриту для підписання у</p>
 <p>Відні і Нью-Йорку 3 березня 1980 року.</p>
-<p class="center">ДОДАТОК I</p>
-<p class="center">РІВНІ ФІЗИЧНОГО ЗАХИСТУ, ЩО ЗАСТОСОВУЄТЬСЯ ПРИ</p>
-<p class="center">МІЖНАРОДНОМУ ПЕРЕВЕЗЕННІ ЯДЕРНОГО МАТЕРІАЛУ,</p>
-<p class="center">КЛАСИФІКОВАНОГО У ДОДАТКУ II</p>
+<p>ДОДАТОК I</p>
+<p>РІВНІ ФІЗИЧНОГО ЗАХИСТУ, ЩО ЗАСТОСОВУЄТЬСЯ ПРИ</p>
+<p>МІЖНАРОДНОМУ ПЕРЕВЕЗЕННІ ЯДЕРНОГО МАТЕРІАЛУ,</p>
+<p>КЛАСИФІКОВАНОГО У ДОДАТКУ II</p>
 <p>1. Рівні фізичного захисту ядерного матеріалу в процесі</p>
 <p>зберігання, пов'язаного з міжнародним перевезенням ядерного</p>
 <p>матеріалу, включають:</p>
@@ -532,9 +590,9 @@
 <p>кілограмів включає попереднє повідомлення про перевезення, в якому</p>
 <p>зазначаються вид транспорту, передбачуваний час прибуття і</p>
 <p>підтвердження про отримання вантажу.</p>
-<p class="center">ДОДАТОК II</p>
+<p>ДОДАТОК II</p>
 <p>ТАБЛИЦЯ:</p>
-<p class="center">КЛАСИФІКАЦІЯ ЯДЕРНОГО МАТЕРІАЛУ</p>
+<p>КЛАСИФІКАЦІЯ ЯДЕРНОГО МАТЕРІАЛУ</p>
 <p>------------------------------------------------------------------</p>
 <p>| | | Категорії |</p>
 <p>| Матеріал | Форма |---------------------------------|</p>
@@ -596,10 +654,7 @@
 <p>може бути знижено за рівнем не більше ніж на одну категорію, якщо</p>
 <p>рівень випромінення палива перевищує 100 рад/год на відстані</p>
 <p>одного метра без захисту.</p>
-  </div>
-  <div class="doc-footer">
-    Повний текст документа. Джерело: zakon.rada.gov.ua. Завантажено та перевірено станом на 28.08.2026.
-  </div>
 </div>
-</body>
-</html>
+</div>
+<footer class="law-footer">Повний текст документа. Джерело: zakon.rada.gov.ua. Завантажено та перевірено станом на 28.08.2026.</footer>
+</div></body></html>

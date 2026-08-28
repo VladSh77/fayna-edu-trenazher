@@ -21,3 +21,4 @@ banks/mzs-2026.json.bak*
 banks/mzs-2026.json.bak-pre-v2
 # E2E залежності
 e2e/node_modules/
+screenshots/

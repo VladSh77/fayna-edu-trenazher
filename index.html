@@ -107,17 +107,31 @@
     .top-bar{flex-direction:column; align-items:flex-start;}
   }
   /* ===== Вибір тем галочками (замість 38 кнопок «Навчання») ===== */
-  .topic-picker{display:flex; flex-direction:column; gap:8px; margin:12px 0;}
-  .topic-picker .topic-row{display:flex; align-items:flex-start; gap:12px; padding:12px 14px; background:var(--card); border:1px solid var(--border); border-radius:12px; cursor:pointer; transition:border-color 0.15s, background 0.15s;}
+  .topic-picker{display:grid; grid-template-columns:repeat(auto-fill, minmax(340px, 1fr)); gap:8px; margin:12px 0;}
+  .topic-picker .topic-row{display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--card); border:1px solid var(--border); border-radius:12px; cursor:pointer; transition:border-color 0.15s, background 0.15s;}
   .topic-picker .topic-row:hover{border-color:var(--accent);}
   .topic-picker .topic-row.selected{border-color:var(--accent); background:var(--accent-soft);}
-  .topic-picker .topic-row input{width:22px; height:22px; flex-shrink:0; margin-top:2px; accent-color:var(--accent);}
-  .topic-picker .topic-row .topic-info{flex:1; min-width:0;}
-  .topic-picker .topic-row .topic-title{font-weight:600; font-size:0.98rem; line-height:1.35; overflow-wrap:break-word; word-break:break-word;}
-  .topic-picker .topic-row .topic-meta{font-size:0.85rem; color:var(--muted); margin-top:2px;}
-  .topic-toolbar{display:flex; gap:10px; margin:8px 0 4px; flex-wrap:wrap;}
-  .topic-toolbar button{flex:1; min-width:120px; padding:10px 12px; min-height:44px; font-size:0.9rem;}
+  .topic-picker .topic-row input{width:20px; height:20px; flex-shrink:0; accent-color:var(--accent); cursor:pointer;}
+  .topic-picker .topic-row .topic-info{flex:1; min-width:0; display:flex; flex-direction:column; gap:4px;}
+  .topic-picker .topic-row .topic-title{font-weight:600; font-size:0.95rem; line-height:1.3; overflow-wrap:break-word; word-break:break-word;}
+  .topic-picker .topic-row .topic-meta{font-size:0.82rem; color:var(--muted);}
+  .topic-picker .topic-row .topic-progress{height:6px; background:var(--border); border-radius:20px; overflow:hidden; width:100%;}
+  .topic-picker .topic-row .topic-progress-fill{height:100%; background:var(--green); border-radius:20px; transition:width 0.3s;}
+  .topic-picker .topic-row .topic-progress-fill.low{background:var(--red);}
+  .topic-picker .topic-row .topic-reset{flex-shrink:0; width:36px; height:36px; min-height:36px; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.1rem; border-radius:10px; background:var(--card); border:1px solid var(--border); color:var(--muted);}
+  .topic-picker .topic-row .topic-reset:hover{border-color:var(--red); color:var(--red);}
+  .topic-toolbar{display:flex; gap:8px; margin:8px 0 4px; flex-wrap:wrap;}
+  .topic-toolbar button{flex:1; min-width:110px; padding:9px 12px; min-height:42px; font-size:0.88rem;}
+  .topic-search{width:100%; padding:11px 14px; border:1px solid var(--border); border-radius:12px; background:var(--card); color:var(--text); font:inherit; font-size:0.95rem; margin:8px 0 2px;}
+  .topic-search:focus{outline:none; border-color:var(--accent);}
+  .topic-empty{color:var(--muted); text-align:center; padding:20px; grid-column:1/-1;}
+  /* ===== Sticky Action Bar внизу для запуску навчання ===== */
+  .topic-sticky-bar{position:sticky; bottom:0; z-index:90; background:var(--bg); padding:12px 0 calc(12px + env(safe-area-inset-bottom)); box-shadow:0 -4px 12px rgba(0,0,0,0.08); margin-top:16px;}
+  .topic-sticky-bar .btn-primary{width:100%; min-height:52px; font-size:1rem; font-weight:700;}
   .learn-actions{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;}
+  @media (max-width:720px){
+    .topic-picker{grid-template-columns:1fr;}
+  }
   /* ===== Довідка / Інструкція (Nielsen #10) ===== */
   .help-section{margin-top:20px;}
   .help-section details{border:1px solid var(--border); border-radius:12px; background:var(--card); overflow:hidden;}
@@ -156,12 +170,24 @@
   .law-category{font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--muted); margin:18px 0 8px;}
   .law-empty{color:var(--muted); text-align:center; padding:24px;}
   /* ===== Кнопка «вгору» в модальному вікні закону ===== */
-  .law-modal-toolbar{display:flex; align-items:center; gap:8px; padding:8px 16px; border-bottom:1px solid var(--border); background:var(--card); flex-wrap:wrap;}
+  .law-modal-toolbar{display:flex; align-items:center; gap:8px; padding:8px 16px; border-bottom:1px solid var(--border); background:var(--card); flex-wrap:wrap; flex-shrink:0; position:sticky; top:0; z-index:2;}
   .law-modal-toolbar .law-tool-btn{flex-shrink:0; width:auto; min-width:44px; min-height:44px; padding:8px 14px; font-size:0.9rem; border-radius:10px; background:var(--card); border:1px solid var(--border); color:var(--text); display:inline-flex; align-items:center; justify-content:center; gap:6px;}
   .law-modal-toolbar .law-tool-btn:hover{border-color:var(--accent); color:var(--accent);}
   .law-modal-toolbar .law-tool-btn.primary{background:var(--accent); border-color:var(--accent); color:#fff;}
   .law-modal-toolbar .law-tool-btn.primary:hover{opacity:0.9;}
   .law-modal-toolbar .law-toc-toggle{flex:1; text-align:center; font-weight:600;}
+  .law-search-wrap{flex:1; display:flex; align-items:center; gap:6px; min-width:200px;}
+  .law-search-input{flex:1; min-width:0; padding:9px 12px; border:1px solid var(--border); border-radius:10px; background:var(--bg); color:var(--text); font-size:0.9rem;}
+  .law-search-input:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft);}
+  .law-search-count{font-size:0.78rem; color:var(--muted); white-space:nowrap; min-width:34px; text-align:center;}
+  .law-search-nav{flex-shrink:0; width:34px; height:34px; min-height:34px; padding:0; display:flex; align-items:center; justify-content:center; font-size:0.85rem; border-radius:8px; background:var(--card); border:1px solid var(--border); color:var(--text); cursor:pointer;}
+  .law-search-nav:hover:not(:disabled){border-color:var(--accent); color:var(--accent);}
+  .law-search-nav:disabled{opacity:0.4; cursor:not-allowed;}
+  .law-article{scroll-margin-top:8px;}
+  .law-article + .law-article{margin-top:18px; padding-top:14px; border-top:1px solid var(--border);}
+  .law-article-title{font-weight:700; font-size:1.05rem; color:var(--accent); margin:0 0 8px; padding:8px 12px; background:var(--accent-soft); border-left:4px solid var(--accent); border-radius:0 8px 8px 0;}
+  .law-search-mark{background:#ffe08a; color:#1a1a1a; border-radius:2px; padding:0 1px;}
+  .law-search-mark.active{background:#ffb020;}
   /* ===== Зміст документа (TOC) ===== */
   .law-toc{display:none; border-bottom:1px solid var(--border); background:var(--card); max-height:45vh; overflow-y:auto; -webkit-overflow-scrolling:touch;}
   .law-toc.open{display:block;}
@@ -189,6 +215,12 @@
     </div>
     <div class="law-modal-toolbar">
       <button class="law-tool-btn" id="lawTocToggle" aria-label="Зміст">☰ Зміст</button>
+      <div class="law-search-wrap">
+        <input type="text" class="law-search-input" id="lawSearchInput" placeholder="🔍 Пошук у законі..." aria-label="Пошук у законі" autocomplete="off">
+        <span class="law-search-count" id="lawSearchCount"></span>
+        <button class="law-search-nav" id="lawSearchPrev" aria-label="Попередній збіг" title="Попередній">▲</button>
+        <button class="law-search-nav" id="lawSearchNext" aria-label="Наступний збіг" title="Наступний">▼</button>
+      </div>
       <button class="law-tool-btn primary" id="lawScrollTop" aria-label="Вгору">↑ Вгору</button>
     </div>
     <div class="law-toc" id="lawToc"></div>
@@ -277,11 +309,14 @@ function fmtPercent(correct, total) {
 }
 function sectionProgress(sectionId) {
   const p = state.progress[sectionId];
-  if (!p) return { done: 0, correct: 0, pct: 0 };
+  if (!p) return { done: 0, correct: 0, pct: 0, progPct: 0, total: 0 };
   const total = state.bank.sections.find(s => s.id === sectionId).count;
   const done = p.correct.size + p.wrong.size;
+  // Успішність (accuracy): правильні серед пройдених
   const pct = done === 0 ? 0 : Math.round((p.correct.size / done) * 100);
-  return { done, correct: p.correct.size, pct, total };
+  // Загальний прогрес теми: пройдені / всього
+  const progPct = total === 0 ? 0 : Math.round((done / total) * 100);
+  return { done, correct: p.correct.size, pct, progPct, total };
 }
 function getShuffledOptions(q) {
   if (!state.shuffled[q.id]) {
@@ -487,14 +522,33 @@ function renderLawLibList(query) {
   });
 }
 
+// Витягує номер закону з тексту/джерела (напр. «№ 1678-VII») для підпису кнопки
+function extractLawNumber(text) {
+  if (!text) return null;
+  const m = text.match(/№\s*([0-9]+(?:\s*[-–—]\s*[IVXLC]+)?)/i);
+  return m ? m[1].trim() : null;
+}
+
+// Будує HTML-кнопку посилання на закон: шукає збіг і в джерелі, і в тексті пояснення
+function buildLawLinkHtml(explain) {
+  if (!explain) return '';
+  const ref = explain.ref || '';
+  const text = explain.text || '';
+  // Спершу пробуємо джерело, потім текст пояснення
+  let file = legislationLink(ref);
+  if (!file) file = legislationLink(text);
+  if (!file) return '';
+  // Номер закону для підпису: з тексту, джерела або назви файлу
+  const num = extractLawNumber(text) || extractLawNumber(ref);
+  const label = num ? `📖 Відкрити Закон № ${num}` : '📖 Відкрити повний текст документа';
+  return `<button class="explain-link" data-law="${file}">${label}</button>`;
+}
+
 // Показує пояснення з кнопкою перегляду повного тексту акта після відповіді
 function renderExplain(q, isCorrect) {
   const box = document.getElementById('explainBox');
   if (!box) return;
-  const file = legislationLink(q.explain && q.explain.ref);
-  const linkHtml = file
-    ? `<button class="explain-link" data-law="${file}">📄 Читати повний текст документа</button>`
-    : '';
+  const linkHtml = buildLawLinkHtml(q.explain);
   if (!isCorrect) {
     // Навіть при помилці показуємо пояснення, щоб закріпити знання
     if (!q.explain) return;
@@ -545,11 +599,8 @@ const app = document.getElementById('app');
 function renderHome() {
   if (!state.manifest) return;
   state.screen = 'home';
-  let html = `<div class="top-bar"><h1>Оберіть банк</h1></div>`;
-  html += `<div class="card" style="margin-bottom:16px; cursor:pointer;" data-action="lawlib">
-    <div style="font-weight:600; font-size:1.1rem;">📚 Бібліотека законів</div>
-    <div class="muted">${LAW_LIBRARY.length} нормативно-правових актів · повні тексти з пошуком</div>
-  </div>`;
+  let html = `<div class="top-bar"><h1>Оберіть проєкт</h1></div>`;
+  html += `<div class="muted" style="margin-bottom:14px;">Оберіть банк питань для тренування.</div>`;
   for (const b of state.manifest.banks) {
     const prog = loadProgressForBank(b.file);
     const done = prog ? Object.values(prog).reduce((acc, p) => acc + p.correct.length + p.wrong.length, 0) : 0;
@@ -561,47 +612,11 @@ function renderHome() {
       ${done > 0 ? `<div style="margin-top:8px;">✅ Пройдено ${done}/${total} · правильно ${pct}%</div>` : '<div class="muted" style="margin-top:8px;">Ще не починав</div>'}
     </div>`;
   }
-  // Довідка / Інструкція (евристика Нільсена #10 — допомога та документація)
-  html += `<div class="help-section">
-    <details>
-      <summary>Як користуватися тренажером</summary>
-      <div class="help-body">
-        <h4>📖 Навчання</h4>
-        <ul>
-          <li>Оберіть банк питань на головному екрані.</li>
-          <li>Позначте галочками теми, які хочете повторити (можна обрати кілька одразу), і натисніть «Навчатися за обраними темами».</li>
-          <li>Оберіть відповідь — одразу побачите пояснення та джерело. Кнопка «Читати повний текст документа» відкриє відповідний акт у Бібліотеці законів.</li>
-          <li>Після відповіді натисніть «Наступне →» або клавішу <kbd>Enter</kbd>.</li>
-        </ul>
-        <h4>📝 Екзамен</h4>
-        <ul>
-          <li>Оберіть кількість питань і час. Після завершення побачите результат та історію спроб.</li>
-        </ul>
-        <h4>⌨️ Гарячі клавіші (на комп'ютері)</h4>
-        <ul>
-          <li><kbd>1</kbd>–<kbd>4</kbd> — обрати відповідь</li>
-          <li><kbd>Enter</kbd> — наступне питання</li>
-          <li><kbd>Esc</kbd> — закрити модальне вікно закону</li>
-        </ul>
-        <h4>📚 Бібліотека законів</h4>
-        <ul>
-          <li>Повні тексти нормативно-правових актів із пошуком та навігацією за статтями.</li>
-        </ul>
-        <h4>💾 Прогрес</h4>
-        <ul>
-          <li>Прогрес зберігається автоматично у вашому браузері (localStorage) і не потребує входу.</li>
-        </ul>
-      </div>
-    </details>
-  </div>`;
   // aria-live регіон для оголошення динамічних оновлень скрінрідером (WCAG 4.1.3)
   html += `<div class="sr-only" id="liveRegion" aria-live="polite"></div>`;
   app.innerHTML = html;
   app.querySelectorAll('[data-bank]').forEach(el => {
     el.addEventListener('click', () => loadBank(el.dataset.bank));
-  });
-  app.querySelectorAll('[data-action="lawlib"]').forEach(el => {
-    el.addEventListener('click', () => renderLawLibrary());
   });
 }
 function loadProgressForBank(file) {
@@ -631,9 +646,10 @@ function renderSections() {
   state.screen = 'sections';
   const b = state.bank;
   let html = `<div class="top-bar"><h1>${b.title}</h1><button class="btn-ghost" id="backHome">← Банки</button></div>`;
-  html += `<div style="display:flex; gap:10px; margin-bottom:16px;">
+  html += `<div style="display:flex; gap:10px; margin-bottom:16px; flex-wrap:wrap;">
     <button class="btn-primary" id="btnLearn">📖 Навчання</button>
     <button class="btn-secondary" id="btnExam">📝 Екзамен</button>
+    ${state.bankFile === 'mzs-2026.json' ? `<button class="btn-secondary" id="btnLawLib">📚 Бібліотека законів</button>` : ''}
   </div>`;
   // Панель вибору тем галочками (замість 38 окремих кнопок «Навчання»)
   html += `<div class="card" style="margin-bottom:16px;">
@@ -642,32 +658,15 @@ function renderSections() {
     <div class="topic-toolbar">
       <button class="btn-secondary" id="selectAll">☑ Обрати всі</button>
       <button class="btn-ghost" id="selectNone">☐ Зняти всі</button>
+      <button class="btn-ghost" id="selectErrors">⏳ Тільки з помилками</button>
     </div>
+    <input type="text" class="topic-search" id="topicSearch" placeholder="🔍 Пошук теми…" aria-label="Пошук теми">
     <div class="topic-picker" id="topicPicker"></div>
-    <div class="learn-actions">
-      <button class="btn-primary" id="btnLearnSelected">📖 Навчатися за обраними темами</button>
-    </div>
     <div id="topicError" class="inline-error hidden" role="alert"></div>
   </div>`;
   // aria-live регіон для оголошення динамічних оновлень (WCAG 4.1.3)
   html += `<div class="sr-only" id="liveRegion" aria-live="polite"></div>`;
-  // Прогрес по темах
-  html += `<h3 style="margin:18px 0 8px;">Прогрес по темах</h3>`;
-  for (const sec of b.sections) {
-    const p = sectionProgress(sec.id);
-    const fillClass = p.pct < 75 ? 'low' : '';
-    html += `<div class="section-item">
-      <div class="section-header">
-        <span class="section-title">${sec.title}</span>
-        <span class="muted">${p.done}/${sec.count} · ${p.pct}%</span>
-      </div>
-      <div class="progress-bar"><div class="progress-fill ${fillClass}" style="width:${p.done/sec.count*100}%"></div></div>
-      <div class="section-actions">
-        <button class="btn-ghost btn-sm" data-restart="${sec.id}">↺ Скинути прогрес теми</button>
-      </div>
-    </div>`;
-  }
-  html += `<div style="margin-top:20px;"><button class="btn-danger" id="resetProgress">Скинути весь прогрес</button></div>`;
+  // Історія екзаменів
   html += `<div style="margin-top:16px;"><h3>Історія екзаменів</h3>`;
   const allHistory = [];
   for (const sec of b.sections) {
@@ -683,26 +682,89 @@ function renderSections() {
     }
   }
   html += `</div>`;
+  // Sticky Action Bar внизу — запуск навчання з будь-якого місця скролу
+  html += `<div class="topic-sticky-bar">
+    <button class="btn-primary" id="btnLearnSelected">📚 Навчатися за обраними темами (Обрано: 0)</button>
+  </div>`;
+  html += `<div style="margin-top:12px;"><button class="btn-danger" id="resetProgress">Скинути весь прогрес</button></div>`;
   app.innerHTML = html;
-  // Побудова списку тем з галочками
+  // Побудова списку тем з галочками (єдина картка: чекбокс + назва + прогрес + скидання)
   const picker = document.getElementById('topicPicker');
   const selected = new Set();
+  const searchInput = document.getElementById('topicSearch');
+  const stickyBtn = document.getElementById('btnLearnSelected');
+  const topicError = document.getElementById('topicError');
+  // Зберігаємо всі рядки тем для фільтрації/пошуку
+  const rows = [];
   b.sections.forEach(sec => {
     const p = sectionProgress(sec.id);
     const row = document.createElement('label');
     row.className = 'topic-row';
+    row.dataset.sectionId = sec.id;
+    row.dataset.title = sec.title.toLowerCase();
+    // Метрики: прогрес теми (пройдені/всього) та успішність (правильні/пройдені)
+    const progLabel = p.done === 0
+      ? `0/${sec.count} питань (0%) · 🎯 0% правильно`
+      : `${p.done}/${sec.count} питань (${p.progPct}%) · 🎯 ${p.pct}% правильно`;
+    const fillClass = p.progPct < 75 ? 'low' : '';
     row.innerHTML = `<input type="checkbox" data-topic="${sec.id}">
       <span class="topic-info">
         <span class="topic-title">${sec.title}</span>
-        <span class="topic-meta">${p.done}/${sec.count} питань · ${p.pct}%</span>
-      </span>`;
+        <span class="topic-meta">${progLabel}</span>
+        <span class="topic-progress"><span class="topic-progress-fill ${fillClass}" style="width:${p.progPct}%"></span></span>
+      </span>
+      <button type="button" class="topic-reset" data-restart="${sec.id}" aria-label="Скинути прогрес теми" title="Скинути прогрес теми">↺</button>`;
     const cb = row.querySelector('input');
     cb.addEventListener('change', () => {
       if (cb.checked) { selected.add(sec.id); row.classList.add('selected'); }
       else { selected.delete(sec.id); row.classList.remove('selected'); }
+      updateStickyBtn();
+    });
+    // Клік по кнопці скидання не має перемикати чекбокс (label)
+    const resetBtn = row.querySelector('.topic-reset');
+    resetBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const secId = resetBtn.dataset.restart;
+      if (!confirm('Скинути прогрес цієї теми?')) return;
+      const p = state.progress[secId];
+      p.correct.clear();
+      p.wrong.clear();
+      p.index = 0;
+      saveProgress();
+      renderSections();
     });
     picker.appendChild(row);
+    rows.push({ sec, row, cb, p });
   });
+  function updateStickyBtn() {
+    stickyBtn.textContent = `📚 Навчатися за обраними темами (Обрано: ${selected.size})`;
+  }
+  function applyFilter() {
+    const q = (searchInput.value || '').trim().toLowerCase();
+    const onlyErrors = document.getElementById('selectErrors').classList.contains('active');
+    let visible = 0;
+    rows.forEach(({ sec, row, p }) => {
+      const matchQ = !q || sec.title.toLowerCase().includes(q);
+      const hasErrors = p.wrong && p.wrong.size > 0;
+      const matchErr = !onlyErrors || hasErrors;
+      const show = matchQ && matchErr;
+      row.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    let empty = picker.querySelector('.topic-empty');
+    if (visible === 0) {
+      if (!empty) {
+        empty = document.createElement('div');
+        empty.className = 'topic-empty';
+        empty.textContent = 'Нічого не знайдено за запитом.';
+        picker.appendChild(empty);
+      }
+    } else if (empty) {
+      empty.remove();
+    }
+  }
+  searchInput.addEventListener('input', applyFilter);
   document.getElementById('backHome').onclick = () => { state.bank = null; state.bankFile=''; renderHome(); };
   document.getElementById('btnLearn').onclick = () => {
     // Якщо нічого не обрано — навчатися за всіма темами
@@ -710,8 +772,9 @@ function renderSections() {
     startLearning(ids);
   };
   document.getElementById('btnExam').onclick = () => renderExamSetup();
-  const topicError = document.getElementById('topicError');
-  document.getElementById('btnLearnSelected').onclick = () => {
+  const btnLawLib = document.getElementById('btnLawLib');
+  if (btnLawLib) btnLawLib.onclick = () => renderLawLibrary();
+  stickyBtn.onclick = () => {
     if (selected.size === 0) {
       // Інлайн-повідомлення про помилку замість alert() (WCAG 3.3.1)
       topicError.textContent = 'Оберіть хоча б одну тему галочкою.';
@@ -723,12 +786,23 @@ function renderSections() {
     startLearning([...selected]);
   };
   document.getElementById('selectAll').onclick = () => {
-    picker.querySelectorAll('input[type=checkbox]').forEach(cb => { cb.checked = true; selected.add(cb.dataset.topic); cb.closest('.topic-row').classList.add('selected'); });
+    rows.forEach(({ cb, row }) => { cb.checked = true; selected.add(cb.dataset.topic); row.classList.add('selected'); });
     topicError.classList.add('hidden');
+    updateStickyBtn();
   };
   document.getElementById('selectNone').onclick = () => {
-    picker.querySelectorAll('input[type=checkbox]').forEach(cb => { cb.checked = false; selected.delete(cb.dataset.topic); cb.closest('.topic-row').classList.remove('selected'); });
+    rows.forEach(({ cb, row }) => { cb.checked = false; selected.delete(cb.dataset.topic); row.classList.remove('selected'); });
+    updateStickyBtn();
   };
+  // «Тільки з помилками» — фільтр тем, де є неправильні відповіді
+  const errorsBtn = document.getElementById('selectErrors');
+  errorsBtn.classList.add('btn-ghost');
+  errorsBtn.addEventListener('click', () => {
+    const active = errorsBtn.classList.toggle('active');
+    errorsBtn.classList.toggle('btn-secondary', active);
+    errorsBtn.classList.toggle('btn-ghost', !active);
+    applyFilter();
+  });
   document.getElementById('resetProgress').onclick = () => {
     if (confirm('Скинути весь прогрес?')) {
       try { localStorage.removeItem('trenazher:' + state.bankFile); } catch(e) {}
@@ -736,18 +810,6 @@ function renderSections() {
       renderSections();
     }
   };
-  document.querySelectorAll('[data-restart]').forEach(btn => {
-    btn.onclick = () => {
-      const secId = btn.dataset.restart;
-      if (!confirm('Скинути прогрес цієї теми?')) return;
-      const p = state.progress[secId];
-      p.correct.clear();
-      p.wrong.clear();
-      p.index = 0;
-      saveProgress();
-      renderSections();
-    };
-  });
 }
 
 // ====== Навчання ======
@@ -795,8 +857,9 @@ function renderLearn() {
     <button class="btn-ghost" id="restartLearn">↺ Почати з початку</button>
   </div>`;
   // Підказка гарячих клавіш (Шнейдерман #2 — універсальність використання)
+  // Діапазон динамічний — відповідно до кількості варіантів відповідей
   html += `<div class="hotkey-hint">
-    <span><kbd>1</kbd>–<kbd>4</kbd> відповідь</span>
+    <span><kbd>1</kbd>–<kbd>${options.length}</kbd> відповідь</span>
     <span><kbd>Enter</kbd> наступне</span>
   </div>`;
   app.innerHTML = html;
@@ -1202,6 +1265,20 @@ const LAW_IFRAME_CSS = `
   .doc-body th{ background:var(--accent-soft); font-weight:700; }
   .doc-body strong{ font-weight:700; }
   .doc-body .article-num{ font-weight:700; color:var(--accent); }
+  .doc-body details.law-amendments{
+    margin:14px 0; border:1px solid var(--border); border-radius:8px;
+    background:var(--accent-soft);
+  }
+  .doc-body details.law-amendments summary{
+    cursor:pointer; padding:10px 14px; font-weight:600;
+    font-family:system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    color:var(--accent); user-select:none;
+  }
+  .doc-body details.law-amendments summary:hover{ background:rgba(0,0,0,0.03); }
+  .doc-body details.law-amendments .law-amendments-body{
+    padding:0 14px 12px; font-size:0.9rem; color:var(--muted);
+    max-height:320px; overflow-y:auto; line-height:1.6;
+  }
 `;
 
 function openLawModal(file) {
@@ -1211,9 +1288,9 @@ function openLawModal(file) {
   const toc = document.getElementById('lawToc');
   const tocToggle = document.getElementById('lawTocToggle');
   if (!modal || !body) return;
-  // Назва акта з файлу
-  const name = file.replace(/^laws\//, '').replace(/\.html$/, '').replace(/-/g, ' ');
-  title.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+  // Назва акта українською з каталогу LAW_LIBRARY (замість трансліту з імені файлу)
+  const libEntry = LAW_LIBRARY.find(l => l.file === file);
+  title.textContent = libEntry ? libEntry.title : 'Повний текст документа';
   body.innerHTML = '<div class="law-modal-loading">Завантаження…</div>';
   if (toc) { toc.innerHTML = ''; toc.classList.remove('open'); }
   if (tocToggle) tocToggle.textContent = '☰ Зміст';
@@ -1245,7 +1322,54 @@ function openLawModal(file) {
     });
 }
 
-// Будує зміст документа з заголовків h1/h2/h3 всередині iframe
+// Обгортає статті документа в окремі блоки .law-article з заголовком .law-article-title
+// Підтримує формат .doc (h3 «Стаття N. …») та сирий формат rada (<div id="article">)
+function wrapLawArticles(doc) {
+  const container = doc.querySelector('.doc-body') || doc.querySelector('.law-content') || doc.body;
+  if (!container) return;
+  // Якщо статті вже обгорнуті в .law-article (новий еталонний формат) — нічого не робимо
+  if (container.querySelector('.law-article')) return;
+  // Формат .doc: статті — це <h3>, що починаються з «Стаття»
+  const h3s = Array.from(container.querySelectorAll('h3'));
+  const articleH3 = h3s.filter(h => /^\s*Стаття\s*\d/i.test(h.textContent || ''));
+  if (articleH3.length) {
+    articleH3.forEach((h, idx) => {
+      // Збираємо наступні сусідні елементи до наступного заголовка статті/розділу
+      const nodes = [h];
+      let el = h.nextElementSibling;
+      while (el && !(el.tagName === 'H2' || (el.tagName === 'H3' && /^\s*Стаття\s*\d/i.test(el.textContent || '')))) {
+        nodes.push(el);
+        el = el.nextElementSibling;
+      }
+      const wrap = doc.createElement('div');
+      wrap.className = 'law-article';
+      wrap.id = 'article-' + (idx + 1);
+      const title = doc.createElement('h3');
+      title.className = 'law-article-title';
+      title.textContent = (h.textContent || '').trim();
+      wrap.appendChild(title);
+      nodes.slice(1).forEach(n => wrap.appendChild(n));
+      h.parentNode.insertBefore(wrap, h);
+      h.remove();
+    });
+    return;
+  }
+  // Сирий формат rada: статті в <div id="article"> або <pre>
+  const rawArticles = container.querySelectorAll('div[id^="article"], div[id^="art"]');
+  rawArticles.forEach((a, idx) => {
+    a.classList.add('law-article');
+    if (!a.id) a.id = 'article-' + (idx + 1);
+    const first = a.querySelector('p, .rvps, .rvts, h3, h2');
+    if (first && /Стаття/i.test(first.textContent || '')) {
+      const title = doc.createElement('h3');
+      title.className = 'law-article-title';
+      title.textContent = (first.textContent || '').trim().split('\n')[0];
+      a.insertBefore(title, a.firstChild);
+    }
+  });
+}
+
+// Будує зміст документа зі статей та налаштовує пошук усередині iframe
 function buildLawToc(iframe, file) {
   const toc = document.getElementById('lawToc');
   const tocToggle = document.getElementById('lawTocToggle');
@@ -1254,34 +1378,115 @@ function buildLawToc(iframe, file) {
     let doc;
     try { doc = iframe.contentDocument; } catch (e) { return; }
     if (!doc) return;
-    const headings = doc.querySelectorAll('.doc-body h1, .doc-body h2, .doc-body h3');
-    if (!headings.length) return;
-    let tocHtml = '';
-    headings.forEach((h, i) => {
-      const level = h.tagName.toLowerCase();
+    // Обгортаємо статті в окремі блоки
+    wrapLawArticles(doc);
+    // Збираємо пункти змісту: заголовки статей + h1/h2 розділів
+    const items = [];
+    doc.querySelectorAll('.law-article-title, .doc-body h1, .doc-body h2, .law-content h1, .law-content h2').forEach((h, i) => {
       const text = (h.textContent || '').trim();
       if (!text) return;
-      // Додаємо id кожному заголовку для навігації
       const id = 'law-sec-' + i;
       h.id = id;
-      tocHtml += `<a href="#${id}" class="toc-${level}" data-target="${id}">${escapeHtml(text)}</a>`;
+      items.push({ id, text, level: h.classList.contains('law-article-title') ? 'h3' : h.tagName.toLowerCase() });
+    });
+    if (!items.length) return;
+    let tocHtml = '';
+    items.forEach(it => {
+      tocHtml += `<a href="#${it.id}" class="toc-${it.level}" data-target="${it.id}">${escapeHtml(it.text)}</a>`;
     });
     toc.innerHTML = tocHtml;
-    // Клік по пункту змісту — прокручуємо iframe до відповідного заголовка
+    // Клік по пункту змісту — плавна прокрутка до відповідного заголовка
     toc.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', (e) => {
         e.preventDefault();
-        const targetId = a.getAttribute('data-target');
-        const target = doc.getElementById(targetId);
+        const target = doc.getElementById(a.getAttribute('data-target'));
         if (target) {
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          // Закриваємо зміст на мобільних після вибору
           toc.classList.remove('open');
           if (tocToggle) tocToggle.textContent = '☰ Зміст';
         }
       });
     });
+    // Налаштовуємо пошук у тексті закону
+    setupLawSearch(doc);
   };
+}
+
+// Пошук у тексті закону: підсвітка збігів та навігація ▲/▼
+let lawSearchMatches = [];
+let lawSearchIndex = -1;
+function setupLawSearch(doc) {
+  const input = document.getElementById('lawSearchInput');
+  const count = document.getElementById('lawSearchCount');
+  const prevBtn = document.getElementById('lawSearchPrev');
+  const nextBtn = document.getElementById('lawSearchNext');
+  if (!input) return;
+  const clearMarks = () => {
+    doc.querySelectorAll('.law-search-mark').forEach(m => {
+      const parent = m.parentNode;
+      parent.replaceChild(doc.createTextNode(m.textContent), m);
+      parent.normalize();
+    });
+    lawSearchMatches = [];
+    lawSearchIndex = -1;
+    if (count) count.textContent = '';
+    if (prevBtn) prevBtn.disabled = true;
+    if (nextBtn) nextBtn.disabled = true;
+  };
+  const doSearch = () => {
+    clearMarks();
+    const q = input.value.trim();
+    if (!q) return;
+    const walker = doc.createTreeWalker(doc.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: (n) => {
+        const p = n.parentNode;
+        if (p && p.classList && (p.classList.contains('law-search-mark') || p.classList.contains('law-article-title'))) return NodeFilter.FILTER_REJECT;
+        return n.textContent.toLowerCase().includes(q.toLowerCase()) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(node => {
+      const lower = node.textContent.toLowerCase();
+      const ql = q.toLowerCase();
+      let idx = lower.indexOf(ql);
+      while (idx !== -1) {
+        const frag = doc.createDocumentFragment();
+        frag.appendChild(doc.createTextNode(node.textContent.slice(0, idx)));
+        const mark = doc.createElement('mark');
+        mark.className = 'law-search-mark';
+        mark.textContent = node.textContent.slice(idx, idx + q.length);
+        frag.appendChild(mark);
+        frag.appendChild(doc.createTextNode(node.textContent.slice(idx + q.length)));
+        node.parentNode.replaceChild(frag, node);
+        lawSearchMatches.push(mark);
+        idx = lower.indexOf(ql, idx + q.length);
+      }
+    });
+    lawSearchIndex = lawSearchMatches.length ? 0 : -1;
+    if (count) count.textContent = lawSearchMatches.length ? '1/' + lawSearchMatches.length : '0';
+    if (prevBtn) prevBtn.disabled = lawSearchMatches.length === 0;
+    if (nextBtn) nextBtn.disabled = lawSearchMatches.length === 0;
+    highlightCurrent();
+  };
+  const highlightCurrent = () => {
+    lawSearchMatches.forEach((m, i) => m.classList.toggle('active', i === lawSearchIndex));
+    if (lawSearchIndex >= 0 && lawSearchMatches[lawSearchIndex]) {
+      lawSearchMatches[lawSearchIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (count) count.textContent = (lawSearchIndex + 1) + '/' + lawSearchMatches.length;
+    }
+  };
+  const go = (dir) => {
+    if (!lawSearchMatches.length) return;
+    lawSearchIndex = (lawSearchIndex + dir + lawSearchMatches.length) % lawSearchMatches.length;
+    highlightCurrent();
+  };
+  input.addEventListener('input', doSearch);
+  if (prevBtn) prevBtn.onclick = () => go(-1);
+  if (nextBtn) nextBtn.onclick = () => go(1);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); go(e.shiftKey ? -1 : 1); }
+  });
 }
 
 function escapeHtml(s) {
@@ -1312,10 +1517,16 @@ function closeLawModal() {
   const body = document.getElementById('lawModalBody');
   const toc = document.getElementById('lawToc');
   const tocToggle = document.getElementById('lawTocToggle');
+  const searchInput = document.getElementById('lawSearchInput');
+  const searchCount = document.getElementById('lawSearchCount');
   if (modal) modal.classList.add('hidden');
   if (body) body.innerHTML = '<div class="law-modal-loading">Завантаження…</div>';
   if (toc) { toc.innerHTML = ''; toc.classList.remove('open'); }
   if (tocToggle) tocToggle.textContent = '☰ Зміст';
+  if (searchInput) searchInput.value = '';
+  if (searchCount) searchCount.textContent = '';
+  lawSearchMatches = [];
+  lawSearchIndex = -1;
   document.body.style.overflow = '';
 }
 
