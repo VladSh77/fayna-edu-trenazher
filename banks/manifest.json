@@ -9,8 +9,28 @@
     {
       "file": "it-admin-interview.json",
       "title": "IT Administrator — Techniczna rozmowa kwalifikacyjna",
-      "total": 33,
-      "sections": 5
+      "total": 73,
+      "sections": 10
+    }
+  ],
+  "courses": [
+    {
+      "file": "wychowawca.json",
+      "title": "Wychowawca — табірний вихователь",
+      "status": "stub",
+      "modules": 5
+    },
+    {
+      "file": "cpp-miltech.json",
+      "title": "C++ MilTech — програмування для військових технологій",
+      "status": "stub",
+      "modules": 5
+    },
+    {
+      "file": "llm-engineering.json",
+      "title": "LLM Engineering — інженерія великих мовних моделей",
+      "status": "stub",
+      "modules": 5
     }
   ]
 }

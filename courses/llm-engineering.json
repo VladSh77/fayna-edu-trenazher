@@ -1,0 +1,38 @@
+{
+  "slug": "llm-engineering",
+  "title": "LLM Engineering — інженерія великих мовних моделей",
+  "status": "stub",
+  "description": "Курс з інженерії LLM: prompt engineering, RAG, fine-tuning, агенти, оцінка якості. (Заглушка — контент у розробці)",
+  "modules": [
+    {
+      "id": "llm-01",
+      "title": "Основи LLM та токенізація",
+      "status": "stub",
+      "lessons": []
+    },
+    {
+      "id": "llm-02",
+      "title": "Prompt Engineering",
+      "status": "stub",
+      "lessons": []
+    },
+    {
+      "id": "llm-03",
+      "title": "RAG (Retrieval-Augmented Generation)",
+      "status": "stub",
+      "lessons": []
+    },
+    {
+      "id": "llm-04",
+      "title": "Fine-tuning та оцінка моделей",
+      "status": "stub",
+      "lessons": []
+    },
+    {
+      "id": "llm-05",
+      "title": "Агенти та інтеграції",
+      "status": "stub",
+      "lessons": []
+    }
+  ]
+}

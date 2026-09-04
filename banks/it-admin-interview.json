@@ -1,6 +1,6 @@
 {
   "title": "IT Administrator — Techniczna rozmowa kwalifikacyjna",
-  "total": 33,
+  "total": 73,
   "sections": [
     {
       "id": "windows-ad",
@@ -363,6 +363,441 @@
             "W kolejności zgłoszeń, bez wyjątków",
             "Najpierw obsługuję znajomych",
             "Wszystkie zgłoszenia są równe, bez SLA"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "linux-serwery",
+      "title": "Linux / serwery",
+      "count": 8,
+      "questions": [
+        {
+          "id": "it-lnx-001",
+          "question": "Chcesz sprawdzić, które procesy zużywają najwięcej pamięci na serwerze Linux. Jakie polecenie użyjesz?",
+          "correct": "top / htop oraz ps aux --sort=-%mem",
+          "wrong": [
+            "ipconfig",
+            "chkdsk",
+            "regedit"
+          ]
+        },
+        {
+          "id": "it-lnx-002",
+          "question": "Jak nadać uprawnienia do pliku w Linux (np. właściciel: rwx, grupa: r-x, inni: ---)?",
+          "correct": "chmod 750 plik (lub chmod u=rwx,g=rx,o= plik)",
+          "wrong": [
+            "chown 750 plik",
+            "chmod 777 zawsze",
+            "attrib +r plik"
+          ]
+        },
+        {
+          "id": "it-lnx-003",
+          "question": "Chcesz, aby usługa (np. nginx) startowała automatycznie po starcie systemu. Co robisz?",
+          "correct": "systemctl enable nginx (oraz systemctl start nginx)",
+          "wrong": [
+            "Dodaję wpis do rejestru",
+            "Kopiuję plik do folderu Autostart",
+            "Uruchamiam ręcznie za każdym razem"
+          ]
+        },
+        {
+          "id": "it-lnx-004",
+          "question": "Jak bezpiecznie zalogować się zdalnie do serwera Linux?",
+          "correct": "Przez SSH z kluczem publicznym (ssh user@host), wyłączając logowanie hasłem",
+          "wrong": [
+            "Telnet z hasłem w plaintext",
+            "FTP z hasłem",
+            "RDP z domyślnym hasłem"
+          ]
+        },
+        {
+          "id": "it-lnx-005",
+          "question": "Chcesz wykonać zadanie automatycznie codziennie o 2:00. Jakie narzędzie użyjesz?",
+          "correct": "cron (wpis w crontab: 0 2 * * * polecenie)",
+          "wrong": [
+            "Task Scheduler w Windows",
+            "systemctl restart",
+            "at tylko raz na stałe"
+          ]
+        },
+        {
+          "id": "it-lnx-006",
+          "question": "Serwer Linux nie ma miejsca na dysku. Jak sprawdzisz użycie dysku?",
+          "correct": "df -h (użycie partycji) oraz du -sh * (rozmiar katalogów)",
+          "wrong": [
+            "ipconfig /all",
+            "netstat -an",
+            "ping -t"
+          ]
+        },
+        {
+          "id": "it-lnx-007",
+          "question": "Chcesz skonfigurować serwer WWW (nginx) jako reverse proxy. Co konfigurujesz?",
+          "correct": "Plik konfiguracyjny nginx (server block / location proxy_pass) i weryfikuję nginx -t",
+          "wrong": [
+            "Regedit w Windows",
+            "IIS Manager tylko",
+            "Nie da się tego zrobić w Linux"
+          ]
+        },
+        {
+          "id": "it-lnx-008",
+          "question": "Jak sprawdzisz, które porty nasłuchują na serwerze Linux?",
+          "correct": "ss -tlnp lub netstat -tlnp",
+          "wrong": [
+            "df -h",
+            "ls -la",
+            "cat /etc/passwd"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wirtualizacja-docker",
+      "title": "Wirtualizacja / Docker",
+      "count": 8,
+      "questions": [
+        {
+          "id": "it-virt-001",
+          "question": "Jaka jest różnica między maszyną wirtualną (VM) a kontenerem Docker?",
+          "correct": "VM ma własny system operacyjny (hiperwizor), kontener współdzieli jądro hosta i jest lżejszy",
+          "wrong": [
+            "To dokładnie to samo",
+            "Kontener jest cięższy niż VM",
+            "VM nie ma systemu operacyjnego"
+          ]
+        },
+        {
+          "id": "it-virt-002",
+          "question": "Chcesz uruchomić kontener z obrazu. Jakie polecenie użyjesz?",
+          "correct": "docker run <obraz> (np. docker run -d -p 80:80 nginx)",
+          "wrong": [
+            "docker build tylko",
+            "systemctl start",
+            "chmod +x"
+          ]
+        },
+        {
+          "id": "it-virt-003",
+          "question": "Jak zachować dane, gdy kontener zostanie usunięty?",
+          "correct": "Używam wolumenów (volumes) lub bind mounts — dane przechowywane poza warstwą kontenera",
+          "wrong": [
+            "Zapisuję dane w środku kontenera i usuwam kontener",
+            "Dane zawsze giną, nie da się ich zachować",
+            "Kopiuję dane do obrazu"
+          ]
+        },
+        {
+          "id": "it-virt-004",
+          "question": "Chcesz uruchomić kilka usług (np. baza + aplikacja) razem. Jakie narzędzie użyjesz?",
+          "correct": "docker-compose (plik docker-compose.yml definiuje usługi, sieci i wolumeny)",
+          "wrong": [
+            "docker run za każdym razem ręcznie",
+            "crontab",
+            "systemctl enable"
+          ]
+        },
+        {
+          "id": "it-virt-005",
+          "question": "Co to jest obraz (image) a co kontener w Docker?",
+          "correct": "Obraz to szablon/definicja (read-only), kontener to działająca instancja obrazu",
+          "wrong": [
+            "To synonimy, nie ma różnicy",
+            "Kontener to szablon, obraz to instancja",
+            "Obraz to plik logów"
+          ]
+        },
+        {
+          "id": "it-virt-006",
+          "question": "Chcesz zbudować własny obraz z Dockerfile. Jakie polecenie użyjesz?",
+          "correct": "docker build -t nazwa:tag .",
+          "wrong": [
+            "docker run -t",
+            "docker ps -a",
+            "docker logs"
+          ]
+        },
+        {
+          "id": "it-virt-007",
+          "question": "Jak sprawdzisz, które kontenery aktualnie działają?",
+          "correct": "docker ps (a docker ps -a pokazuje również zatrzymane)",
+          "wrong": [
+            "df -h",
+            "ss -tlnp",
+            "cat /etc/hosts"
+          ]
+        },
+        {
+          "id": "it-virt-008",
+          "question": "Jakie są zalety wirtualizacji w firmie?",
+          "correct": "Izolacja środowisk, efektywne wykorzystanie sprzętu, łatwe snapshoty/backup i szybkie wdrażanie",
+          "wrong": [
+            "Zwiększa zużycie prądu bez korzyści",
+            "Utrudnia backup",
+            "Wymaga osobnego fizycznego serwera na każdą usługę"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sieci-poglebienie",
+      "title": "Sieci — pogłębienie (VPN, DNS, monitoring)",
+      "count": 8,
+      "questions": [
+        {
+          "id": "it-netp-001",
+          "question": "Chcesz połączyć dwa biura w jedną sieć. Jakie rozwiązanie VPN zastosujesz?",
+          "correct": "Site-to-site VPN (np. IPsec/WireGuard) między routerami/firewallami obu lokalizacji",
+          "wrong": [
+            "Remote access VPN dla każdego użytkownika osobno",
+            "Zwykły switch między biurami",
+            "Nie da się połączyć dwóch biur"
+          ]
+        },
+        {
+          "id": "it-netp-002",
+          "question": "Co to jest rekord DNS A, a co MX?",
+          "correct": "A mapuje nazwę na adres IPv4, MX wskazuje serwer poczty dla domeny",
+          "wrong": [
+            "A to serwer poczty, MX to adres IPv4",
+            "Oba to rekordy dla drukarek",
+            "To rekordy tylko w Windows"
+          ]
+        },
+        {
+          "id": "it-netp-003",
+          "question": "Chcesz monitorować dostępność serwerów i sieci. Jakie narzędzie użyjesz?",
+          "correct": "Narzędzia monitoringu (np. Zabbix, PRTG, Nagios) z alertami i dashboardem",
+          "wrong": [
+            "Tylko ping ręcznie co godzinę",
+            "Notatnik",
+            "Nie da się monitorować sieci"
+          ]
+        },
+        {
+          "id": "it-netp-004",
+          "question": "Jak sprawdzisz, czy port na zdalnym serwerze jest otwarty?",
+          "correct": "telnet host port lub nc -zv host port (np. nc -zv 10.0.0.5 443)",
+          "wrong": [
+            "ping host",
+            "df -h",
+            "ls -la"
+          ]
+        },
+        {
+          "id": "it-netp-005",
+          "question": "Co to jest NAT i do czego służy?",
+          "correct": "Tłumaczenie adresów — pozwala wielu urządzeniom w sieci lokalnej korzystać z jednego publicznego IP",
+          "wrong": [
+            "To protokół szyfrowania",
+            "To narzędzie do backupu",
+            "To typ kabla"
+          ]
+        },
+        {
+          "id": "it-netp-006",
+          "question": "Chcesz podzielić sieć na mniejsze podsieci. Jak to zrobisz?",
+          "correct": "Stosuję maski podsieci (subnetting/CIDR) i odpowiednio konfiguruję routing/VLAN",
+          "wrong": [
+            "Zmieniam adres MAC",
+            "Instaluję więcej RAM",
+            "Nie da się podzielić sieci"
+          ]
+        },
+        {
+          "id": "it-netp-007",
+          "question": "Co to jest QoS i kiedy go stosujesz?",
+          "correct": "Priorytetyzacja ruchu sieciowego (np. VoIP, wideokonferencje) — zapewnia jakość dla krytycznych aplikacji",
+          "wrong": [
+            "To narzędzie do backupu",
+            "To program antywirusowy",
+            "To typ dysku"
+          ]
+        },
+        {
+          "id": "it-netp-008",
+          "question": "Jak zabezpieczyć zdalny dostęp administratora do sieci?",
+          "correct": "VPN + MFA + ograniczenie źródeł (allowlist) + logowanie i audyt",
+          "wrong": [
+            "Otwarty RDP na publiczny adres bez zabezpieczeń",
+            "Wspólne hasło dla wszystkich",
+            "Brak logowania"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bezpieczenstwo-it",
+      "title": "Bezpieczeństwo IT (hardening, złote standardy)",
+      "count": 8,
+      "questions": [
+        {
+          "id": "it-sec-001",
+          "question": "Co to jest hardening systemu i od czego zaczynasz?",
+          "correct": "Wzmacnianie bezpieczeństwa: aktualizacje, minimalizacja usług, silne hasła, firewall, zasada najmniejszych uprawnień",
+          "wrong": [
+            "Instalacja większej ilości oprogramowania",
+            "Wyłączenie wszystkich zabezpieczeń",
+            "Używanie jednego wspólnego hasła"
+          ]
+        },
+        {
+          "id": "it-sec-002",
+          "question": "Jak zabezpieczasz hasła i sekrety (np. klucze API)?",
+          "correct": "Przechowuję w menedżerze haseł / vault, nigdy w kodzie ani w repozytorium; stosuję 2FA",
+          "wrong": [
+            "Zapisuję w pliku .txt na pulpicie",
+            "Wrzucam do kodu źródłowego",
+            "Używam tego samego hasła wszędzie"
+          ]
+        },
+        {
+          "id": "it-sec-003",
+          "question": "Co to jest zasada najmniejszych uprawnień (least privilege)?",
+          "correct": "Użytkownik/usługa ma tylko te uprawnienia, które są niezbędne do pracy — nic więcej",
+          "wrong": [
+            "Wszyscy są administratorami",
+            "Uprawnienia nadaje się raz na zawsze wszystkim",
+            "Nie ma znaczenia, kto ma jakie uprawnienia"
+          ]
+        },
+        {
+          "id": "it-sec-004",
+          "question": "Jak zabezpieczasz serwer przed nieautoryzowanym dostępem SSH?",
+          "correct": "Klucze zamiast haseł, wyłączony root login, zmieniony port, fail2ban, firewall",
+          "wrong": [
+            "Domyślne hasło root",
+            "Otwarty port 22 dla całego internetu",
+            "Brak logowania"
+          ]
+        },
+        {
+          "id": "it-sec-005",
+          "question": "Co to jest plan Disaster Recovery (DR) i od czego zaczynasz?",
+          "correct": "Plan odtworzenia po awarii: RPO/RTO, kopie zapasowe, procedury i testy odtworzenia",
+          "wrong": [
+            "To tylko kopia na tym samym dysku",
+            "Plan bez testów",
+            "Nie da się przygotować na awarię"
+          ]
+        },
+        {
+          "id": "it-sec-006",
+          "question": "Jak postępujesz z podejrzanym e-mailem (phishing) zgłoszonym przez użytkownika?",
+          "correct": "Nie klikam linków, analizuję nagłówki, izoluję i zgłaszam incydent zgodnie z procedurą",
+          "wrong": [
+            "Klikam, żeby sprawdzić",
+            "Ignoruję zgłoszenie",
+            "Usuwam wszystkie logi"
+          ]
+        },
+        {
+          "id": "it-sec-007",
+          "question": "Dlaczego ważne jest rozdzielenie środowisk (produkcja/test) i kont?",
+          "correct": "Izolacja ogranicza skutki błędów i ataków — osobne konta i środowiska minimalizują ryzyko",
+          "wrong": [
+            "Wszystko w jednym środowisku jest wygodniejsze",
+            "Jedno wspólne konto dla wszystkich",
+            "Nie ma to znaczenia"
+          ]
+        },
+        {
+          "id": "it-sec-008",
+          "question": "Co to jest audyt bezpieczeństwa i co sprawdzasz?",
+          "correct": "Systematyczna weryfikacja: logi, uprawnienia, aktualizacje, konfiguracja, zgodność z politykami",
+          "wrong": [
+            "Tylko sprawdzenie, czy komputer działa",
+            "Instalacja nowych programów",
+            "Nie da się przeprowadzić audytu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zarzadzanie-polityki",
+      "title": "Zarządzanie użytkownikami / polityki / audyt",
+      "count": 8,
+      "questions": [
+        {
+          "id": "it-mgmt-001",
+          "question": "Jak zarządzasz cyklem życia konta użytkownika (onboarding/offboarding)?",
+          "correct": "Tworzę konto z odpowiednimi grupami, a przy odejściu blokuję/usuwam i odbieram uprawnienia zgodnie z procedurą",
+          "wrong": [
+            "Konto tworzę bez uprawnień i nigdy nie usuwam",
+            "Przy odejściu zostawiam konto aktywne",
+            "Nie prowadzę żadnej dokumentacji"
+          ]
+        },
+        {
+          "id": "it-mgmt-002",
+          "question": "Jak wymuszasz politykę haseł w domenie?",
+          "correct": "Przez GPO (zasady haseł: długość, złożoność, wygaśnięcie) oraz MFA",
+          "wrong": [
+            "Proszę użytkowników, żeby zmieniali hasła",
+            "Ustawiam w BIOS",
+            "Nie da się wymusić polityki haseł"
+          ]
+        },
+        {
+          "id": "it-mgmt-003",
+          "question": "Co to jest audyt logowania i jak go włączasz?",
+          "correct": "Rejestrowanie zdarzeń logowania (np. w Windows przez GPO/audyt) i przeglądanie w dzienniku zdarzeń",
+          "wrong": [
+            "To tylko logi aplikacji",
+            "Nie da się śledzić logowania",
+            "Audyt to to samo co backup"
+          ]
+        },
+        {
+          "id": "it-mgmt-004",
+          "question": "Jak dokumentujesz zmiany w infrastrukturze?",
+          "correct": "Prowadzę dokumentację/zmiany (np. changelog, ticketing, Git) — każda zmiana jest opisana i weryfikowalna",
+          "wrong": [
+            "Zmieniam bez zapisu",
+            "Dokumentuję tylko duże zmiany",
+            "Nie prowadzę dokumentacji"
+          ]
+        },
+        {
+          "id": "it-mgmt-005",
+          "question": "Jak zarządzasz grupami i uprawnieniami w Active Directory?",
+          "correct": "Używam grup (domenowe, lokalne) i przypisuję uprawnienia przez grupy, nie pojedynczym użytkownikom",
+          "wrong": [
+            "Nadaję uprawnienia każdemu użytkownikowi osobno",
+            "Wszyscy w grupie Administratorzy",
+            "Nie używam grup"
+          ]
+        },
+        {
+          "id": "it-mgmt-006",
+          "question": "Co to jest SLA i jak go stosujesz w pracy helpdesk?",
+          "correct": "Umowa o poziomie usług — określa czasy reakcji i rozwiązania; priorytetyzuję zgłoszenia wg SLA",
+          "wrong": [
+            "To program do backupu",
+            "To typ kabla sieciowego",
+            "SLA nie ma wpływu na pracę"
+          ]
+        },
+        {
+          "id": "it-mgmt-007",
+          "question": "Jak przygotowujesz nowy komputer dla pracownika?",
+          "correct": "Standardowy obraz/konfiguracja, dołączenie do domeny, przypisanie do OU/grup, instalacja oprogramowania i test",
+          "wrong": [
+            "Daję komputer bez konfiguracji",
+            "Instaluję wszystko ręcznie bez standardu",
+            "Nie dołączam do domeny"
+          ]
+        },
+        {
+          "id": "it-mgmt-008",
+          "question": "Jak reagujesz na prośbę o dostęp do danych, do których użytkownik nie powinien mieć uprawnień?",
+          "correct": "Weryfikuję zasadność, stosuję zasadę najmniejszych uprawnień i wymagam zatwierdzenia zgodnie z procedurą",
+          "wrong": [
+            "Od razu daję pełny dostęp",
+            "Daję dostęp bez pytania",
+            "Ignoruję prośbę bez odpowiedzi"
           ]
         }
       ]
