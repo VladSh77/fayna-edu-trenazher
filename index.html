@@ -49,6 +49,7 @@
   .top-bar{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:16px; flex-wrap:wrap;}
   .top-bar h1{font-size:1.2rem; font-weight:600;}
   .muted{color:var(--muted); font-size:0.9rem;}
+  .badge-stub{display:inline-block; background:rgba(240,173,78,.15); color:#b8860b; border:1px solid rgba(240,173,78,.5); border-radius:999px; padding:2px 10px; font-size:0.75rem; font-weight:600; vertical-align:middle; margin-left:6px;}
   .question-text{font-size:1.1rem; line-height:1.55; margin-bottom:20px; font-weight:500;}
   .options{display:flex; flex-direction:column; gap:10px; margin-bottom:20px;}
   .option{display:flex; align-items:center; gap:10px; width:100%;}
@@ -600,7 +601,10 @@ function renderHome() {
   if (!state.manifest) return;
   state.screen = 'home';
   let html = `<div class="top-bar"><h1>Оберіть проєкт</h1></div>`;
-  html += `<div class="muted" style="margin-bottom:14px;">Оберіть банк питань для тренування.</div>`;
+  html += `<div class="muted" style="margin-bottom:14px;">Портал навчання: тести, курси, теми та стандарти.</div>`;
+
+  // Банки питань (тести)
+  html += `<h2 style="margin:18px 0 8px;">📝 Тести (банки питань)</h2>`;
   for (const b of state.manifest.banks) {
     const prog = loadProgressForBank(b.file);
     const done = prog ? Object.values(prog).reduce((acc, p) => acc + p.correct.length + p.wrong.length, 0) : 0;
@@ -612,12 +616,56 @@ function renderHome() {
       ${done > 0 ? `<div style="margin-top:8px;">✅ Пройдено ${done}/${total} · правильно ${pct}%</div>` : '<div class="muted" style="margin-top:8px;">Ще не починав</div>'}
     </div>`;
   }
+
+  // Курси (заглушки)
+  if (state.manifest.courses && state.manifest.courses.length) {
+    html += `<h2 style="margin:24px 0 8px;">🎓 Курси</h2>`;
+    for (const c of state.manifest.courses) {
+      const badge = c.status === 'stub' ? '<span class="badge-stub">заглушка</span>' : '';
+      html += `<div class="card" style="margin-bottom:12px; cursor:pointer;" data-course="${c.file}">
+        <div style="font-weight:600; font-size:1.1rem;">${c.title} ${badge}</div>
+        <div class="muted">${c.modules} модулів</div>
+      </div>`;
+    }
+  }
+
   // aria-live регіон для оголошення динамічних оновлень скрінрідером (WCAG 4.1.3)
   html += `<div class="sr-only" id="liveRegion" aria-live="polite"></div>`;
   app.innerHTML = html;
   app.querySelectorAll('[data-bank]').forEach(el => {
     el.addEventListener('click', () => loadBank(el.dataset.bank));
   });
+  app.querySelectorAll('[data-course]').forEach(el => {
+    el.addEventListener('click', () => loadCourse(el.dataset.course));
+  });
+}
+
+async function loadCourse(file) {
+  try {
+    const resp = await fetch('courses/' + file);
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const course = await resp.json();
+    state.screen = 'course';
+    let html = `<div class="top-bar"><h1>${course.title}</h1><button class="btn-ghost" id="backHomeCourse">← Головна</button></div>`;
+    html += `<div class="muted" style="margin-bottom:14px;">${course.description || ''}</div>`;
+    if (course.status === 'stub') {
+      html += `<div class="card" style="margin-bottom:16px; border-left:4px solid #f0ad4e;">
+        <strong>⏳ Заглушка</strong> — контент курсу в розробці. Структуру модулів вже визначено.
+      </div>`;
+    }
+    for (const m of course.modules) {
+      const n = (m.lessons && m.lessons.length) ? m.lessons.length : 0;
+      html += `<div class="card" style="margin-bottom:10px;">
+        <div style="font-weight:600;">${m.title}</div>
+        <div class="muted">${n > 0 ? n + ' уроків' : '⏳ уроки в розробці'}</div>
+      </div>`;
+    }
+    app.innerHTML = html;
+    const back = document.getElementById('backHomeCourse');
+    if (back) back.onclick = renderHome;
+  } catch (e) {
+    app.innerHTML = `<div class="error-box"><strong>Не вдалося завантажити курс.</strong><br>Перевірте наявність файлу в courses/.</div>`;
+  }
 }
 function loadProgressForBank(file) {
   try {
@@ -1490,7 +1538,7 @@ function setupLawSearch(doc) {
 }
 
 function escapeHtml(s) {
-  return s.replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>').replace(/"/g, '"');
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
 // Прокрутити вміст iframe вгору
